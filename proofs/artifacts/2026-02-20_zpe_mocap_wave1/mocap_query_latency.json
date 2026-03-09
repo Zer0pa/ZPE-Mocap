@@ -1,0 +1,1 @@
+{"library_size":10000,"metric":"query_latency_ms","p50_ms":14.834062501904555,"p95_ms":43.42387115066231,"p99_ms":65.57488401929734,"status":"PASS","threshold_ms":100.0}

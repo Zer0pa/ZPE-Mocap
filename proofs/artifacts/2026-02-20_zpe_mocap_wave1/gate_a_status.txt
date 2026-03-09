@@ -1,0 +1,1 @@
+Gate A PASS: runbooks present, fixture lock and schema hash frozen.

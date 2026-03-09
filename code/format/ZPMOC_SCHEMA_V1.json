@@ -1,0 +1,31 @@
+{
+  "schema_name": "zpmoc",
+  "schema_version": "1.0.0",
+  "endianness": "little",
+  "token_dictionary": {
+    "xy": ["E", "NE", "N", "NW", "W", "SW", "S", "SE"],
+    "xz": ["E", "NE", "N", "NW", "W", "SW", "S", "SE"]
+  },
+  "required_header_fields": [
+    "magic",
+    "version",
+    "seed",
+    "fps",
+    "num_frames",
+    "num_joints",
+    "joint_names",
+    "parents"
+  ],
+  "required_payload_fields": [
+    "magnitudes_q",
+    "xy_tokens",
+    "xz_tokens",
+    "periodicity",
+    "mirror_groups",
+    "index_offsets"
+  ],
+  "integrity_fields": [
+    "payload_sha256",
+    "schema_sha256"
+  ]
+}

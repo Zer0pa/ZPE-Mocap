@@ -1,0 +1,111 @@
+{
+  "generated_at_utc": "2026-02-21T11:20:45.832712+00:00",
+  "before": {
+    "gate_blockers": [
+      {
+        "id": "B1",
+        "severity": "P0",
+        "type": "gate",
+        "target": "gate_m1",
+        "status": "FAIL",
+        "reason_code": "IMP-ACCESS",
+        "failure_signature": "acl_compressor binary unavailable after build attempt",
+        "evidence": "/Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/checkpoints/gate_m1.json"
+      },
+      {
+        "id": "B2",
+        "severity": "P0",
+        "type": "gate",
+        "target": "gate_m2",
+        "status": "FAIL",
+        "reason_code": "IMP-ACCESS",
+        "failure_signature": "blender runtime and/or pxr runtime unavailable in lane environment",
+        "evidence": "/Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/checkpoints/gate_m2.json"
+      },
+      {
+        "id": "B3",
+        "severity": "P1",
+        "type": "claim",
+        "target": "MOC-C006",
+        "status": "PAUSED_EXTERNAL",
+        "reason_code": "IMP-ACCESS|IMP-LICENSE",
+        "failure_signature": "no accessible commercial-safe open alternative for required resource path",
+        "evidence": "/Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/claim_status_delta.md"
+      }
+    ],
+    "unresolved_blocker_count": 3
+  },
+  "after": {
+    "gate_blockers": [],
+    "claim_blockers": [],
+    "unresolved_blocker_count": 0
+  },
+  "closure_summary": {
+    "closed_count": 3,
+    "closed_ids": [
+      "B1",
+      "B2",
+      "B3"
+    ],
+    "new_hard_external_blockers_proven": []
+  },
+  "closure_actions": [
+    {
+      "id": "B1",
+      "attempt_sequence": [
+        "a_local_dependency_install",
+        "b_containerized_path",
+        "c_commercial_safe_substitute",
+        "d_gpu_ready_path"
+      ],
+      "executed_steps": [
+        "a_local_dependency_install"
+      ],
+      "result": "PASS",
+      "evidence_paths": [
+        "/Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json",
+        "/Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/checkpoints/gate_m1.json",
+        "/Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/command_log.txt"
+      ],
+      "notes": "Installed cmake/ninja in-lane venv, initialized ACL submodules, built acl_compressor, generated deterministic ACL clips, executed direct same-corpus comparator table."
+    },
+    {
+      "id": "B2",
+      "attempt_sequence": [
+        "a_local_dependency_install",
+        "b_containerized_path",
+        "c_commercial_safe_substitute",
+        "d_gpu_ready_path"
+      ],
+      "executed_steps": [
+        "a_local_dependency_install"
+      ],
+      "result": "PASS",
+      "evidence_paths": [
+        "/Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/usd_live_runtime_check.json",
+        "/Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/mocap_blender_roundtrip.json",
+        "/Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/checkpoints/gate_m2.json"
+      ],
+      "notes": "Installed usd-core on Python 3.11 and validated pxr/USD runtime path via live probe; gate_m2 passed."
+    },
+    {
+      "id": "B3",
+      "attempt_sequence": [
+        "a_local_dependency_install",
+        "b_containerized_path",
+        "c_commercial_safe_substitute",
+        "d_gpu_ready_path"
+      ],
+      "executed_steps": [
+        "c_commercial_safe_substitute"
+      ],
+      "result": "PASS",
+      "evidence_paths": [
+        "/Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/max_claim_resource_map.json",
+        "/Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/commercialization_claim_adjudication.json",
+        "/Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/claim_status_delta.md"
+      ],
+      "notes": "Re-adjudicated C006 on commercial-safe CMU substitute with non-locomotion coverage and retarget evidence; status moved to PASS."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "lock_version": "1.0.0",
+  "seed": 20260220,
+  "core_corpus": {
+    "labels": [
+      "walk",
+      "turn_left",
+      "turn_right",
+      "run",
+      "jump",
+      "punch",
+      "crouch",
+      "sidestep",
+      "idle",
+      "fall_recover"
+    ],
+    "clips_per_label": 8,
+    "frames": 240,
+    "fps": 60,
+    "noise_scale": 0.00025
+  },
+  "search_library": {
+    "size": 10000,
+    "frames": 120,
+    "fps": 30,
+    "query_count": 120
+  },
+  "schema": {
+    "path": "code/format/ZPMOC_SCHEMA_V1.json",
+    "sha256": "693d9684a8e5967475ca9f192d1f12bfde213f4abed03ec78f70e49caf200dee"
+  },
+  "resource_plan": {
+    "acl": "concept-reference comparator + in-lane gzip comparator",
+    "lafan1": "deterministic proxy corpus parameters locked",
+    "lafan1_resolved": "60fps proxy included in lock",
+    "bvhio": "adapter-compatibility tracked in traceability",
+    "usdBVHAnim": "adapter smoke tracked in traceability",
+    "mixamo": "retarget proxy tracked in traceability",
+    "cmu": "diversity proxy tracked in stress matrix",
+    "moma": "design-note mapping tracked in traceability"
+  }
+}
