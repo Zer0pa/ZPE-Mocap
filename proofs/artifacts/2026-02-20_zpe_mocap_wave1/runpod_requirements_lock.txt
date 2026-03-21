@@ -1,6 +1,7 @@
-cmake==4.2.1
+cmake==4.2.3
 ninja==1.13.0
-numpy==2.4.2
+numpy==2.4.3
 packaging==26.0
-setuptools==82.0.0
+setuptools==82.0.1
 wheel==0.46.3
+-e git+https://github.com/Zer0pa/ZPE-Mocap@62f751224a91e2cad01d18fef7ba28fb554477e7#egg=zpe_mocap&subdirectory=code

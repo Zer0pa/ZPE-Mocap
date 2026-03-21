@@ -179,13 +179,33 @@ def main() -> None:
                 timeout_sec=240,
             )
         )
-        build_result = run_command([cmake_exe, "--build", str(build_dir), "-j2"], timeout_sec=900)
-        evidence.append(build_result)
-        build_ok = build_result["exit_code"] == 0
-
         if build_dir.exists():
             acl_tool_path = _find_acl_tool(build_dir)
             acl_tool_exists = bool(acl_tool_path)
+
+        if acl_tool_exists:
+            build_ok = True
+            evidence.append(
+                {
+                    "cmd": "skip full ACL rebuild; acl_compressor already present",
+                    "cwd": str(build_dir),
+                    "exit_code": 0,
+                    "stdout_tail": acl_tool_path,
+                    "stderr_tail": "",
+                    "timed_out": False,
+                }
+            )
+        else:
+            build_result = run_command(
+                [cmake_exe, "--build", str(build_dir), "--target", "acl_compressor", "-j2"],
+                timeout_sec=900,
+            )
+            evidence.append(build_result)
+            build_ok = build_result["exit_code"] == 0
+
+            if build_dir.exists():
+                acl_tool_path = _find_acl_tool(build_dir)
+                acl_tool_exists = bool(acl_tool_path)
 
     if acl_tool_exists:
         evidence.append(run_command([acl_tool_path], timeout_sec=30))

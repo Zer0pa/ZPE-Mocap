@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "blocker_type": null,
+  "attempted_command": "python3 scripts/gate_c_benchmarks.py",
+  "reason": null,
+  "next_action": "Re-run if baseline corpus or code changes.",
+  "latency_ms": 26.137510099943025,
+  "compression_ratio": 85.18929711318528,
+  "search_latency_ms": 26.137510099943025,
+  "source_command": "python3 scripts/gate_c_benchmarks.py",
+  "timestamp_utc": "2026-03-21T12:33:11Z",
+  "metrics": {
+    "latency_p50_ms": 9.013583499836386,
+    "latency_p95_ms": 26.137510099943025,
+    "latency_p99_ms": 43.34372525001982,
+    "latency_threshold_ms": 100.0,
+    "compression_metric": "compression_ratio_vs_raw_bvh_float32",
+    "zpmoc_mean_cr": 85.18929711318528,
+    "zpmoc_p50_cr": 80.43161711385062,
+    "zpmoc_p95_cr": 131.4796680497925
+  }
+}

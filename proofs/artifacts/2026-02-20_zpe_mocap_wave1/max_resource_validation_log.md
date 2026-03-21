@@ -14,7 +14,7 @@ BOOTSTRAP_OK
 ## Resource Attempts
 
 ### Kaiwu arXiv access
-- command: `curl -L https://arxiv.org/abs/2503.05231 -o artifacts/2026-02-20_zpe_mocap_wave1/tmp/kaiwu_arxiv.html`
+- command: `curl -L https://arxiv.org/abs/2503.05231 -o /Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/proofs/artifacts/2026-02-20_zpe_mocap_wave1/tmp/kaiwu_arxiv.html`
 - exit_code: `0`
 - timed_out: `False`
 - stderr_tail:
@@ -23,7 +23,7 @@ BOOTSTRAP_OK
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 46488  100 46488    0     0   201k      0 --:--:-- --:--:-- --:--:--  202k
+100 46665  100 46665    0     0  96286      0 --:--:-- --:--:-- --:--:-- 96614
 
 ```
 
@@ -45,17 +45,18 @@ Accept-Ranges: bytes
 ```
 - stderr_tail:
 ```text
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+rent
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  0 13103    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0 13103    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+  0 13103    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
 
 ```
 
 ### BABEL landing page
-- command: `curl -L https://babel.is.tue.mpg.de/ -o artifacts/2026-02-20_zpe_mocap_wave1/tmp/babel_home.html`
+- command: `curl -L https://babel.is.tue.mpg.de/ -o /Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/proofs/artifacts/2026-02-20_zpe_mocap_wave1/tmp/babel_home.html`
 - exit_code: `0`
 - timed_out: `False`
 - stderr_tail:
@@ -64,13 +65,12 @@ Accept-Ranges: bytes
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 13103  100 13103    0     0  13549      0 --:--:-- --:--:-- --:--:-- 13564
+100 13103  100 13103    0     0  14166      0 --:--:-- --:--:-- --:--:-- 14196
 
 ```
 
 ### BABEL dependency setup (smplx)
-- command: `/Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/.venv/bin/python -m pip install smplx`
+- command: `/Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/.venv/bin/python -m pip install smplx`
 - exit_code: `1`
 - timed_out: `False`
 - stdout_tail:
@@ -96,7 +96,7 @@ ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics
 ```
 
 ### RELI11D arXiv access
-- command: `curl -L https://arxiv.org/abs/2403.19501 -o artifacts/2026-02-20_zpe_mocap_wave1/tmp/reli11d_arxiv.html`
+- command: `curl -L https://arxiv.org/abs/2403.19501 -o /Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/proofs/artifacts/2026-02-20_zpe_mocap_wave1/tmp/reli11d_arxiv.html`
 - exit_code: `0`
 - timed_out: `False`
 - stderr_tail:
@@ -105,12 +105,13 @@ ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 47660  100 47660    0     0   220k      0 --:--:-- --:--:-- --:--:--  222k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 47837  100 47837    0     0   111k      0 --:--:-- --:--:-- --:--:--  111k
 
 ```
 
 ### LAFAN1 repository attempt
-- command: `git -C /Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/external/datasets/ubisoft-laforge-animation-dataset pull --ff-only`
+- command: `git -C /Users/Zer0pa/ZPE/ZPE Mocap/external/datasets/ubisoft-laforge-animation-dataset pull --ff-only`
 - exit_code: `0`
 - timed_out: `False`
 - stdout_tail:
@@ -126,7 +127,7 @@ Already up to date.
 - stdout_tail:
 ```text
 HTTP/1.1 200 OK
-date: Sat, 21 Feb 2026 11:19:07 GMT
+date: Fri, 20 Mar 2026 18:00:57 GMT
 server: Apache/2.4.61 (FreeBSD)
 x-powered-by: PHP/8.3.8
 content-type: text/html; charset=UTF-8
@@ -140,12 +141,13 @@ Connection: keep-alive
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
 
 ```
 
 ### CMU site fetch
-- command: `curl -L http://mocap.cs.cmu.edu -o /Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/tmp/cmu_home.html`
+- command: `curl -L http://mocap.cs.cmu.edu -o /Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/proofs/artifacts/2026-02-20_zpe_mocap_wave1/tmp/cmu_home.html`
 - exit_code: `0`
 - timed_out: `False`
 - stderr_tail:
@@ -154,13 +156,13 @@ Connection: keep-alive
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100  8445    0  8445    0     0  14699      0 --:--:-- --:--:-- --:--:-- 14738
-100  8445    0  8445    0     0  14695      0 --:--:-- --:--:-- --:--:-- 14738
+100  8445    0  8445    0     0  14188      0 --:--:-- --:--:-- --:--:-- 14217
+100  8445    0  8445    0     0  14185      0 --:--:-- --:--:-- --:--:-- 14217
 
 ```
 
 ### CMU commercial-safe BVH mirror attempt
-- command: `git -C /Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/external/datasets/cmu-mocap pull --ff-only`
+- command: `git -C /Users/Zer0pa/ZPE/ZPE Mocap/external/datasets/cmu-mocap pull --ff-only`
 - exit_code: `None`
 - timed_out: `True`
 
@@ -175,35 +177,36 @@ X-Xss-Protection: 1
 Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 Accept-Ranges: bytes
 Cache-Control: public, max-age=0
-Last-Modified: Thu, 05 Feb 2026 02:21:23 GMT
-Etag: W/"8f5b-19c2b9ab007"
-X-Request-Id: 0oX2Aq4A4WrA5tYSYteCF7lR6RFpbzuF
+Last-Modified: Thu, 05 Feb 2026 02:21:24 GMT
+Etag: W/"8f5b-19c2b9ab369"
+X-Request-Id: RmXq5Ll0cVyUn2BfIQBFEIEdbiQesMFo
 
 
 ```
-- stderr_tail:
-```text
-   0
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
-  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
-  0 36699    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0
-  0 36699    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0
-
-```
-
-### Mixamo landing fetch
-- command: `curl -L https://www.mixamo.com -o /Users/prinivenpillay/ZPE Multimodality/ZPE Mocap/artifacts/2026-02-20_zpe_mocap_wave1/tmp/mixamo_home.html`
-- exit_code: `0`
-- timed_out: `False`
 - stderr_tail:
 ```text
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0 36699    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+
+```
+
+### Mixamo landing fetch
+- command: `curl -L https://www.mixamo.com -o /Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/proofs/artifacts/2026-02-20_zpe_mocap_wave1/tmp/mixamo_home.html`
+- exit_code: `0`
+- timed_out: `False`
+- stderr_tail:
+```text
+rent
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
   0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
-100 36699  100 36699    0     0  22613      0  0:00:01  0:00:01 --:--:-- 22639
+100 36699  100 36699    0     0  23517      0  0:00:01  0:00:01 --:--:-- 23540
 
 ```
 

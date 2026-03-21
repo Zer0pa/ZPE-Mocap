@@ -84,3 +84,17 @@
 [2026-02-21T11:24:33.800843+00:00] python3 scripts/gate_e_runpod_readiness.py
 [2026-02-21T11:24:36.535601+00:00] python3 scripts/gate_f_commercial_closure.py
 [2026-02-21T11:24:36.743561+00:00] python3 scripts/gate_e_package.py
+[2026-03-20T17:47:27.005910+00:00] python3 code/scripts/gate_a_setup.py
+[2026-03-20T17:47:33.328489+00:00] python3 scripts/gate_b_build.py
+[2026-03-20T17:56:51.583367+00:00] python3 scripts/gate_c_benchmarks.py
+[2026-03-20T17:57:14.604065+00:00] python3 scripts/gate_d_falsification.py
+[2026-03-20T17:58:28.454064+00:00] python3 code/scripts/gate_m2_live_runtime.py
+[2026-03-20T17:58:43.017074+00:00] python3 scripts/gate_m3_corpus_stress.py
+[2026-03-20T17:59:41.106420+00:00] python3 code/scripts/gate_m1_acl_comparator.py
+[2026-03-20T18:03:02.273241+00:00] python3 code/scripts/gate_m1_acl_comparator.py
+[2026-03-20T18:03:22.566824+00:00] python3 code/scripts/gate_e_appendix_ingestion.py
+[2026-03-20T18:06:41.484901+00:00] python3 scripts/gate_e_runpod_readiness.py
+[2026-03-20T18:06:42.235858+00:00] python3 scripts/gate_m4_replay_core_claims.py
+[2026-03-20T18:06:42.420490+00:00] python3 scripts/gate_f_commercial_closure.py
+[2026-03-20T18:06:42.603991+00:00] python3 scripts/gate_e_package.py
+[2026-03-21T12:33:11.359139+00:00] python3 scripts/gate_c_benchmarks.py

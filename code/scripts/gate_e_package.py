@@ -298,7 +298,7 @@ def main() -> None:
     regression_path = gate_file("regression_results.txt")
     proc = subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py"],
-        cwd=str(ROOT),
+        cwd=str(ROOT / "code"),
         capture_output=True,
         text=True,
         check=False,

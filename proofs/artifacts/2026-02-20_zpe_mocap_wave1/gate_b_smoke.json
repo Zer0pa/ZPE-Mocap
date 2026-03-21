@@ -3,5 +3,5 @@
   "joint_rmse_deg": 5.5016788831596123e-08,
   "mpjpe_mm": 0.7875749195093276,
   "retarget_mpjpe_mm": 0.0,
-  "search_latency_ms": 0.11979100236203521
+  "search_latency_ms": 0.08450000314041972
 }

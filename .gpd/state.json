@@ -1,0 +1,699 @@
+{
+  "project_reference": {
+    "project_md_updated": null,
+    "core_research_question": "Can ZPE-Mocap be advanced from a boundary-confused staging repo to an evidence-backed commercialization wedge with honest final statuses for the mocap claims?",
+    "current_focus": "All roadmap phases complete; evidence ready for review"
+  },
+  "project_contract": {
+    "schema_version": 1,
+    "scope": {
+      "question": "Can ZPE-Mocap be advanced from a boundary-confused staging repo to an evidence-backed commercialization wedge with honest final statuses for the mocap claims?",
+      "in_scope": [
+        "Treat /Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap as the sole GPD authority surface.",
+        "Carry forward GitHub issue #1 and Comet as evidence/log sinks rather than success proxies.",
+        "Use Mac M1 Air and Red Magic 10 Pro+ via ADB as the initial compute path.",
+        "Research and execute the unresolved gate surfaces already visible locally: clean boundary truth, Gate M2 live runtime evidence, and Gate F commercialization closure.",
+        "Manage disk tightly and delete only large outputs that are irrelevant to this mocap workstream."
+      ],
+      "out_of_scope": [
+        "Promoting imported historical prose as current truth.",
+        "Counting the current 2/2 unit tests, synthetic-only metrics, or simulated Blender/USD checks as commercialization closure.",
+        "Escalating to RunPod without a documented IMP-COMPUTE basis and explicit user approval.",
+        "Editing other sector repositories or mutating the GitHub board directly."
+      ],
+      "unresolved_questions": [
+        "Which exact closure-brief language needs to be restored beyond the locally recoverable PRD and runbook corpus?",
+        "Which imported historical artifacts remain usable anchors after stale IMC-era wording and path references are normalized?"
+      ]
+    },
+    "context_intake": {
+      "must_read_refs": [
+        "Ref-wave1-prd",
+        "Ref-readme",
+        "Ref-audit-limits",
+        "Ref-master-runbook",
+        "Ref-m2",
+        "Ref-f"
+      ],
+      "must_include_prior_outputs": [
+        "proofs/logs/20260320T152557Z_boundary_context.txt",
+        "proofs/logs/20260320T152557Z_boundary_sanity_tests.log",
+        "proofs/logs/20260320T152557Z_comet_run.json",
+        "proofs/release_readiness/2026-03-20_science_engineering_packet/01_PACKET_INDEX.md"
+      ],
+      "user_asserted_anchors": [
+        "Commercial wedge only counts if final claim statuses are PASS, FAIL, or PAUSED_EXTERNAL.",
+        "GitHub and Comet are evidence sinks, not success proxies.",
+        "RunPod requires explicit approval after a real IMP-COMPUTE blocker.",
+        "Keep docs and handover artifacts frozen unless the real gate is met."
+      ],
+      "known_good_baselines": [
+        "Inner repo origin is https://github.com/Zer0pa/ZPE-Mocap on branch main.",
+        "Current minimal sanity surface is python -m unittest discover -s code/tests -v with 2/2 passing.",
+        "Fresh 2026-03-20 repo-local checkpoints report PASS for Gate A, Gate B, Gate C, Gate D, Gate M1, Gate M2, Gate M3, Gate M4, Gate E appendix, Gate E G5, Gate F, and Gate E.",
+        "Historical February 20, 2026 proof artifacts remain lineage only until revalidated from the inner repo boundary."
+      ],
+      "context_gaps": [
+        "The exact closure brief text from the chat is not persisted on disk.",
+        "Imported historical artifacts still contain stale absolute paths and IMC-era wording."
+      ],
+      "crucial_inputs": [
+        "GitHub issue #1 in Zer0pa/ZPE-Mocap",
+        "Comet boundary sanity run 9495909aaa70435abdb6f4b4abda6dbe",
+        "team_analysis_packet_2026-03-20/02_WAVE1_PRD.md",
+        "proofs/release_readiness/2026-03-20_science_engineering_packet/08_MASTER_RUNBOOK.md"
+      ]
+    },
+    "approach_policy": {
+      "formulations": [
+        "Inner-repo-first execution contract tied to repo-facing truth docs and gate runbooks.",
+        "Popper-first gate closure with explicit PASS, FAIL, or PAUSED_EXTERNAL adjudication."
+      ],
+      "allowed_estimator_families": [
+        "Direct gate evidence from repo-local runs, receipts, and claim adjudication artifacts.",
+        "Commercial-safe corpus and runtime evidence, or explicit IMP-backed PAUSED_EXTERNAL adjudication when execution is blocked."
+      ],
+      "forbidden_estimator_families": [
+        "Synthetic-only closure without commercial-safe evidence.",
+        "Simulated-only runtime proof presented as a live runtime pass.",
+        "Board status, GitHub issue presence, or Comet activity treated as proof of claim closure."
+      ],
+      "allowed_fit_families": [
+        "Gate-by-gate closure aligned to the local M2 and F runbook requirements.",
+        "Conservative downgrade logic when decisive commercial-safe evidence is absent."
+      ],
+      "forbidden_fit_families": [
+        "Narrative pass construction from mixed evidence.",
+        "Local improvements that substitute for the commercialization authority metric."
+      ],
+      "stop_and_rethink_conditions": [
+        "Any regression on the commercialization authority metric.",
+        "Any final claim remains INCONCLUSIVE at closure time.",
+        "External compute or external datasets become necessary without documented IMP-* reasoning and user approval where required."
+      ]
+    },
+    "observables": [
+      {
+        "id": "obs-boundary",
+        "name": "Inner-repo authority boundary status",
+        "kind": "classification",
+        "definition": "Whether execution, evidence, and docs are governed by the inner repo truth surface instead of outer workspace lineage.",
+        "regime": null,
+        "units": null
+      },
+      {
+        "id": "obs-runtime",
+        "name": "Gate M2 runtime evidence status",
+        "kind": "classification",
+        "definition": "Whether Blender/USD runtime evidence is live, blocked with IMP-backed evidence, or still unresolved.",
+        "regime": null,
+        "units": null
+      },
+      {
+        "id": "obs-commercial",
+        "name": "Final mocap claim-status map",
+        "kind": "map",
+        "definition": "Status assignment over MOC-C001 through MOC-C007 at commercialization closure.",
+        "regime": null,
+        "units": null
+      }
+    ],
+    "claims": [
+      {
+        "id": "claim-boundary",
+        "statement": "Execution decisions are governed by inner-repo truth and gate artifacts rather than outer-workspace lineage or proxy status surfaces.",
+        "observables": [
+          "obs-boundary"
+        ],
+        "deliverables": [
+          "deliv-project",
+          "deliv-roadmap"
+        ],
+        "acceptance_tests": [
+          "test-boundary-contract"
+        ],
+        "references": [
+          "Ref-readme",
+          "Ref-audit-limits",
+          "Ref-master-runbook",
+          "Ref-packet"
+        ]
+      },
+      {
+        "id": "claim-runtime",
+        "statement": "Gate M2 ends with either repo-local live runtime evidence or an explicit IMP-backed downgrade that never promotes simulated-only checks as a live pass.",
+        "observables": [
+          "obs-runtime"
+        ],
+        "deliverables": [
+          "deliv-runtime-log"
+        ],
+        "acceptance_tests": [
+          "test-runtime-gate"
+        ],
+        "references": [
+          "Ref-m2",
+          "Ref-readme",
+          "Ref-audit-limits"
+        ]
+      },
+      {
+        "id": "claim-commercial",
+        "statement": "Commercialization closure assigns PASS, FAIL, or PAUSED_EXTERNAL to the final mocap claims with no INCONCLUSIVE residue.",
+        "observables": [
+          "obs-commercial"
+        ],
+        "deliverables": [
+          "deliv-commercial-map",
+          "deliv-commercial-adjudication"
+        ],
+        "acceptance_tests": [
+          "test-commercial-finality"
+        ],
+        "references": [
+          "Ref-wave1-prd",
+          "Ref-master-runbook",
+          "Ref-f"
+        ]
+      }
+    ],
+    "deliverables": [
+      {
+        "id": "deliv-project",
+        "kind": "note",
+        "path": ".gpd/PROJECT.md",
+        "description": "Project contract narrative that names the inner repo boundary, decisive gate surfaces, and forbidden proxy wins.",
+        "must_contain": [
+          "inner repo source-of-truth statement",
+          "commercial wedge success rule",
+          "forbidden proxy language"
+        ]
+      },
+      {
+        "id": "deliv-roadmap",
+        "kind": "note",
+        "path": ".gpd/ROADMAP.md",
+        "description": "Roadmap that sequences boundary normalization, runtime evidence work, and commercialization adjudication without filler phases.",
+        "must_contain": [
+          "boundary-focused first phase",
+          "Gate M2 path",
+          "Gate F closure path"
+        ]
+      },
+      {
+        "id": "deliv-runtime-log",
+        "kind": "data",
+        "path": "proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_blender_roundtrip.json",
+        "description": "Runtime roundtrip evidence artifact with live-attempt annotations or IMP-backed blocked status.",
+        "must_contain": [
+          "live or blocked runtime status",
+          "attempt evidence from repo boundary"
+        ]
+      },
+      {
+        "id": "deliv-commercial-map",
+        "kind": "data",
+        "path": "proofs/artifacts/2026-02-20_zpe_mocap_wave1/max_claim_resource_map.json",
+        "description": "Claim-to-resource closure map for the commercialization path.",
+        "must_contain": [
+          "claim linkage",
+          "commercial-safe evidence path or IMP-backed fallback"
+        ]
+      },
+      {
+        "id": "deliv-commercial-adjudication",
+        "kind": "data",
+        "path": "proofs/artifacts/2026-02-20_zpe_mocap_wave1/commercialization_claim_adjudication.json",
+        "description": "Final commercialization claim adjudication with PASS, FAIL, or PAUSED_EXTERNAL only.",
+        "must_contain": [
+          "final claim statuses",
+          "supporting evidence notes"
+        ]
+      }
+    ],
+    "acceptance_tests": [
+      {
+        "id": "test-boundary-contract",
+        "subject": "claim-boundary",
+        "kind": "human_review",
+        "procedure": "Review .gpd/PROJECT.md and .gpd/ROADMAP.md against the repo-facing truth docs and runbook to confirm the inner repo is named as authoritative and proxy wins are explicitly rejected.",
+        "pass_condition": "The project scaffold explicitly binds execution to the inner repo boundary, preserves the gate sequence, and rejects synthetic-only, simulated-only, GitHub-only, and Comet-only closure logic.",
+        "evidence_required": [
+          "deliv-project",
+          "deliv-roadmap",
+          "Ref-readme",
+          "Ref-master-runbook"
+        ],
+        "automation": "human"
+      },
+      {
+        "id": "test-runtime-gate",
+        "subject": "claim-runtime",
+        "kind": "reproducibility",
+        "procedure": "Inspect the runtime artifact and accompanying logs to verify that a live Blender/USD attempt was made from the repo boundary, or that an IMP-backed blocked outcome was recorded without simulated-only promotion.",
+        "pass_condition": "The runtime artifact records either a live repo-local runtime attempt with evidence, or an explicit IMP-backed blocked state; simulated-only checks are not promoted as live proof.",
+        "evidence_required": [
+          "deliv-runtime-log",
+          "Ref-m2"
+        ],
+        "automation": "hybrid"
+      },
+      {
+        "id": "test-commercial-finality",
+        "subject": "claim-commercial",
+        "kind": "consistency",
+        "procedure": "Compare commercialization_claim_adjudication.json and max_claim_resource_map.json against the Gate F rule set to confirm that every final claim status is PASS, FAIL, or PAUSED_EXTERNAL and that the status is backed by a commercial-safe evidence path or IMP-* downgrade.",
+        "pass_condition": "No final claim remains INCONCLUSIVE, and every PASS or PAUSED_EXTERNAL status has an evidence-backed explanation consistent with the Gate F commercialization rules.",
+        "evidence_required": [
+          "deliv-commercial-map",
+          "deliv-commercial-adjudication",
+          "Ref-f"
+        ],
+        "automation": "hybrid"
+      }
+    ],
+    "references": [
+      {
+        "id": "Ref-wave1-prd",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Mocap/team_analysis_packet_2026-03-20/02_WAVE1_PRD.md",
+        "aliases": [
+          "Wave-1 PRD"
+        ],
+        "role": "definition",
+        "why_it_matters": "Defines the lane claims, falsification plan, hard gates, and maximalization path that the closure work must respect.",
+        "applies_to": [
+          "claim-commercial"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "use",
+          "compare"
+        ]
+      },
+      {
+        "id": "Ref-readme",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/README.md",
+        "aliases": [
+          "Repo README"
+        ],
+        "role": "definition",
+        "why_it_matters": "States the current repo-facing truth surface and explicitly lists what is not yet promoted.",
+        "applies_to": [
+          "claim-boundary",
+          "claim-runtime"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "use"
+        ]
+      },
+      {
+        "id": "Ref-audit-limits",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/PUBLIC_AUDIT_LIMITS.md",
+        "aliases": [
+          "Audit Limits"
+        ],
+        "role": "must_consider",
+        "why_it_matters": "Defines the current audit limits and blocks over-promotion of historical or absent evidence.",
+        "applies_to": [
+          "claim-boundary",
+          "claim-runtime"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "use"
+        ]
+      },
+      {
+        "id": "Ref-packet",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/proofs/release_readiness/2026-03-20_science_engineering_packet/01_PACKET_INDEX.md",
+        "aliases": [
+          "Science And Engineering Packet"
+        ],
+        "role": "background",
+        "why_it_matters": "Summarizes the current G1 cleanroom-boundary reading order and preserves the current truth interpretation.",
+        "applies_to": [
+          "claim-boundary"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "use"
+        ]
+      },
+      {
+        "id": "Ref-master-runbook",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/proofs/release_readiness/2026-03-20_science_engineering_packet/08_MASTER_RUNBOOK.md",
+        "aliases": [
+          "Master Runbook"
+        ],
+        "role": "method",
+        "why_it_matters": "Defines the canonical gate order, claim rules, fallback logic, and commercialization closure discipline.",
+        "applies_to": [
+          "claim-boundary",
+          "claim-commercial"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "use",
+          "compare"
+        ]
+      },
+      {
+        "id": "Ref-m2",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/proofs/release_readiness/2026-03-20_science_engineering_packet/09_GATE_M2_RUNTIME.md",
+        "aliases": [
+          "Gate M2 Runtime"
+        ],
+        "role": "benchmark",
+        "why_it_matters": "Sets the runtime evidence bar and blocks simulated-only promotion.",
+        "applies_to": [
+          "claim-runtime"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "use",
+          "compare"
+        ]
+      },
+      {
+        "id": "Ref-f",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/proofs/release_readiness/2026-03-20_science_engineering_packet/10_GATE_F_COMMERCIAL.md",
+        "aliases": [
+          "Gate F Commercial"
+        ],
+        "role": "benchmark",
+        "why_it_matters": "Sets the final commercialization adjudication rules and forbids INCONCLUSIVE residue.",
+        "applies_to": [
+          "claim-commercial"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "use",
+          "compare"
+        ]
+      },
+      {
+        "id": "Ref-gh-issue",
+        "kind": "prior_artifact",
+        "locator": "https://github.com/Zer0pa/ZPE-Mocap/issues/1",
+        "aliases": [
+          "Issue 1"
+        ],
+        "role": "background",
+        "why_it_matters": "Tracks the lane orchestration context but is not itself evidence of gate closure.",
+        "applies_to": [
+          "claim-boundary"
+        ],
+        "carry_forward_to": [
+          "execution",
+          "writing"
+        ],
+        "must_surface": false,
+        "required_actions": []
+      },
+      {
+        "id": "Ref-comet-boundary",
+        "kind": "prior_artifact",
+        "locator": "https://www.comet.com/zer0pa/zpe-mocap/9495909aaa70435abdb6f4b4abda6dbe",
+        "aliases": [
+          "Boundary sanity Comet run"
+        ],
+        "role": "background",
+        "why_it_matters": "Provides an execution log anchor for the boundary sanity run but does not close any gate by itself.",
+        "applies_to": [
+          "claim-boundary"
+        ],
+        "carry_forward_to": [
+          "execution",
+          "writing"
+        ],
+        "must_surface": false,
+        "required_actions": []
+      }
+    ],
+    "forbidden_proxies": [
+      {
+        "id": "fp-boundary",
+        "subject": "claim-boundary",
+        "proxy": "Treating outer-workspace narratives, GitHub issue state, or Comet activity as proof that the inner repo boundary is clean and authoritative.",
+        "reason": "Those surfaces can support traceability but they do not replace repo-local truth or gate evidence."
+      },
+      {
+        "id": "fp-runtime",
+        "subject": "claim-runtime",
+        "proxy": "Presenting simulated Blender/USD checks or adapter smoke tests as a live runtime pass.",
+        "reason": "Gate M2 requires live runtime evidence or explicit blocked-state adjudication."
+      },
+      {
+        "id": "fp-commercial",
+        "subject": "claim-commercial",
+        "proxy": "Closing commercialization claims using synthetic-only, non-commercial, or absent-corpus evidence without an explicit FAIL or PAUSED_EXTERNAL downgrade.",
+        "reason": "This would substitute proxy progress for the commercialization authority metric."
+      }
+    ],
+    "links": [
+      {
+        "id": "link-boundary-project",
+        "source": "claim-boundary",
+        "target": "deliv-project",
+        "relation": "supports",
+        "verified_by": [
+          "test-boundary-contract"
+        ]
+      },
+      {
+        "id": "link-boundary-roadmap",
+        "source": "claim-boundary",
+        "target": "deliv-roadmap",
+        "relation": "supports",
+        "verified_by": [
+          "test-boundary-contract"
+        ]
+      },
+      {
+        "id": "link-runtime-artifact",
+        "source": "claim-runtime",
+        "target": "deliv-runtime-log",
+        "relation": "supports",
+        "verified_by": [
+          "test-runtime-gate"
+        ]
+      },
+      {
+        "id": "link-commercial-map",
+        "source": "claim-commercial",
+        "target": "deliv-commercial-map",
+        "relation": "supports",
+        "verified_by": [
+          "test-commercial-finality"
+        ]
+      },
+      {
+        "id": "link-commercial-adjudication",
+        "source": "claim-commercial",
+        "target": "deliv-commercial-adjudication",
+        "relation": "supports",
+        "verified_by": [
+          "test-commercial-finality"
+        ]
+      },
+      {
+        "id": "link-ref-m2",
+        "source": "Ref-m2",
+        "target": "claim-runtime",
+        "relation": "benchmarks",
+        "verified_by": [
+          "test-runtime-gate"
+        ]
+      },
+      {
+        "id": "link-ref-f",
+        "source": "Ref-f",
+        "target": "claim-commercial",
+        "relation": "benchmarks",
+        "verified_by": [
+          "test-commercial-finality"
+        ]
+      }
+    ],
+    "uncertainty_markers": {
+      "weakest_anchors": [
+        "The exact closure-brief phrasing still depends on chat history rather than a repo-local source file.",
+        "Some imported February 2026 narrative artifacts still need future normalization before public-facing reuse."
+      ],
+      "unvalidated_assumptions": [
+        "The locally recoverable PRD and runbooks capture enough of the missing closure brief to support future public-doc cleanup."
+      ],
+      "competing_explanations": [
+        "Future public messaging may still need wording changes even though the current repo-local gate chain is closed.",
+        "Imported historical prose can still contradict fresh artifacts if reused without normalization."
+      ],
+      "disconfirming_observations": [
+        "Local runtime attempts show that Gate M2 cannot be evidenced and cannot be downgraded cleanly with IMP-backed records.",
+        "Commercial-safe evidence is absent for one or more final claims and no honest FAIL or PAUSED_EXTERNAL adjudication path can be completed from the repo boundary.",
+        "Planning or execution starts depending on GitHub or Comet status instead of repo-local gate evidence."
+      ]
+    }
+  },
+  "position": {
+    "current_phase": "4",
+    "current_phase_name": "Conditional Compute Escalation Or Closure Packaging",
+    "total_phases": 5,
+    "current_plan": "01",
+    "total_plans_in_phase": 1,
+    "status": "Complete",
+    "last_activity": "2026-03-21",
+    "last_activity_desc": "Full local gate chain reached PASS through Gate F and Gate E without compute escalation",
+    "progress_percent": 100,
+    "paused_at": null
+  },
+  "active_calculations": [
+    "Repo-local `.venv` remains the verified execution environment for the inner repo.",
+    "Gate M2 runtime evidence passed from the repo boundary with a fresh checkpoint and USD runtime artifact.",
+    "Gate M1, Gate M3, Gate M4, Gate F, and Gate E all passed from the repo boundary with fresh checkpoints.",
+    "Compute escalation was not needed because the local closure path reached Gate E PASS."
+  ],
+  "intermediate_results": [
+    "Gate A, Gate B, Gate C, Gate D, Gate M1, Gate M2, Gate M3, Gate M4, Gate E appendix, Gate E G5, Gate F, and Gate E all have fresh PASS checkpoints dated 2026-03-20.",
+    "`handoff_manifest.json` records PASS across the max gate set with `regression_exit_code=0`.",
+    "`commercialization_claim_adjudication.json` and `max_claim_resource_map.json` now close the current claim set without `INCONCLUSIVE` residue."
+  ],
+  "open_questions": [],
+  "performance_metrics": {
+    "rows": []
+  },
+  "decisions": [
+    {
+      "phase": null,
+      "summary": "Phase 0: Use recommended GPD defaults for this workstream to keep research, plan checking, and verification active without supervised pauses.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Phase 0: GitHub and Comet are traceability surfaces only, not acceptance proxies.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Phase 1: Start with a boundary-and-capability audit because the gate scripts already exist in `code/scripts`.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Phase 1: Normalize the repo-local environment before classifying deeper blockers.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Phase 1: Advance to Phase 2 because Gate A and Gate B both passed from the repo boundary.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Phase 2: Use the repo-local `.venv` and available runtime candidates instead of waiting for system-level parity before executing Gate M2.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Phase 3: Trust fresh repo-local gate artifacts over imported historical prose when adjudicating commercialization claims.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Phase 4: Skip compute escalation because Gate E G5 marked extra compute unnecessary and the local closure path reached PASS.",
+      "rationale": null
+    },
+    {
+      "phase": "05",
+      "summary": "Added Phase 05: Refinement, performance, and evidence-hygiene augmentation",
+      "rationale": "Extends current milestone with the next ratified augmentation lane"
+    }
+  ],
+  "approximations": [],
+  "convention_lock": {
+    "metric_signature": "not set",
+    "fourier_convention": "not set",
+    "natural_units": "not set",
+    "gauge_choice": "not set",
+    "regularization_scheme": "not set",
+    "renormalization_scheme": "not set",
+    "coordinate_system": "Cartesian skeleton/world coordinates",
+    "spin_basis": "not set",
+    "state_normalization": "not set",
+    "coupling_convention": "not set",
+    "index_positioning": "not set",
+    "time_ordering": "not set",
+    "commutation_convention": "not set",
+    "levi_civita_sign": "not set",
+    "generator_normalization": "not set",
+    "covariant_derivative_sign": "not set",
+    "gamma_matrix_convention": "not set",
+    "creation_annihilation_order": "not set",
+    "custom_conventions": {}
+  },
+  "propagated_uncertainties": [],
+  "pending_todos": [],
+  "blockers": [
+    "Host disk headroom is still tight and should be watched before generating larger artifacts or environments."
+  ],
+  "session": {
+    "last_date": "2026-03-20",
+    "stopped_at": "All current gate surfaces passed; evidence is ready for orchestrator review",
+    "resume_file": "`proofs/artifacts/2026-02-20_zpe_mocap_wave1/handoff_manifest.json`"
+  },
+  "_version": 1,
+  "_synced_at": "2026-03-21T12:21:08.636228+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "experiment_url": "https://www.comet.com/zer0pa/zpe-mocap/9495909aaa70435abdb6f4b4abda6dbe",
+  "workspace": "zer0pa",
+  "project_name": "zpe-mocap",
+  "lane": "ZPE Mocap",
+  "current_gate": "G1 Cleanroom Boundary",
+  "verdict": "INCONCLUSIVE",
+  "tests_ran": 2,
+  "tests_failed": 0,
+  "notes": "Boundary sanity run logged to Comet; inner repo verified against GitHub origin, outer workspace still nested under a different parent Git repo."
+}

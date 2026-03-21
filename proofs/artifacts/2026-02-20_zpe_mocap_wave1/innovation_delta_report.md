@@ -7,5 +7,5 @@
 
 ## Quantified Deltas
 - Compression delta vs minimum brief (10x): +75.189x
-- Search latency headroom vs 100ms threshold (p95): 56.576ms
+- Search latency headroom vs 100ms threshold (p95): 69.799ms
 - Retarget headroom vs 10mm threshold: 10.000mm
