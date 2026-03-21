@@ -1,6 +1,8 @@
+<img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+
 # Public Audit Limits
 
-This repo is a private staging surface. The only promoted authority is the imported `2026-02-20` synthetic-corpus wave. No CMU commercialization-safe closure, no Blender runtime proof, and no clean-clone verification are promoted.
+This repo is a private staging surface. The only promoted authority is the imported `2026-02-20` synthetic-corpus wave. No CMU commercialization-safe closure, no Blender runtime proof, and no clean-clone verification are promoted. Treat any claim outside the tables below as non-authoritative.
 
 ## What A Public Audit Can Establish (Table-Driven)
 
@@ -35,3 +37,5 @@ This repo is a private staging surface. The only promoted authority is the impor
 ## Use These Files Together
 
 `README.md`, `AUDITOR_PLAYBOOK.md`, `docs/README.md`, `proofs/README.md`.
+
+<img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">

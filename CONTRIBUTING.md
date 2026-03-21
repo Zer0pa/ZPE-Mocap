@@ -1,6 +1,17 @@
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>
+
 # Contributing
 
-ZPE-Mocap is evidence-first. Claims without artifacts are out of scope.
+ZPE-Mocap is evidence-first. Claims without artifacts are out of scope. Treat
+every contribution as a proof trail that a cold reader can validate.
+
+## Evidence Standard
+
+- Name the artifact and include a path or location for it in the PR.
+- Use reproducible steps when asserting behavior changes or fixes.
+- Capture enough context for a third party to rerun or audit the result.
 
 ## Contribution Rules
 
@@ -20,6 +31,9 @@ python -m pip install -e ./code
 python -m unittest discover -s code/tests -v
 ```
 
+If setup or tests fail, include the exact command, terminal output, and any
+relevant environment details in the PR.
+
 ## Pull Request Expectations
 
 | Expectation | Notes |
@@ -28,3 +42,7 @@ python -m unittest discover -s code/tests -v
 | State whether the change affects code, docs, proofs, or boundary handling. | Use the PR description to call this out. |
 | Include concrete evidence when behavior changes. | Attach artifacts or reference existing proof paths. |
 | Do not hide or rewrite failing or contradicted historical artifacts. | Supersede with clearer docs or new evidence instead. |
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>

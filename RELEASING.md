@@ -47,3 +47,7 @@ valid unless the gates below are backed by in-repo evidence.
 </table>
 
 If any required gate lacks evidence, the release is not valid.
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>

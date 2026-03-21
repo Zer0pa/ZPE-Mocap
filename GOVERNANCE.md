@@ -50,3 +50,7 @@ Out of scope here:
 
 Evidence disputes should be filed as issues with a direct artifact path and
 counter-evidence. Claims without evidence remain `UNKNOWN` or are removed.
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>

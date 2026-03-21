@@ -157,3 +157,7 @@
     <td colspan="2" width="67%" valign="top">Legal source of truth: <a href="../LICENSE"><code>LICENSE</code></a></td>
   </tr>
 </table>
+
+<p align="center">
+  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>

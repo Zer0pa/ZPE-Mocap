@@ -8,6 +8,33 @@
   This document is a compact boundary map. It does not override the license or promoted authority surfaces.
 </p>
 
+<table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
+  <thead>
+    <tr>
+      <th align="left" width="38%">If you are looking for...</th>
+      <th align="left" width="62%">Start here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top">Legal source of truth</td>
+      <td valign="top"><a href="../LICENSE"><code>LICENSE</code></a></td>
+    </tr>
+    <tr>
+      <td valign="top">What is in the package surface</td>
+      <td valign="top"><a href="#package-surface">Package Surface</a></td>
+    </tr>
+    <tr>
+      <td valign="top">What stays outside the repo</td>
+      <td valign="top"><a href="#external-material">External Material Kept Outside The Repo</a></td>
+    </tr>
+    <tr>
+      <td valign="top">Evidence handling expectations</td>
+      <td valign="top"><a href="#evidence-boundary">Evidence Boundary</a></td>
+    </tr>
+  </tbody>
+</table>
+
 <p>
   <img src="../.github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
 </p>
@@ -33,6 +60,10 @@
     </tr>
   </tbody>
 </table>
+
+<p align="center">
+  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>
 
 <p>
   <img src="../.github/assets/readme/section-bars/repo-shape.svg" alt="REPO SHAPE" width="100%">

@@ -1,6 +1,8 @@
+<img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+
 # Auditor Playbook
 
-Shortest honest verification path for the current ZPE-Mocap staging repo. Current authority is the imported `2026-02-20` synthetic-corpus wave only. No CMU commercialization-safe closure, no Blender runtime proof, and no clean-clone verification are promoted.
+Shortest honest verification path for the current ZPE-Mocap staging repo. Current authority is the imported `2026-02-20` synthetic-corpus wave only. No CMU commercialization-safe closure, no Blender runtime proof, and no clean-clone verification are promoted. If your clone is a fork, use its URL and keep evidence references identical.
 
 ## Audit Scope (Table-Driven)
 
@@ -42,3 +44,5 @@ Shortest honest verification path for the current ZPE-Mocap staging repo. Curren
 | Stdout/stderr | Diagnose deltas quickly |
 
 Then compare against `README.md`, `PUBLIC_AUDIT_LIMITS.md`, and `proofs/README.md`.
+
+<img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">

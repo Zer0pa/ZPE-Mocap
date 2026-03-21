@@ -6,13 +6,13 @@ Scope: evidence in repo docs and runbooks only. No live-render verification exec
 - Commercial-safe posture explicitly remains downgraded; CMU-backed closure is not promoted.
   Evidence: `/Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/PUBLIC_AUDIT_LIMITS.md`
 - Repo-facing docs explicitly do not promote CMU-backed commercialization closure or direct Blender runtime proof.
-  Evidence: `/Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/proofs/release_readiness/2026-03-20_science_engineering_packet/04_PUBLIC_AUDIT_LIMITS.md`
+  Evidence: `/Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/README.md`
 
 ## Path or Render Issues Found
 - Stale absolute paths exist in imported runbooks (historical references).
   Evidence: `/Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/proofs/runbooks/README.md`
 - Some artifacts retain stale absolute paths as lineage.
-  Evidence: `/Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/proofs/release_readiness/2026-03-20_science_engineering_packet/04_PUBLIC_AUDIT_LIMITS.md`
+  Evidence: `/Users/Zer0pa/ZPE/ZPE Mocap/ZPE-Mocap/proofs/README.md`
 - No render failures were documented in the reviewed sources.
 
 ## Remaining Owner Inputs

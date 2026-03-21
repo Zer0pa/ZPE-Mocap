@@ -6,6 +6,7 @@
 
 This registry enumerates the documentation surfaces for ZPE-Mocap. The root
 README is the only location for promoted metrics.
+Paths are repository-root relative unless noted.
 
 | Document | Role | Authority Scope | Status |
 | --- | --- | --- | --- |
@@ -33,3 +34,7 @@ README is the only location for promoted metrics.
 | `.github/ISSUE_TEMPLATE/evidence_dispute.md` | Evidence dispute intake. | Issue routing only. | Active |
 | `.github/ISSUE_TEMPLATE/feature_request.md` | Feature request intake. | Issue routing only. | Active |
 | `.github/ISSUE_TEMPLATE/question.md` | Question intake. | Issue routing only. | Active |
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>

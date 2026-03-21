@@ -49,3 +49,7 @@ links, and any evidence that supports the report.
 
 Enforcement decisions are made by maintainers with an evidence-first
 standard. Reports that include concrete context will be handled faster.
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>

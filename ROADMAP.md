@@ -55,3 +55,7 @@ not a release promise.
 </p>
 
 Open risks and caveats are tracked in `PUBLIC_AUDIT_LIMITS.md`.
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>

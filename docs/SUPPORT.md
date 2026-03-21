@@ -8,6 +8,33 @@
   Support is routed through the channels below. Keep reports concrete and scoped to ZPE-Mocap surfaces.
 </p>
 
+<table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
+  <thead>
+    <tr>
+      <th align="left" width="38%">If you are trying to...</th>
+      <th align="left" width="62%">Start here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top">Report a repo issue</td>
+      <td valign="top">Read the Support Routes below before filing.</td>
+    </tr>
+    <tr>
+      <td valign="top">Report a security concern</td>
+      <td valign="top"><a href="../SECURITY.md"><code>SECURITY.md</code></a></td>
+    </tr>
+    <tr>
+      <td valign="top">Check legal boundaries</td>
+      <td valign="top"><a href="LEGAL_BOUNDARIES.md"><code>docs/LEGAL_BOUNDARIES.md</code></a></td>
+    </tr>
+    <tr>
+      <td valign="top">Contribute or propose a change</td>
+      <td valign="top"><a href="../CONTRIBUTING.md"><code>CONTRIBUTING.md</code></a></td>
+    </tr>
+  </tbody>
+</table>
+
 <p>
   <img src="../.github/assets/readme/section-bars/contributing-security-support.svg" alt="CONTRIBUTING, SECURITY, SUPPORT" width="100%">
 </p>
@@ -48,4 +75,8 @@
 
 <p align="center">
   Reports that include a concrete path, command, or artifact will be triaged faster.
+</p>
+
+<p align="center">
+  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
 </p>

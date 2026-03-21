@@ -265,3 +265,7 @@
     </tr>
   </tbody>
 </table>
+
+<p align="center">
+  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>

@@ -1,3 +1,7 @@
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>
+
 # Code Surface
 
 Install with:
@@ -27,3 +31,7 @@ Current lightweight test entrypoint:
 ```bash
 python -m unittest discover -s code/tests -v
 ```
+
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>

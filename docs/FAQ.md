@@ -54,3 +54,7 @@ inspect the wave1 proof artifacts in `proofs/artifacts/2026-02-20_zpe_mocap_wave
 
 Use the GitHub issue templates in this repo, and route security issues to
 `architects@zer0pa.ai`. See `docs/SUPPORT.md` for routing.
+
+<p>
+  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>

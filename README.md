@@ -39,7 +39,7 @@
 <a id="what-this-is"></a>
 <h2 align="center">What This Is</h2>
 
-ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sector. This repository currently exposes a deterministic Python reference implementation and an imported synthetic-corpus proof bundle (2026-02-20). The public claims in this README are limited to that synthetic-corpus evidence; no Blender runtime pass, no CMU commercialization-safe closure, and no clean-clone verification are promoted here.
+ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sector. This repo contains a deterministic Python reference implementation plus an imported synthetic-corpus proof bundle dated 2026-02-20. Every public claim below is limited to that synthetic evidence. No Blender runtime pass, no CMU commercialization-safe closure, and no clean-clone verification are claimed here.
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
   <thead>
@@ -51,15 +51,15 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
   <tbody>
     <tr>
       <td valign="top">What is this?</td>
-      <td valign="top">A deterministic, synthetic-corpus-backed motion capture compression and retrieval reference stack with preserved proof lineage.</td>
+      <td valign="top">A deterministic mocap compression and retrieval reference stack backed by a synthetic corpus with preserved proof lineage.</td>
     </tr>
     <tr>
       <td valign="top">What is the current authority state?</td>
-      <td valign="top">The current authority is the imported <code>2026-02-20_zpe_mocap_wave1</code> synthetic-corpus proof bundle; no new run-of-record has been accepted inside this repo boundary.</td>
+      <td valign="top">Imported <code>2026-02-20_zpe_mocap_wave1</code> synthetic-corpus proof bundle; no new run-of-record has been accepted inside this repo boundary.</td>
     </tr>
     <tr>
       <td valign="top">What is actually proved?</td>
-      <td valign="top">Synthetic-corpus compression ratio, joint-angle fidelity, positional fidelity, search ranking, and query-latency metrics captured in the wave1 evidence bundle.</td>
+      <td valign="top">Synthetic-corpus compression ratio, joint-angle fidelity, positional fidelity, search ranking, and query-latency metrics in the wave1 bundle.</td>
     </tr>
     <tr>
       <td valign="top">What is not being claimed?</td>
@@ -67,7 +67,7 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
     </tr>
     <tr>
       <td valign="top">Where should an outsider acquire and verify?</td>
-      <td valign="top">Clone <code>https://github.com/Zer0pa/ZPE-Mocap.git</code>, run the quick verify path below, and inspect <code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/</code> as the current authority proof surface.</td>
+      <td valign="top">Clone <code>https://github.com/Zer0pa/ZPE-Mocap.git</code>, run the quick verify path below, and inspect <code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/</code> as the authority surface.</td>
     </tr>
   </tbody>
 </table>
@@ -85,12 +85,12 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
     <td width="33%" valign="top">
       <strong>Backend truth</strong><br>
       <code>backend=python</code><br><br>
-      Current reference path is the Python implementation; no compiled runtime authority is claimed here.
+      Python reference implementation; no compiled runtime authority is claimed here.
     </td>
     <td width="34%" valign="top">
       <strong>Performance authority</strong><br>
       <code>zpmoc_mean_cr=85.1893</code>, <code>mpjpe_mean_mm=1.1901</code>, <code>query_latency_p95_ms=43.4239</code><br><br>
-      These are the promoted synthetic-corpus headline metrics from the wave1 bundle.
+      Promoted synthetic-corpus headline metrics from the wave1 bundle.
     </td>
   </tr>
 </table>
@@ -107,12 +107,12 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
     <tr>
       <td valign="top">Authority bundle</td>
       <td valign="top"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/</code></td>
-      <td valign="top">This is the current proof surface for all promoted metrics.</td>
+      <td valign="top">Current proof surface for all promoted metrics.</td>
     </tr>
     <tr>
       <td valign="top">Corpus type</td>
       <td valign="top"><code>synthetic</code></td>
-      <td valign="top">All current claims are synthetic-corpus claims. No CMU-backed closure is promoted.</td>
+      <td valign="top">All current claims are synthetic-corpus claims; no CMU-backed closure is promoted.</td>
     </tr>
     <tr>
       <td valign="top">Compression ratio</td>
@@ -147,7 +147,7 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
     <tr>
       <td valign="top">External acquisition surface</td>
       <td valign="top"><code>https://github.com/Zer0pa/ZPE-Mocap.git</code></td>
-      <td valign="top">Current public clone target for this repo.</td>
+      <td valign="top">Public clone target for this repo.</td>
     </tr>
   </tbody>
 </table>
@@ -156,9 +156,9 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
   <tr>
-    <td width="33%" valign="top">The imported wave1 bundle is the current authority surface; no later run-of-record has been re-accepted inside this repo boundary.</td>
-    <td width="33%" valign="top">Blender runtime verification remains unpromoted; existing compatibility notes are simulated only.</td>
-    <td width="34%" valign="top">CMU-backed commercialization-safe closure and clean-clone verification remain gaps and are explicitly not claimed.</td>
+      <td width="33%" valign="top">The imported wave1 bundle is the current authority surface; no later run-of-record has been re-accepted inside this repo boundary.</td>
+      <td width="33%" valign="top">Blender runtime verification remains unpromoted; existing compatibility notes are simulated only.</td>
+      <td width="34%" valign="top">CMU-backed commercialization-safe closure and clean-clone verification remain gaps and are explicitly not claimed.</td>
   </tr>
 </table>
 
@@ -169,7 +169,7 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
 <a id="runtime-proof-wave-1"></a>
 <h2 align="center">Runtime Proof (Wave-1)</h2>
 
-The current proof surface is the imported <code>2026-02-20_zpe_mocap_wave1</code> synthetic-corpus bundle. No clean-clone verification, Blender runtime pass, or CMU-backed closure is promoted beyond this evidence.
+The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1</code> synthetic-corpus bundle. No clean-clone verification, Blender runtime pass, or CMU-backed closure is promoted beyond this evidence.
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
   <tr>
@@ -253,7 +253,7 @@ The current proof surface is the imported <code>2026-02-20_zpe_mocap_wave1</code
 
 ### Quick Verify
 
-Use the clone/install path below as repository verification guidance, not as packaged public-release guidance.
+Use the clone/install path below as repository verification guidance, not packaged public-release guidance.
 
 ```bash
 git clone https://github.com/Zer0pa/ZPE-Mocap.git
@@ -280,7 +280,7 @@ print(enc.compression_ratio, dec.clip_id)
 PY
 ```
 
-Expected surface:
+Expected outputs:
 
 - <code>python -m unittest discover -s code/tests -v</code> completes locally after the editable install.
 - The smoke snippet prints a compression ratio and returns <code>readme_smoke</code> as the decoded clip id.
@@ -313,7 +313,7 @@ Shortest outsider path:
 <a id="modality-status-snapshot"></a>
 <h2 align="center">Modality Status Snapshot</h2>
 
-ZPE-Mocap is a motion-capture sector. The status below reports only the synthetic-corpus evidence that exists today and explicitly marks the missing Blender, CMU, and clean-clone gates.
+ZPE-Mocap is a motion-capture sector. The status below reports only the synthetic-corpus evidence that exists today and marks the missing Blender, CMU, and clean-clone gates.
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
   <thead>
@@ -533,7 +533,7 @@ No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evide
 - Blender runtime proof remains unpromoted; compatibility notes are simulated only.
 - CMU-backed commercialization-safe closure is not available in this repo boundary.
 - Clean-clone verification has not been executed from this repo.
-- Historical artifacts can retain machine-absolute paths from the February 20, 2026 bundle.
+- Historical artifacts can retain machine-absolute paths from the 2026-02-20 bundle.
 - No public ML workbook has been published for this repo; evidence is local to the wave1 bundle.
 
 <p>
@@ -558,3 +558,11 @@ No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evide
     <td colspan="2" width="67%" valign="top">Autonomous agents and AI systems using this repository are subject to Section 6 of the <a href="LICENSE">Zer0pa SAL v6.0</a>.</td>
   </tr>
 </table>
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead-option-3-3.gif" alt="ZPE-Mocap Tail Masthead" width="100%">
+</p>
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+</p>
