@@ -1,0 +1,38 @@
+Technical Alignment Verification Log
+Timestamp (UTC): 2026-03-21T20:24:37Z
+
+1) System python unittest (failed due to missing numpy)
+Command: python3 -m unittest discover -s tests -v
+Result: FAILED
+Error: ModuleNotFoundError: No module named 'numpy'
+
+2) Venv setup
+Command: python3 -m venv /tmp/zpe_mocap_techalign
+Command: /tmp/zpe_mocap_techalign/bin/pip install --quiet build
+Command: /tmp/zpe_mocap_techalign/bin/pip install --quiet -e ./code
+Result: PASS
+
+3) Tests in venv
+Command: /tmp/zpe_mocap_techalign/bin/python -m unittest discover -s tests -v
+Result: PASS (2 tests)
+
+4) Wheel build
+Command: /tmp/zpe_mocap_techalign/bin/python -m build
+Result: PASS
+Notes: SetuptoolsDeprecationWarning about project.license table (non-blocking).
+
+5) Clean wheel install + import
+Command: python3 -m venv /tmp/zpe_mocap_install_verify
+Command: /tmp/zpe_mocap_install_verify/bin/pip install --quiet code/dist/zpe_mocap-0.1.0-py3-none-any.whl
+Command: /tmp/zpe_mocap_install_verify/bin/python -c "from zpe_mocap import encode_clip, MotionSuffixIndex; print('import_ok')"
+Result: PASS (import_ok)
+
+6) CLI version
+Command: /tmp/zpe_mocap_install_verify/bin/zpe-mocap --version
+Result: PASS (0.1.0)
+
+7) Re-run after pyproject/readme alignment changes
+Command: /tmp/zpe_mocap_techalign/bin/python -m unittest discover -s tests -v
+Result: PASS (2 tests)
+Command: /tmp/zpe_mocap_techalign/bin/python -m build
+Result: PASS (license table deprecation warning persists)

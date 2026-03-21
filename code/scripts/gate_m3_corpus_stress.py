@@ -5,8 +5,22 @@ from statistics import mean
 
 import numpy as np
 
-from _common import gate_file, init_output_root, log_command, write_checkpoint
+from _common import (
+    comet_log_asset,
+    comet_log_metrics,
+    finalize_comet,
+    gate_file,
+    init_comet_context,
+    init_output_root,
+    log_command,
+    now_iso,
+    resolve_corpus,
+    update_run_manifest,
+    write_checkpoint,
+)
 from zpe_mocap.benchmark import determinism_hash, run_core_benchmarks
+from zpe_mocap.cmu import load_cmu_clips
+from zpe_mocap.constants import ACTION_LABELS
 from zpe_mocap.codec import decode_zpmoc, encode_clip
 from zpe_mocap.metrics import mpjpe_mm
 from zpe_mocap.synthetic import ACTION_LABELS, generate_corpus
@@ -67,8 +81,13 @@ def _joint_class_breakdown(seed: int) -> dict:
 def main() -> None:
     init_output_root()
     log_command("python3 scripts/gate_m3_corpus_stress.py")
+    corpus = resolve_corpus()
+    comet = init_comet_context("gate_m3", corpus)
 
-    bundle = run_core_benchmarks(seed=20260220, search_library_size=10000, query_count=120)
+    clips = None
+    if corpus != "synthetic":
+        clips = load_cmu_clips(max_clips=2548, required_labels=ACTION_LABELS)
+    bundle = run_core_benchmarks(seed=20260220, search_library_size=10000, query_count=120, clips=clips)
 
     hashes = [determinism_hash(20260220) for _ in range(5)]
     det_status = "PASS" if len(set(hashes)) == 1 else "FAIL"
@@ -109,9 +128,23 @@ def main() -> None:
         det_status,
     ]
 
+    comet_log_metrics(
+        comet,
+        {
+            "compression_ratio_mean": bundle.compression.get("zpmoc_mean_cr"),
+            "search_latency_p95_ms": bundle.latency_eval.get("p95_ms"),
+            "determinism_status": 1 if det_status == "PASS" else 0,
+            "corpus_type": 0 if corpus == "synthetic" else 1,
+        },
+    )
+    comet_log_asset(comet, gate_file("mocap_max_stress_benchmark.json"))
+    comet_log_asset(comet, gate_file("joint_class_error_breakdown.json"))
+
+    status = "PASS" if all(s == "PASS" for s in statuses) else "FAIL"
+    comet_url = finalize_comet(comet)
     write_checkpoint(
         gate="gate_m3",
-        status="PASS" if all(s == "PASS" for s in statuses) else "FAIL",
+        status=status,
         details={
             "stress_summary": {
                 "compression_cr": bundle.compression["zpmoc_mean_cr"],
@@ -121,6 +154,16 @@ def main() -> None:
             },
             "statuses": statuses,
         },
+        comet_url=comet_url,
+    )
+    update_run_manifest(
+        {
+            "gate": "gate_m3",
+            "corpus": corpus,
+            "status": status,
+            "timestamp_utc": now_iso(),
+            "comet_experiment_url": comet_url,
+        }
     )
 
 

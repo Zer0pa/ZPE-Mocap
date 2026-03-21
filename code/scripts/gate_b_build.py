@@ -5,7 +5,20 @@ from pathlib import Path
 
 import numpy as np
 
-from _common import ROOT, gate_file, init_output_root, log_command, write_checkpoint
+from _common import (
+    ROOT,
+    comet_log_asset,
+    comet_log_metrics,
+    finalize_comet,
+    gate_file,
+    init_comet_context,
+    init_output_root,
+    log_command,
+    now_iso,
+    resolve_corpus,
+    update_run_manifest,
+    write_checkpoint,
+)
 from zpe_mocap.codec import decode_zpmoc, encode_clip
 from zpe_mocap.metrics import joint_rmse_deg, mpjpe_mm
 from zpe_mocap.retarget import build_scaled_ground_truth, retarget_scale_space
@@ -21,6 +34,8 @@ def _require(condition: bool, message: str) -> None:
 def main() -> None:
     init_output_root()
     log_command("python3 scripts/gate_b_build.py")
+    corpus = resolve_corpus()
+    comet = init_comet_context("gate_b", corpus)
 
     clip = generate_clip(
         clip_id="gate_b_smoke",
@@ -63,7 +78,10 @@ def main() -> None:
     gate_file("gate_b_smoke.json").write_text(
         __import__("json").dumps(summary, indent=2) + "\n", encoding="utf-8"
     )
+    comet_log_metrics(comet, summary)
+    comet_log_asset(comet, gate_file("gate_b_smoke.json"))
 
+    comet_url = finalize_comet(comet)
     write_checkpoint(
         gate="gate_b",
         status="PASS",
@@ -71,6 +89,16 @@ def main() -> None:
             "smoke_file": "artifacts/2026-02-20_zpe_mocap_wave1/gate_b_smoke.json",
             "summary": summary,
         },
+        comet_url=comet_url,
+    )
+    update_run_manifest(
+        {
+            "gate": "gate_b",
+            "corpus": corpus,
+            "status": "PASS",
+            "timestamp_utc": now_iso(),
+            "comet_experiment_url": comet_url,
+        }
     )
 
 

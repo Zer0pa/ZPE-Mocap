@@ -8,11 +8,18 @@ from pathlib import Path
 
 from _common import (
     ROOT,
+    comet_log_asset,
+    comet_log_metrics,
     collect_hashes,
+    finalize_comet,
     gate_file,
+    init_comet_context,
     init_output_root,
     log_command,
+    now_iso,
     read_json,
+    resolve_corpus,
+    update_run_manifest,
     write_checkpoint,
     write_text,
 )
@@ -46,6 +53,8 @@ def _claim_status(compression: dict, joint: dict, pos: dict, search: dict, laten
 def main() -> None:
     init_output_root()
     log_command("python3 scripts/gate_e_package.py")
+    corpus = resolve_corpus()
+    comet = init_comet_context("gate_e", corpus)
 
     compression = _load("mocap_compression_benchmark.json")
     joint = _load("mocap_joint_fidelity.json")
@@ -359,6 +368,27 @@ def main() -> None:
     write_json(gate_file("handoff_manifest.json"), manifest)
 
     status = "PASS" if all(v == "PASS" for v in claims.values()) and proc.returncode == 0 else "FAIL"
+    comet_log_metrics(
+        comet,
+        {
+            "claims_pass_count": sum(1 for v in claims.values() if v == "PASS"),
+            "claims_total": len(claims),
+            "quality_gate_score": quality.get("total_score"),
+            "quality_status": quality.get("status"),
+            "corpus_type": 0 if corpus == "synthetic" else 1,
+        },
+    )
+    for name in (
+        "before_after_metrics.json",
+        "claim_status_delta.md",
+        "quality_gate_scorecard.json",
+        "innovation_delta_report.md",
+        "integration_readiness_contract.json",
+        "handoff_manifest.json",
+    ):
+        comet_log_asset(comet, gate_file(name))
+
+    comet_url = finalize_comet(comet)
     write_checkpoint(
         gate="gate_e",
         status=status,
@@ -367,6 +397,16 @@ def main() -> None:
             "regression_exit_code": proc.returncode,
             "quality_status": quality["status"],
         },
+        comet_url=comet_url,
+    )
+    update_run_manifest(
+        {
+            "gate": "gate_e",
+            "corpus": corpus,
+            "status": status,
+            "timestamp_utc": now_iso(),
+            "comet_experiment_url": comet_url,
+        }
     )
 
 

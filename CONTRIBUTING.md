@@ -1,15 +1,17 @@
 # Contributing
 
-Contributions in this repo are evidence-first.
+ZPE-Mocap is evidence-first. Claims without artifacts are out of scope.
 
-## Ground Rules
+## Contribution Rules
 
-- Do not promote a claim without naming the supporting artifact.
-- Negative results are valid contributions.
-- Keep nested external repos and datasets outside this repo boundary.
-- If you change gate logic, path handling, or proof wording, update the relevant docs and evidence references in the same change.
+| Rule | Evidence or constraint |
+| --- | --- |
+| Do not promote a claim without naming the supporting artifact. | Evidence paths are required in the PR. |
+| Negative results are valid contributions. | Falsification findings are first-class artifacts. |
+| Keep nested external repos and datasets outside this repo boundary. | Do not vendor external trees into this repo. |
+| If you change gate logic, path handling, or proof wording, update the relevant docs and evidence references in the same change. | The proof trail must stay consistent. |
 
-## Setup
+## Environment Setup
 
 ```bash
 python -m venv .venv
@@ -18,9 +20,11 @@ python -m pip install -e ./code
 python -m unittest discover -s code/tests -v
 ```
 
-## Pull Requests
+## Pull Request Expectations
 
-- Keep scope narrow.
-- State whether the change affects code, docs, proofs, or boundary handling.
-- Include concrete evidence when behavior changes.
-- Do not hide or rewrite failing/contradicted historical artifacts; supersede them with clearer docs or new evidence.
+| Expectation | Notes |
+| --- | --- |
+| Keep scope narrow. | One concern per PR. |
+| State whether the change affects code, docs, proofs, or boundary handling. | Use the PR description to call this out. |
+| Include concrete evidence when behavior changes. | Attach artifacts or reference existing proof paths. |
+| Do not hide or rewrite failing or contradicted historical artifacts. | Supersede with clearer docs or new evidence instead. |

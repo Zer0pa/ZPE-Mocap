@@ -1,13 +1,31 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-from _common import gate_file, init_output_root, load_env_file, log_command, preferred_python, read_json, run_command, write_checkpoint
+from _common import (
+    comet_log_asset,
+    comet_log_metrics,
+    finalize_comet,
+    gate_file,
+    init_comet_context,
+    init_output_root,
+    load_env_file,
+    log_command,
+    now_iso,
+    preferred_python,
+    read_json,
+    resolve_corpus,
+    run_command,
+    update_run_manifest,
+    write_checkpoint,
+)
 from zpe_mocap.utils import write_json
 
 
 def main() -> None:
     init_output_root()
     log_command("python3 code/scripts/gate_m2_live_runtime.py")
+    corpus = resolve_corpus()
+    comet = init_comet_context("gate_m2", corpus)
     env_report = load_env_file()
 
     evidence = []
@@ -83,6 +101,19 @@ def main() -> None:
         },
     )
 
+    comet_log_metrics(
+        comet,
+        {
+            "live_runtime_status": 1 if live_status == "PASS" else 0,
+            "blender_live_ok": 1 if blender_live_ok else 0,
+            "usd_live_ok": 1 if usd_live_ok else 0,
+            "corpus_type": 0 if corpus == "synthetic" else 1,
+        },
+    )
+    comet_log_asset(comet, roundtrip_path)
+    comet_log_asset(comet, gate_file("usd_live_runtime_check.json"))
+
+    comet_url = finalize_comet(comet)
     write_checkpoint(
         gate="gate_m2",
         status="PASS" if live_status == "PASS" else "FAIL",
@@ -90,6 +121,16 @@ def main() -> None:
             "live_status": live_status,
             "impracticality": impracticality,
         },
+        comet_url=comet_url,
+    )
+    update_run_manifest(
+        {
+            "gate": "gate_m2",
+            "corpus": corpus,
+            "status": "PASS" if live_status == "PASS" else "FAIL",
+            "timestamp_utc": now_iso(),
+            "comet_experiment_url": comet_url,
+        }
     )
 
 

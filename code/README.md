@@ -6,7 +6,17 @@ Install with:
 python -m pip install -e ./code
 ```
 
-Current dependencies:
+Optional extras:
+- `gates` (Comet logging + zstandard comparator)
+- `cmu` (BVH ingestion via `bvhio`)
+
+Example with extras:
+
+```bash
+python -m pip install -e "./code[gates,cmu]"
+```
+
+Current core dependencies:
 - `numpy`
 
 Primary package:

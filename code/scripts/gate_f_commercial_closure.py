@@ -1,7 +1,20 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-from _common import gate_file, init_output_root, log_command, read_json, write_checkpoint
+from _common import (
+    comet_log_asset,
+    comet_log_metrics,
+    finalize_comet,
+    gate_file,
+    init_comet_context,
+    init_output_root,
+    log_command,
+    now_iso,
+    read_json,
+    resolve_corpus,
+    update_run_manifest,
+    write_checkpoint,
+)
 from zpe_mocap.utils import write_json
 
 
@@ -27,6 +40,8 @@ def _core_claim_status() -> dict[str, str]:
 def main() -> None:
     init_output_root()
     log_command("python3 scripts/gate_f_commercial_closure.py")
+    corpus = resolve_corpus()
+    comet = init_comet_context("gate_f", corpus)
 
     core = _core_claim_status()
     resource_map = read_json(gate_file("max_claim_resource_map.json"))
@@ -88,6 +103,19 @@ def main() -> None:
     }
     write_json(gate_file("commercialization_claim_adjudication.json"), payload)
 
+    comet_log_metrics(
+        comet,
+        {
+            "final_claims_pass": sum(1 for v in final.values() if v == "PASS"),
+            "final_claims_fail": sum(1 for v in final.values() if v == "FAIL"),
+            "final_claims_paused": sum(1 for v in final.values() if v == "PAUSED_EXTERNAL"),
+            "corpus_type": 0 if corpus == "synthetic" else 1,
+        },
+    )
+    comet_log_asset(comet, gate_file("commercialization_claim_adjudication.json"))
+    comet_log_asset(comet, gate_file("net_new_gap_closure_matrix.json"))
+
+    comet_url = finalize_comet(comet)
     write_checkpoint(
         gate="gate_f",
         status="PASS" if all(v in {"PASS", "FAIL", "PAUSED_EXTERNAL"} for v in final.values()) else "FAIL",
@@ -95,6 +123,16 @@ def main() -> None:
             "final_claim_status": final,
             "f_gates": payload["f_gates"],
         },
+        comet_url=comet_url,
+    )
+    update_run_manifest(
+        {
+            "gate": "gate_f",
+            "corpus": corpus,
+            "status": "PASS" if all(v in {"PASS", "FAIL", "PAUSED_EXTERNAL"} for v in final.values()) else "FAIL",
+            "timestamp_utc": now_iso(),
+            "comet_experiment_url": comet_url,
+        }
     )
 
 

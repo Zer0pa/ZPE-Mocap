@@ -90,3 +90,12 @@ Plans:
 
 Plans:
 - [ ] TBD (run plan-phase 5 to break down)
+
+### Phase 6: Technical closure: real-corpus validation, Comet wiring, PyPI packaging, clean-clone verification, GitHub freshness
+
+**Goal:** [To be planned]
+**Depends on:** Phase 5
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run plan-phase 6 to break down)

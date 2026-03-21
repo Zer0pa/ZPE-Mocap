@@ -7,7 +7,25 @@ from pathlib import Path
 
 import numpy as np
 
-from _common import EXTERNAL_ROOT, ROOT, gate_file, init_output_root, load_env_file, log_command, preferred_python, run_command, write_checkpoint, write_text
+from _common import (
+    EXTERNAL_ROOT,
+    ROOT,
+    comet_log_asset,
+    comet_log_metrics,
+    finalize_comet,
+    gate_file,
+    init_comet_context,
+    init_output_root,
+    load_env_file,
+    log_command,
+    now_iso,
+    preferred_python,
+    resolve_corpus,
+    run_command,
+    update_run_manifest,
+    write_checkpoint,
+    write_text,
+)
 from zpe_mocap.synthetic import generate_clip
 from zpe_mocap.utils import write_json
 
@@ -369,6 +387,8 @@ def _multisensor_alignment(proxy_only: bool) -> dict:
 def main() -> None:
     init_output_root()
     log_command("python3 code/scripts/gate_e_appendix_ingestion.py")
+    corpus = resolve_corpus()
+    comet = init_comet_context("gate_e_appendix", corpus)
 
     env_report = load_env_file()
     output_root = gate_file("")
@@ -614,15 +634,46 @@ def main() -> None:
 
     write_text(gate_file("max_resource_validation_log.md"), "\n".join(md_lines) + "\n")
 
+    comet_log_metrics(
+        comet,
+        {
+            "resources_attempted": len(resources),
+            "resources_success": sum(1 for r in resources if r["success"]),
+            "impracticality_count": len(impracticalities),
+            "corpus_type": 0 if corpus == "synthetic" else 1,
+        },
+    )
+    for name in (
+        "max_resource_validation_log.md",
+        "max_claim_resource_map.json",
+        "impracticality_decisions.json",
+        "joint_class_error_breakdown.json",
+        "multisensor_alignment_report.json",
+        "net_new_gap_closure_matrix.json",
+    ):
+        comet_log_asset(comet, gate_file(name))
+
+    status = "PASS" if all(gap_matrix[g]["status"] == "PASS" for g in ["E-G1", "E-G2", "E-G3", "E-G4"]) else "FAIL"
+    comet_url = finalize_comet(comet)
     write_checkpoint(
         gate="gate_e_appendix",
-        status="PASS" if all(gap_matrix[g]["status"] == "PASS" for g in ["E-G1", "E-G2", "E-G3", "E-G4"]) else "FAIL",
+        status=status,
         details={
             "resources_attempted": len(resources),
             "resources_success": sum(1 for r in resources if r["success"]),
             "impracticality_count": len(impracticalities),
             "gap_status": {k: v["status"] for k, v in gap_matrix.items()},
         },
+        comet_url=comet_url,
+    )
+    update_run_manifest(
+        {
+            "gate": "gate_e_appendix",
+            "corpus": corpus,
+            "status": status,
+            "timestamp_utc": now_iso(),
+            "comet_experiment_url": comet_url,
+        }
     )
 
 

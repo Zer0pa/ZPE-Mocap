@@ -3,7 +3,20 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from _common import ROOT, gate_file, init_output_root, log_command, write_checkpoint, write_text
+from _common import (
+    ROOT,
+    comet_log_asset,
+    finalize_comet,
+    gate_file,
+    init_comet_context,
+    init_output_root,
+    log_command,
+    now_iso,
+    resolve_corpus,
+    update_run_manifest,
+    write_checkpoint,
+    write_text,
+)
 
 import json
 import hashlib
@@ -12,6 +25,8 @@ import hashlib
 def main() -> None:
     init_output_root()
     log_command("python3 code/scripts/gate_a_setup.py")
+    corpus = resolve_corpus()
+    comet = init_comet_context("gate_a", corpus)
 
     schema_path = ROOT / "code" / "format" / "ZPMOC_SCHEMA_V1.json"
     schema_bytes = schema_path.read_bytes()
@@ -67,7 +82,9 @@ def main() -> None:
         gate_file("gate_a_status.txt"),
         "Gate A PASS: runbooks present, fixture lock and schema hash frozen.\n",
     )
+    comet_log_asset(comet, gate_file("gate_a_status.txt"))
 
+    comet_url = finalize_comet(comet)
     write_checkpoint(
         gate="gate_a",
         status="PASS",
@@ -83,6 +100,16 @@ def main() -> None:
                 "proofs/runbooks/RUNBOOK_GATE_E.md",
             ],
         },
+        comet_url=comet_url,
+    )
+    update_run_manifest(
+        {
+            "gate": "gate_a",
+            "corpus": corpus,
+            "status": "PASS",
+            "timestamp_utc": now_iso(),
+            "comet_experiment_url": comet_url,
+        }
     )
 
 

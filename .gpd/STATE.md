@@ -11,7 +11,7 @@ See: `.gpd/PROJECT.md` (updated 2026-03-20)
 
 **Current Phase:** 4
 **Current Phase Name:** Conditional Compute Escalation Or Closure Packaging
-**Total Phases:** 5
+**Total Phases:** 6
 **Current Plan:** 01
 **Total Plans in Phase:** 1
 **Status:** Complete
@@ -56,6 +56,7 @@ See: `.gpd/PROJECT.md` (updated 2026-03-20)
 - Phase 3: Trust fresh repo-local gate artifacts over imported historical prose when adjudicating commercialization claims.
 - Phase 4: Skip compute escalation because Gate E G5 marked extra compute unnecessary and the local closure path reached PASS.
 - [Phase 05]: Added Phase 05: Refinement, performance, and evidence-hygiene augmentation — Extends current milestone with the next ratified augmentation lane
+- [Phase 06]: Added Phase 06: Technical closure: real-corpus validation, Comet wiring, PyPI packaging, clean-clone verification, GitHub freshness — Extends current milestone with new research phase
 
 ### Active Approximations
 

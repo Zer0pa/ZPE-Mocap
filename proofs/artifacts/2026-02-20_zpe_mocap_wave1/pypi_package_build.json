@@ -1,0 +1,8 @@
+{
+  "wheel": "zpe_mocap-0.1.0-py3-none-any.whl",
+  "wheel_sha256": "cf51fc7f33b52d192b79130f391246a1fbd86081a2912d4f75d9ab912327ab05",
+  "install_test": "PASS",
+  "python_version": "3.14.0",
+  "platform": "macOS-x86_64",
+  "timestamp": "2026-03-21T20:26:40Z"
+}

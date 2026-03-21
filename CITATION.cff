@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: >-
+  If you use ZPE-Mocap, cite this repository record.
+type: software
+title: "ZPE-Mocap: Zero-Point Encoding Motion Capture Compression and Retrieval"
+authors:
+  - given-names: Zer0pa
+    family-names: Architect-Prime
+  - name: Zer0pa Labs
+repository-code: https://github.com/Zer0pa/ZPE-Mocap.git
+url: https://github.com/Zer0pa/ZPE-Mocap.git
+license: LicenseRef-Zer0pa-SAL-6.0
+abstract: >-
+  ZPE-Mocap is a deterministic motion-capture compression and retrieval
+  reference stack with a synthetic-corpus proof bundle and explicit
+  staging boundaries for CMU, Blender runtime, and clean-clone verification.
+keywords:
+  - motion capture
+  - compression
+  - retrieval
+  - suffix index
+  - zero-point encoding
+  - evidence discipline

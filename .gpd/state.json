@@ -591,7 +591,7 @@
   "position": {
     "current_phase": "4",
     "current_phase_name": "Conditional Compute Escalation Or Closure Packaging",
-    "total_phases": 5,
+    "total_phases": 6,
     "current_plan": "01",
     "total_plans_in_phase": 1,
     "status": "Complete",
@@ -660,6 +660,11 @@
       "phase": "05",
       "summary": "Added Phase 05: Refinement, performance, and evidence-hygiene augmentation",
       "rationale": "Extends current milestone with the next ratified augmentation lane"
+    },
+    {
+      "phase": "06",
+      "summary": "Added Phase 06: Technical closure: real-corpus validation, Comet wiring, PyPI packaging, clean-clone verification, GitHub freshness",
+      "rationale": "Extends current milestone with new research phase"
     }
   ],
   "approximations": [],
@@ -695,5 +700,5 @@
     "resume_file": "`proofs/artifacts/2026-02-20_zpe_mocap_wave1/handoff_manifest.json`"
   },
   "_version": 1,
-  "_synced_at": "2026-03-21T12:21:08.636228+00:00"
+  "_synced_at": "2026-03-21T15:41:36.325706+00:00"
 }

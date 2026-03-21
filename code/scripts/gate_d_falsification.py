@@ -6,7 +6,20 @@ from pathlib import Path
 
 import numpy as np
 
-from _common import gate_file, init_output_root, log_command, write_checkpoint, write_text
+from _common import (
+    comet_log_asset,
+    comet_log_metrics,
+    finalize_comet,
+    gate_file,
+    init_comet_context,
+    init_output_root,
+    log_command,
+    now_iso,
+    resolve_corpus,
+    update_run_manifest,
+    write_checkpoint,
+    write_text,
+)
 from zpe_mocap.benchmark import determinism_hash
 from zpe_mocap.codec import decode_zpmoc, encode_clip
 from zpe_mocap.constants import JOINT_NAMES
@@ -108,6 +121,8 @@ def _dt_moc_5() -> CaseResult:
 def main() -> None:
     init_output_root()
     log_command("python3 scripts/gate_d_falsification.py")
+    corpus = resolve_corpus()
+    comet = init_comet_context("gate_d", corpus)
 
     results = []
     uncaught = 0
@@ -156,8 +171,19 @@ def main() -> None:
 
     write_text(gate_file("falsification_results.md"), "\n".join(lines) + "\n")
     write_json(gate_file("determinism_replay_results.json"), det_payload)
+    comet_log_metrics(
+        comet,
+        {
+            "uncaught_crash_rate": crash_rate,
+            "determinism_unique_hashes": len(det_payload.get("unique_hashes", [])),
+            "corpus_type": 0 if corpus == "synthetic" else 1,
+        },
+    )
+    comet_log_asset(comet, gate_file("falsification_results.md"))
+    comet_log_asset(comet, gate_file("determinism_replay_results.json"))
 
     status = "PASS" if all(r.status == "PASS" for r in results) and crash_rate == 0.0 else "FAIL"
+    comet_url = finalize_comet(comet)
     write_checkpoint(
         gate="gate_d",
         status=status,
@@ -166,6 +192,16 @@ def main() -> None:
             "uncaught_crash_rate": crash_rate,
             "determinism": det_payload,
         },
+        comet_url=comet_url,
+    )
+    update_run_manifest(
+        {
+            "gate": "gate_d",
+            "corpus": corpus,
+            "status": status,
+            "timestamp_utc": now_iso(),
+            "comet_experiment_url": comet_url,
+        }
     )
 
 

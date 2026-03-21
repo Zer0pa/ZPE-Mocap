@@ -4,19 +4,39 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "zpe-mocap"
-version = "0.0.1"
-description = "Deterministic motion compression reference implementation for ZPE Mocap."
+# Internal package lineage version; public release tagging is tracked separately.
+version = "0.1.0"
+description = "Zero-label structural motion search and compression. ZPE-MoCap deterministic codec/search package."
 readme = "README.md"
-requires-python = ">=3.11"
-license = { text = "LicenseRef-Zer0pa-SAL-6.0" }
+requires-python = ">=3.10"
 authors = [{ name = "Zer0pa" }]
-dependencies = ["numpy>=2.0"]
+license = { text = "LicenseRef-Zer0pa-SAL-6.0" }
+dependencies = [
+  "numpy>=1.24",
+]
+keywords = ["motion-capture", "animation", "search", "compression", "ZPE", "zpe-mocap"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Multimedia :: Graphics :: 3D Modeling",
+  "Topic :: Scientific/Engineering",
+]
+
+[project.scripts]
+zpe-mocap = "zpe_mocap.cli:main"
+
+[project.optional-dependencies]
+cmu = ["bvhio"]
+gates = ["comet_ml>=3.43", "zstandard>=0.22"]
+dev = ["pytest", "build"]
 
 [project.urls]
+Homepage = "https://github.com/Zer0pa/ZPE-Mocap"
 Repository = "https://github.com/Zer0pa/ZPE-Mocap"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+include-package-data = false
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["."]
+include = ["zpe_mocap*"]
+exclude = ["tests*"]
