@@ -10,6 +10,14 @@ This roadmap is a status-first view of the remaining ZPE-Mocap gates. It is
 not a release promise.
 
 <p>
+  <img src=".github/assets/readme/section-bars/family-alignment.svg" alt="FAMILY ALIGNMENT" width="100%">
+</p>
+
+Shared repo infrastructure may align to `ZPE-IMC`, but acceptance in this repo
+still depends on ZPE-Mocap-specific evidence. Visual or packaging parity is
+useful only when it does not blur the current synthetic-only proof boundary.
+
+<p>
   <img src=".github/assets/readme/section-bars/lane-status-snapshot.svg" alt="LANE STATUS SNAPSHOT" width="100%">
 </p>
 
@@ -51,11 +59,17 @@ not a release promise.
 </table>
 
 <p>
+  <img src=".github/assets/readme/section-bars/downstream-action-items.svg" alt="DOWNSTREAM ACTION ITEMS" width="100%">
+</p>
+
+- Keep docs aligned to the Zer0pa reference repo pattern without importing
+  foreign claims.
+- Preserve proof-surface honesty while packaging, Comet wiring, and clean-clone
+  work continue.
+- Treat GitHub freshness as maintenance work, not as authority evidence.
+
+<p>
   <img src=".github/assets/readme/section-bars/open-risks-non-blocking.svg" alt="OPEN RISKS (NON-BLOCKING)" width="100%">
 </p>
 
 Open risks and caveats are tracked in `PUBLIC_AUDIT_LIMITS.md`.
-
-<p>
-  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
-</p>

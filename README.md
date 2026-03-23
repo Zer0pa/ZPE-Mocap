@@ -36,6 +36,10 @@
   <img src=".github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
 </p>
 
+<p>
+  <img src=".github/assets/readme/zpe-masthead-option-3.4.gif" alt="ZPE-Mocap Upper Insert" width="100%">
+</p>
+
 <a id="what-this-is"></a>
 <h2 align="center">What This Is</h2>
 
@@ -71,6 +75,10 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
     </tr>
   </tbody>
 </table>
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead-option-3.5.gif" alt="ZPE-Mocap Lower Insert" width="100%">
+</p>
 
 <a id="current-authority"></a>
 <h2 align="center">Current Authority</h2>
@@ -427,6 +435,10 @@ No throughput benchmark is promoted. The only performance numbers currently prom
   </tbody>
 </table>
 
+<p>
+  <img src=".github/assets/readme/zpe-masthead-option-3-3.gif" alt="ZPE-Mocap Lower Masthead" width="100%">
+</p>
+
 <a id="public-ml-workbooks"></a>
 <h2 align="center">Public ML Workbooks</h2>
 
@@ -537,10 +549,6 @@ No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evide
 - No public ML workbook has been published for this repo; evidence is local to the wave1 bundle.
 
 <p>
-  <img src=".github/assets/readme/zpe-masthead-option-3-3.gif" alt="ZPE-Mocap Lower Masthead" width="100%">
-</p>
-
-<p>
   <img src=".github/assets/readme/section-bars/contributing-security-support.svg" alt="CONTRIBUTING, SECURITY, SUPPORT" width="100%">
 </p>
 
@@ -560,9 +568,5 @@ No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evide
 </table>
 
 <p>
-  <img src=".github/assets/readme/zpe-masthead-option-3-3.gif" alt="ZPE-Mocap Tail Masthead" width="100%">
-</p>
-
-<p>
-  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+  <img src=".github/assets/readme/zpe-masthead-option-3.6.gif" alt="ZPE-Mocap Authority Insert" width="100%">
 </p>

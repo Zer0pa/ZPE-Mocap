@@ -22,7 +22,3 @@ Imported historical artifacts are preserved as lineage and may contain:
 - overstated live-runtime language
 
 Read repo-facing docs as current staging interpretation. Do not treat stale historical prose as current repo truth.
-
-<p>
-  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
-</p>

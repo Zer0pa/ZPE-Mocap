@@ -3,11 +3,11 @@
 </p>
 
 <p>
-  <img src=".github/assets/readme/section-bars/purpose.svg" alt="PURPOSE" width="100%">
+  <img src=".github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
 </p>
 
 ZPE-Mocap governance exists to keep claims, evidence, and public posture
-aligned. The source repo is the authority surface. Historical artifacts are
+aligned. The repo root is the authority surface. Historical artifacts are
 retained as lineage and do not override current repo-facing truth.
 
 <p>
@@ -24,33 +24,33 @@ Claim rules:
   artifact-backed before they can be promoted.
 
 <p>
-  <img src=".github/assets/readme/section-bars/scope.svg" alt="SCOPE" width="100%">
+  <img src=".github/assets/readme/section-bars/compatibility-commitments.svg" alt="COMPATIBILITY COMMITMENTS" width="100%">
 </p>
 
-This governance file applies to:
+Compatibility commitments in this repo are narrow and evidence-bound:
 
-- documentation and claim language
-- proof and audit surfaces
-- release gating and status language
-- public support and intake flow
+- Shared doc surfaces should follow the `ZPE-IMC` reference pattern where it
+  improves clarity.
+- Shared wording must not import `ZPE-IMC` claims into `ZPE-Mocap`.
+- Historical staging artifacts may remain in-repo, but README-facing truth
+  must stay current and explicit.
 
 <p>
-  <img src=".github/assets/readme/section-bars/out-of-scope.svg" alt="OUT OF SCOPE" width="100%">
+  <img src=".github/assets/readme/section-bars/summary.svg" alt="STATUS SEMANTICS" width="100%">
 </p>
 
-Out of scope here:
+Use status language carefully:
 
-- legal license terms (see `LICENSE`)
-- runtime implementation details (see `docs/ARCHITECTURE.md`)
-- contribution workflow specifics (see `CONTRIBUTING.md`)
+- `VERIFIED` means artifact-backed inside this repo boundary.
+- `UNPROMOTED` means evidence may exist historically but is not accepted here.
+- `OPEN` means a gate or evidence surface is still missing.
+- `UNKNOWN` or `INCONCLUSIVE` are preferred over optimistic narrative when the
+  evidence is thin.
 
 <p>
-  <img src=".github/assets/readme/section-bars/reporting.svg" alt="REPORTING" width="100%">
+  <img src=".github/assets/readme/section-bars/escalation-path.svg" alt="ESCALATION PATH" width="100%">
 </p>
 
 Evidence disputes should be filed as issues with a direct artifact path and
-counter-evidence. Claims without evidence remain `UNKNOWN` or are removed.
-
-<p>
-  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
-</p>
+counter-evidence. Legal and licensing questions route to `LICENSE` and
+`architects@zer0pa.ai`. Security matters route through `SECURITY.md`.

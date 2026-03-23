@@ -9,6 +9,14 @@
 This file defines the release gate logic for ZPE-Mocap. A release tag is not
 valid unless the gates below are backed by in-repo evidence.
 
+<p>
+  <img src=".github/assets/readme/section-bars/scope.svg" alt="SCOPE" width="100%">
+</p>
+
+This file governs release semantics only. It does not grant authority to any
+claim that is not already supported by `README.md`, `proofs/`, and the
+relevant gate artifacts.
+
 <table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
   <thead>
     <tr>
@@ -46,8 +54,26 @@ valid unless the gates below are backed by in-repo evidence.
   </tbody>
 </table>
 
+<p>
+  <img src=".github/assets/readme/section-bars/verification.svg" alt="VERIFICATION" width="100%">
+</p>
+
 If any required gate lacks evidence, the release is not valid.
 
 <p>
-  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
+  <img src=".github/assets/readme/section-bars/compatibility-vector-impact.svg" alt="COMPATIBILITY VECTOR IMPACT" width="100%">
 </p>
+
+Docs-only changes are not release authority by themselves. Packaging changes,
+clean-clone claims, and CMU-backed commercialization status must be tied to
+their own artifacts and must not be inferred from visual polish.
+
+<p>
+  <img src=".github/assets/readme/section-bars/downstream-action-items.svg" alt="DOWNSTREAM ACTION ITEMS" width="100%">
+</p>
+
+Before tagging a release, verify:
+
+- `LICENSE` and `code/LICENSE` match the current canonical SAL text.
+- README and docs claim surfaces match the accepted proof boundary.
+- Any new external-facing packaging or runtime claims have artifact-backed tests.

@@ -5,7 +5,3 @@
 # Support
 
 Canonical support routing lives in `docs/SUPPORT.md`.
-
-<p>
-  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
-</p>

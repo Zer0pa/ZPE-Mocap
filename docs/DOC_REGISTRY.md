@@ -14,7 +14,3 @@ Paths are relative to `docs/`.
 | `LEGAL_BOUNDARIES.md` | Legal boundary summary. | Legal notes only; `LICENSE` remains source of truth. | Active |
 | `SUPPORT.md` | Support and escalation routes. | Contact and issue routing only. | Active |
 | `DOC_REGISTRY.md` | Canonical documentation registry. | Docs inventory and status only. | Active |
-
-<p>
-  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Mocap Masthead" width="100%">
-</p>
