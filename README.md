@@ -32,6 +32,32 @@
   </tr>
 </table>
 
+---
+
+<a id="commercial-front-door"></a>
+
+## What This Is
+
+ZPE-Mocap applies the ZPE deterministic 8-primitive encoding architecture to motion-capture data — compression, search, and retrieval for spatial-temporal skeletal signals. All current evidence is bounded to the **synthetic corpus from the 2026-02-20 wave1 bundle**. Nothing here claims real-world validation.
+
+On that synthetic corpus: **85.19× compression ratio**, joint-angle fidelity at **RMSE ≈ 1.16e-07 degrees**, positional fidelity at **MPJPE 1.19 mm**, p@10 = 1.0 search ranking, and p95 query latency of 43.4 ms. Full evidence bundle: `proofs/artifacts/2026-02-20_zpe_mocap_wave1/`. Falsification results and integration readiness contract are included.
+
+Animation studios, game engines, and motion-data infrastructure teams evaluating deterministic mocap compression can benchmark against these synthetic numbers. The gap to commercial readiness is real-world corpus validation — no Blender runtime pass, no CMU commercialization-safe closure, no clean-clone verification exist.
+
+**Readiness: staged, synthetic evidence only.** Public repository. No real-world corpus validation.
+
+**Not claimed:** CMU or commercial corpus validation, Blender runtime compatibility, clean-clone verification, commercialization-safe closure.
+
+| Proof anchor | Location |
+|---|---|
+| Wave1 evidence bundle | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/` |
+| Compression / fidelity / search / latency | wave1 bundle artifacts |
+| Falsification results | wave1 bundle |
+
+Part of the [Zer0pa](https://github.com/zer0-point-energy) family. Platform layer: [ZPE-IMC](https://github.com/zer0-point-energy/ZPE-IMC).
+
+---
+
 <p>
   <img src=".github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
 </p>
