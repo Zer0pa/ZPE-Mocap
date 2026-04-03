@@ -32,6 +32,63 @@
   </tr>
 </table>
 
+---
+
+<a id="commercial-front-door"></a>
+<h2 align="center">What This Is</h2>
+
+> ZPE-Mocap is a deterministic motion-capture compression and retrieval system, currently bounded to synthetic evidence.
+
+**This repo is a staged validation surface, not a primary commercial front door.** All current claims are limited to synthetic-corpus evidence from the 2026-02-20 wave1 bundle. No Blender runtime pass, no CMU commercialization-safe closure, and no clean-clone verification are claimed.
+
+<h3>Commercial Wedge</h3>
+
+This is for animation studios, game engines, and motion-data infrastructure teams who need high-ratio deterministic mocap compression with search and retrieval. The business value is storage reduction and query-speed gains on motion-capture archives — currently demonstrated on synthetic data only.
+
+<h3>Technical Wedge</h3>
+
+The technical edge is deterministic 8-primitive encoding applied to motion-capture data, currently evidenced by a synthetic-corpus compression ratio of 85.19×, sub-millimetre positional fidelity (MPJPE 1.19 mm), and p95 query latency of 43.4 ms in the wave1 bundle.
+
+<h3>Current Readiness</h3>
+
+**STAGED_PROOF_SURFACE** — Public repository with synthetic evidence only. No real-world corpus validation, no Blender pass, no CMU closure.
+
+<h3>What Is Proved</h3>
+
+- Synthetic-corpus compression ratio of 85.19× (wave1 bundle)
+- Synthetic joint-angle fidelity: RMSE ≈ 1.16e-07 degrees
+- Synthetic positional fidelity: MPJPE 1.19 mm
+- Synthetic search ranking: p@10 = 1.0
+- Synthetic query latency p95: 43.4 ms
+
+<h3>What Is Not Being Claimed</h3>
+
+- No real-world (CMU or commercial) corpus validation
+- No Blender runtime verification — compatibility notes are simulated only
+- No clean-clone verification from this repo boundary
+- No commercialization-safe closure gate passed
+- Historical artifacts may retain machine-absolute paths
+
+<h3>Ideal First Buyer</h3>
+
+Animation pipeline or mocap-data infrastructure team evaluating deterministic compression with search for motion archives.
+
+<h3>Deployment Model</h3>
+
+Python reference implementation (`pip install -e ./code`). Public repo, not a packaged release.
+
+<h3>Authority / Proof Anchors</h3>
+
+- `proofs/artifacts/2026-02-20_zpe_mocap_wave1/` — full synthetic evidence bundle
+- Compression benchmark, joint fidelity, position fidelity, search eval, query latency, ACL comparator
+- Falsification results and integration readiness contract in the wave1 bundle
+
+<h3>Why This Exists In The Family</h3>
+
+ZPE-Mocap proves that the ZPE encoding architecture applies to motion-capture and spatial-temporal signal domains. It sits in the staged/validation tier alongside Neuro, Prosody, and Bio, demonstrating family breadth while the primary commercial wedges (IoT, XR, Robotics, Geo) lead market entry. The platform layer is ZPE-IMC.
+
+---
+
 <p>
   <img src=".github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
 </p>

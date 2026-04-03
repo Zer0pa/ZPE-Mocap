@@ -1,0 +1,26 @@
+{
+  "repo_name": "ZPE-Mocap",
+  "repo_role": "staged_validation_lane",
+  "status": "STAGED_PROOF_SURFACE",
+  "plain_english_summary": "Deterministic motion-capture compression and retrieval system, currently bounded to synthetic evidence.",
+  "commercial_wedge": "For animation studios, game engines, and motion-data infrastructure teams needing high-ratio deterministic mocap compression with search and retrieval. Business value: storage reduction and query-speed gains on motion-capture archives.",
+  "technical_wedge": "Deterministic 8-primitive encoding applied to motion-capture data, evidenced by synthetic-corpus compression ratio of 85.19x, sub-millimetre positional fidelity (MPJPE 1.19 mm), and p95 query latency of 43.4 ms.",
+  "ideal_first_buyer": "Animation pipeline or mocap-data infrastructure team evaluating deterministic compression with search for motion archives.",
+  "deployment_model": "Python reference implementation (pip install -e ./code). Public repo, not a packaged release.",
+  "proof_anchors": [
+    "2026-02-20 synthetic-corpus wave1 bundle",
+    "Compression ratio 85.19x on synthetic corpus",
+    "MPJPE 1.19 mm positional fidelity",
+    "p95 query latency 43.4 ms",
+    "ACL direct comparator table"
+  ],
+  "not_claimed": [
+    "No real-world (CMU or commercial) corpus validation",
+    "No Blender runtime verification",
+    "No clean-clone verification from this repo boundary",
+    "No commercialization-safe closure gate passed"
+  ],
+  "family_position": "Proves ZPE encoding applicability to motion-capture and spatial-temporal signal domains. Staged/validation tier alongside Neuro, Prosody, and Bio.",
+  "license": "LicenseRef-Zer0pa-SAL-6.0",
+  "contact": "hello@zer0pa.com"
+}
