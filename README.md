@@ -17,6 +17,11 @@
   <a href="PUBLIC_AUDIT_LIMITS.md"><img src="https://img.shields.io/badge/public%20audit-limits%20%2B%20non--claims-e5e7eb?labelColor=111111" alt="Public audit limits and non-claims"></a>
 </p>
 
+<p align="center">
+  <strong>85.1893x mean compression on 80 synthetic clips</strong><br>
+  Wave1 proof bundle. Raw BVH float32 baseline. Imported authority surface.
+</p>
+
 <table align="center" width="100%" cellpadding="0" cellspacing="0">
   <tr>
     <td width="25%"><a href="#quickstart-and-license"><img src=".github/assets/readme/nav/quickstart-and-license.svg" alt="Quickstart & License" width="100%"></a></td>
@@ -43,7 +48,7 @@
 <a id="what-this-is"></a>
 <h2 align="center">What This Is</h2>
 
-ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sector. This repo contains a deterministic Python reference implementation plus an imported synthetic-corpus proof bundle dated 2026-02-20. Every public claim below is limited to that synthetic evidence. No Blender runtime pass, no CMU commercialization-safe closure, and no clean-clone verification are claimed here.
+85.1893x mean compression on 80 synthetic clips leads the imported <code>2026-02-20_zpe_mocap_wave1</code> proof bundle. ZPE-Mocap packages a deterministic Python reference stack for mocap compression and retrieval plus that synthetic evidence surface. Public claims here stop at the imported bundle, simulated adapter evidence, and repo-local proof links; clean-clone rerun evidence is not yet promoted from this repo.
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
   <thead>
@@ -67,7 +72,7 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
     </tr>
     <tr>
       <td valign="top">What is not being claimed?</td>
-      <td valign="top">No CMU-backed commercialization-safe closure, no Blender runtime pass, and no clean-clone verification. The bundle is historical and may retain machine-absolute paths.</td>
+      <td valign="top">No clean-clone rerun is promoted from this repo boundary. Real Blender runtime integration is not evidenced; the bundle carries a simulated adapter roundtrip plus a separate USD live-runtime check. Historical artifacts may retain machine-absolute paths.</td>
     </tr>
     <tr>
       <td valign="top">Where should an outsider acquire and verify?</td>
@@ -97,7 +102,7 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
     </td>
     <td width="34%" valign="top">
       <strong>Performance authority</strong><br>
-      <code>zpmoc_mean_cr=85.1893</code>, <code>mpjpe_mean_mm=1.1901</code>, <code>query_latency_p95_ms=43.4239</code><br><br>
+      <code>zpmoc_mean_cr=85.1893</code>, <code>mpjpe_mean_mm=1.1901</code>, <code>p95_ms=26.1375</code><br><br>
       Promoted synthetic-corpus headline metrics from the wave1 bundle.
     </td>
   </tr>
@@ -120,7 +125,7 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
     <tr>
       <td valign="top">Corpus type</td>
       <td valign="top"><code>synthetic</code></td>
-      <td valign="top">All current claims are synthetic-corpus claims; no CMU-backed closure is promoted.</td>
+      <td valign="top">All current headline performance claims are synthetic-corpus claims; commercialization adjudication is recorded separately inside the imported bundle.</td>
     </tr>
     <tr>
       <td valign="top">Compression ratio</td>
@@ -144,7 +149,7 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
     </tr>
     <tr>
       <td valign="top">Query latency</td>
-      <td valign="top"><code>query_latency_p95_ms=43.4239</code></td>
+      <td valign="top"><code>p95_ms=26.1375</code></td>
       <td valign="top">Synthetic query latency p95 from the wave1 benchmark.</td>
     </tr>
     <tr>
@@ -165,8 +170,8 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
 <table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
   <tr>
       <td width="33%" valign="top">The imported wave1 bundle is the current authority surface; no later run-of-record has been re-accepted inside this repo boundary.</td>
-      <td width="33%" valign="top">Blender runtime verification remains unpromoted; existing compatibility notes are simulated only.</td>
-      <td width="34%" valign="top">CMU-backed commercialization-safe closure and clean-clone verification remain gaps and are explicitly not claimed.</td>
+      <td width="33%" valign="top">Blender adapter evidence is simulated; a separate USD live-runtime check passed under <code>python3.11</code>.</td>
+      <td width="34%" valign="top">Commercialization adjudication is bundle-backed; clean-clone verification still sits outside this repo's promoted authority.</td>
   </tr>
 </table>
 
@@ -177,7 +182,7 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
 <a id="runtime-proof-wave-1"></a>
 <h2 align="center">Runtime Proof (Wave-1)</h2>
 
-The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1</code> synthetic-corpus bundle. No clean-clone verification, Blender runtime pass, or CMU-backed closure is promoted beyond this evidence.
+The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1</code> synthetic-corpus bundle. Clean-clone verification is still not rerun from this repo, and Blender evidence stays limited to simulated adapter roundtrip plus a separate USD live-runtime check.
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
   <tr>
@@ -188,8 +193,8 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
     </td>
     <td width="50%" valign="top">
       <strong>Runtime boundary</strong><br>
-      <code>python reference only</code><br><br>
-      No Blender runtime verification or clean-clone replay is promoted here.
+      <code>simulated Blender adapter + USD live check</code><br><br>
+      Clean-clone replay is not promoted from this repo boundary.
     </td>
   </tr>
 </table>
@@ -246,7 +251,7 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
     </tr>
     <tr>
       <td valign="top">Synthetic query latency</td>
-      <td valign="top"><code>query_latency_p95_ms=43.4239</code></td>
+      <td valign="top"><code>p95_ms=26.1375</code></td>
       <td valign="top">p95 query latency for the synthetic corpus.</td>
     </tr>
   </tbody>
@@ -306,7 +311,7 @@ Shortest outsider path:
 
 ### License Boundary
 
-- Free tier boundary: annual gross revenue at or below USD 100M under SAL v6.0.
+- Free below $100M annual revenue under SAL v6.0.
 - SPDX tag: <code>LicenseRef-Zer0pa-SAL-6.0</code>.
 - Commercial or hosted use above threshold must follow the contact and enforcement terms in <a href="LICENSE">LICENSE</a>.
 
@@ -321,7 +326,7 @@ Shortest outsider path:
 <a id="modality-status-snapshot"></a>
 <h2 align="center">Modality Status Snapshot</h2>
 
-ZPE-Mocap is a motion-capture sector. The status below reports only the synthetic-corpus evidence that exists today and marks the missing Blender, CMU, and clean-clone gates.
+ZPE-Mocap is a motion-capture sector. The status below separates bundle-backed proof from replay gaps in this repo boundary.
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
   <thead>
@@ -361,19 +366,19 @@ ZPE-Mocap is a motion-capture sector. The status below reports only the syntheti
       <td valign="top">Query latency</td>
       <td valign="top"><code>GREEN</code></td>
       <td valign="top">Synthetic latency p95 in wave1.</td>
-      <td valign="top"><code>query_latency_p95_ms=43.4239</code> in <code>mocap_query_latency.json</code>.</td>
+      <td valign="top"><code>p95_ms=26.1375</code> in <code>mocap_query_latency.json</code>.</td>
     </tr>
     <tr>
       <td valign="top">Blender runtime</td>
-      <td valign="top"><code>RED</code></td>
-      <td valign="top">No Blender runtime proof is promoted.</td>
-      <td valign="top">Compatibility notes remain simulated only.</td>
+      <td valign="top"><code>AMBER</code></td>
+      <td valign="top">Wave1 records a simulated adapter roundtrip plus a USD live-runtime check.</td>
+      <td valign="top">Real Blender runtime integration is not evidenced in the imported bundle.</td>
     </tr>
     <tr>
-      <td valign="top">CMU closure</td>
-      <td valign="top"><code>RED</code></td>
-      <td valign="top">No CMU-backed commercialization-safe closure.</td>
-      <td valign="top">Workspace CMU clone lacks usable corpus files.</td>
+      <td valign="top">Commercialization adjudication</td>
+      <td valign="top"><code>GREEN</code></td>
+      <td valign="top">Wave1 records PASS adjudication in <code>commercialization_claim_adjudication.json</code>.</td>
+      <td valign="top">Coverage routes through <code>max_claim_resource_map.json</code>; clean-clone rerun is still absent from this repo.</td>
     </tr>
     <tr>
       <td valign="top">Clean-clone verification</td>
@@ -391,7 +396,7 @@ ZPE-Mocap is a motion-capture sector. The status below reports only the syntheti
 <a id="throughput"></a>
 <h2 align="center">Throughput</h2>
 
-No throughput benchmark is promoted. The only performance numbers currently promoted are synthetic-corpus compression and query-latency metrics from the wave1 bundle.
+No repo-local throughput rerun is promoted. The current performance surface is the imported wave1 bundle: <code>zpmoc_mean_cr=85.1893</code> and query <code>p95_ms=26.1375</code>.
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
   <tr>
@@ -402,7 +407,7 @@ No throughput benchmark is promoted. The only performance numbers currently prom
     </td>
     <td width="50%" valign="top">
       <strong>Query latency p95</strong><br>
-      <code>query_latency_p95_ms=43.4239</code><br><br>
+      <code>p95_ms=26.1375</code><br><br>
       Synthetic query latency p95 from wave1.
     </td>
   </tr>
@@ -429,7 +434,7 @@ No throughput benchmark is promoted. The only performance numbers currently prom
     </tr>
     <tr>
       <td valign="top">Query latency p95</td>
-      <td valign="top"><code>query_latency_p95_ms=43.4239</code></td>
+      <td valign="top"><code>p95_ms=26.1375</code></td>
       <td valign="top">Search query latency p95 on the synthetic corpus.</td>
     </tr>
   </tbody>
@@ -542,9 +547,10 @@ No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evide
 <a id="open-risks-non-blocking"></a>
 <h2 align="center">Open Risks (Non-Blocking)</h2>
 
-- Blender runtime proof remains unpromoted; compatibility notes are simulated only.
-- CMU-backed commercialization-safe closure is not available in this repo boundary.
+- Blender evidence is limited to a simulated adapter roundtrip plus a separate USD live-runtime check.
+- Commercialization adjudication is imported evidence, not a fresh clean-clone rerun from this repo.
 - Clean-clone verification has not been executed from this repo.
+- NET-NEW dataset coverage limits still propagate uncertainty for linked claims.
 - Historical artifacts can retain machine-absolute paths from the 2026-02-20 bundle.
 - No public ML workbook has been published for this repo; evidence is local to the wave1 bundle.
 
