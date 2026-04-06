@@ -10,7 +10,7 @@ description = "Zero-label structural motion search and compression. ZPE-MoCap de
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "Zer0pa" }]
-license = { text = "LicenseRef-Zer0pa-SAL-6.0" }
+license = "LicenseRef-Zer0pa-SAL-6.0"
 dependencies = [
   "numpy>=1.24",
 ]
