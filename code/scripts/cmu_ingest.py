@@ -13,6 +13,7 @@ from _common import EXTERNAL_ROOT, log_command, now_iso, write_text
 from zpe_mocap.benchmark import _tokens_from_clip
 from zpe_mocap.cmu import CMU_BVH_ROOT, CMU_INDEX_ROOT, CMU_MANIFEST, build_manifest, load_cmu_clips
 from zpe_mocap.constants import ACTION_LABELS
+from zpe_mocap.utils import extract_zip_safely
 
 CGSPEED_PAGE = "https://sites.google.com/a/cgspeed.com/cgspeed/motion-capture/cmu-bvh-conversions"
 
@@ -42,7 +43,7 @@ def main() -> None:
     _download_zip(zip_url, zip_path)
 
     with zipfile.ZipFile(zip_path, "r") as zf:
-        zf.extractall(CMU_BVH_ROOT)
+        extract_zip_safely(zf, CMU_BVH_ROOT)
 
     zip_path.unlink(missing_ok=True)
 
