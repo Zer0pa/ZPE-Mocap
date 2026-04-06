@@ -596,3 +596,11 @@ No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evide
 <p>
   <img src=".github/assets/readme/zpe-masthead-option-3.6.gif" alt="ZPE-Mocap Authority Insert" width="100%">
 </p>
+
+<a id="ecosystem-cross-links"></a>
+<h2 align="center">Ecosystem Cross-Links</h2>
+
+- <a href="https://github.com/Zer0pa/ZPE-IMC"><code>ZPE-IMC</code></a> — reference repo for shared repository structure and documentation alignment.
+- <a href="code/README.md"><code>code/README.md</code></a> — installable package surface for the ZPE-Mocap workstream.
+- <a href="docs/README.md"><code>docs/README.md</code></a> — documentation router for architecture, legal boundaries, and support surfaces.
+- <a href="proofs/README.md"><code>proofs/README.md</code></a> — proof-corpus entrypoint for the evidence carried inside this repo.
