@@ -10,14 +10,17 @@ description = "Zero-label structural motion search and compression. ZPE-MoCap de
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "Zer0pa" }]
-license = { text = "LicenseRef-Zer0pa-SAL-6.0" }
+license = "LicenseRef-Zer0pa-SAL-6.0"
 dependencies = [
   "numpy>=1.24",
 ]
 keywords = ["motion-capture", "animation", "search", "compression", "ZPE", "zpe-mocap"]
 classifiers = [
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
   "Programming Language :: Python :: 3",
   "Topic :: Multimedia :: Graphics :: 3D Modeling",
+  "Topic :: Multimedia :: Video",
   "Topic :: Scientific/Engineering",
 ]
 
@@ -31,7 +34,9 @@ dev = ["pytest", "build"]
 
 [project.urls]
 Homepage = "https://github.com/Zer0pa/ZPE-Mocap"
+Documentation = "https://github.com/Zer0pa/ZPE-Mocap/blob/main/docs/README.md"
 Repository = "https://github.com/Zer0pa/ZPE-Mocap"
+Changelog = "https://github.com/Zer0pa/ZPE-Mocap/blob/main/CHANGELOG.md"
 
 [tool.setuptools]
 include-package-data = false

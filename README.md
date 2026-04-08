@@ -17,6 +17,11 @@
   <a href="PUBLIC_AUDIT_LIMITS.md"><img src="https://img.shields.io/badge/public%20audit-limits%20%2B%20non--claims-e5e7eb?labelColor=111111" alt="Public audit limits and non-claims"></a>
 </p>
 
+<p align="center">
+  <strong>85.1893x mean compression on 80 synthetic clips</strong><br>
+  Synthetic corpus only. Real dataset validation in progress.
+</p>
+
 <table align="center" width="100%" cellpadding="0" cellspacing="0">
   <tr>
     <td width="25%"><a href="#quickstart-and-license"><img src=".github/assets/readme/nav/quickstart-and-license.svg" alt="Quickstart & License" width="100%"></a></td>
@@ -43,7 +48,7 @@
 <a id="what-this-is"></a>
 <h2 align="center">What This Is</h2>
 
-ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sector. This repo contains a deterministic Python reference implementation plus an imported synthetic-corpus proof bundle dated 2026-02-20. Every public claim below is limited to that synthetic evidence. No Blender runtime pass, no CMU commercialization-safe closure, and no clean-clone verification are claimed here.
+85.1893x mean compression on 80 synthetic clips leads the imported <code>2026-02-20_zpe_mocap_wave1</code> proof bundle. Synthetic corpus only. Real dataset validation is in progress. ZPE-Mocap packages a deterministic Python reference stack for mocap compression and retrieval with all public claims limited to that synthetic evidence surface today.
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
   <thead>
@@ -56,6 +61,10 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
     <tr>
       <td valign="top">What is this?</td>
       <td valign="top">A deterministic mocap compression and retrieval reference stack backed by a synthetic corpus with preserved proof lineage.</td>
+    </tr>
+    <tr>
+      <td valign="top">Who is this for?</td>
+      <td valign="top">VFX supervisor archiving shoots. Biomechanics PhD processing gait data. Game animation engineer moving BVH-heavy corpora.</td>
     </tr>
     <tr>
       <td valign="top">What is the current authority state?</td>
@@ -75,6 +84,19 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
     </tr>
   </tbody>
 </table>
+
+### Ecosystem Neighbors
+
+<table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
+  <tr>
+    <td width="25%" valign="top" align="center"><a href="https://www.blender.org/">Blender</a></td>
+    <td width="25%" valign="top" align="center"><a href="https://help.autodesk.com/view/MAYAUL/2026/ENU/">Maya</a></td>
+    <td width="25%" valign="top" align="center"><a href="https://help.autodesk.com/view/MOBPRO/2026/ENU/">MotionBuilder</a></td>
+    <td width="25%" valign="top" align="center"><a href="https://www.c3d.org/">c3d.org</a></td>
+  </tr>
+</table>
+
+Competitive field: no maintained open-source mocap compression alternative is linked in this repo's current audit set. ZPE-Mocap sits beside DCC and biomechanical pipeline tools rather than replacing them.
 
 <p>
   <img src=".github/assets/readme/zpe-masthead-option-3.5.gif" alt="ZPE-Mocap Lower Insert" width="100%">
@@ -97,7 +119,7 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
     </td>
     <td width="34%" valign="top">
       <strong>Performance authority</strong><br>
-      <code>zpmoc_mean_cr=85.1893</code>, <code>mpjpe_mean_mm=1.1901</code>, <code>query_latency_p95_ms=43.4239</code><br><br>
+      <code>zpmoc_mean_cr=85.1893</code>, <code>mpjpe_mean_mm=1.1901</code>, <code>p95_ms=26.1375</code><br><br>
       Promoted synthetic-corpus headline metrics from the wave1 bundle.
     </td>
   </tr>
@@ -144,7 +166,7 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
     </tr>
     <tr>
       <td valign="top">Query latency</td>
-      <td valign="top"><code>query_latency_p95_ms=43.4239</code></td>
+      <td valign="top"><code>p95_ms=26.1375</code></td>
       <td valign="top">Synthetic query latency p95 from the wave1 benchmark.</td>
     </tr>
     <tr>
@@ -246,7 +268,7 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
     </tr>
     <tr>
       <td valign="top">Synthetic query latency</td>
-      <td valign="top"><code>query_latency_p95_ms=43.4239</code></td>
+      <td valign="top"><code>p95_ms=26.1375</code></td>
       <td valign="top">p95 query latency for the synthetic corpus.</td>
     </tr>
   </tbody>
@@ -258,6 +280,21 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
 
 <a id="quickstart-and-license"></a>
 <h2 align="center">Quickstart And License</h2>
+
+### Quick Start
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ./code
+python -m unittest discover -s code/tests -v
+```
+
+### Install
+
+- Editable local install: <code>python -m pip install -e ./code</code>
+- Git install: <code>python -m pip install "git+https://github.com/Zer0pa/ZPE-Mocap.git#subdirectory=code"</code>
+- Optional CMU extras: <code>python -m pip install -e "./code[cmu]"</code>
 
 ### Quick Verify
 
@@ -306,7 +343,7 @@ Shortest outsider path:
 
 ### License Boundary
 
-- Free tier boundary: annual gross revenue at or below USD 100M under SAL v6.0.
+- Free below $100M annual revenue under SAL v6.0.
 - SPDX tag: <code>LicenseRef-Zer0pa-SAL-6.0</code>.
 - Commercial or hosted use above threshold must follow the contact and enforcement terms in <a href="LICENSE">LICENSE</a>.
 
@@ -361,7 +398,7 @@ ZPE-Mocap is a motion-capture sector. The status below reports only the syntheti
       <td valign="top">Query latency</td>
       <td valign="top"><code>GREEN</code></td>
       <td valign="top">Synthetic latency p95 in wave1.</td>
-      <td valign="top"><code>query_latency_p95_ms=43.4239</code> in <code>mocap_query_latency.json</code>.</td>
+      <td valign="top"><code>p95_ms=26.1375</code> in <code>mocap_query_latency.json</code>.</td>
     </tr>
     <tr>
       <td valign="top">Blender runtime</td>
@@ -402,7 +439,7 @@ No throughput benchmark is promoted. The only performance numbers currently prom
     </td>
     <td width="50%" valign="top">
       <strong>Query latency p95</strong><br>
-      <code>query_latency_p95_ms=43.4239</code><br><br>
+      <code>p95_ms=26.1375</code><br><br>
       Synthetic query latency p95 from wave1.
     </td>
   </tr>
@@ -429,7 +466,7 @@ No throughput benchmark is promoted. The only performance numbers currently prom
     </tr>
     <tr>
       <td valign="top">Query latency p95</td>
-      <td valign="top"><code>query_latency_p95_ms=43.4239</code></td>
+      <td valign="top"><code>p95_ms=26.1375</code></td>
       <td valign="top">Search query latency p95 on the synthetic corpus.</td>
     </tr>
   </tbody>

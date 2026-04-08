@@ -10,6 +10,8 @@
 
 ## Unreleased
 
+- README: add evidence-first synthetic-only positioning, personas, ecosystem links, quick start, install guidance, and corrected latency references.
+- Packaging: normalize `code/pyproject.toml` metadata with expanded classifiers and project URLs.
 - Docs: align `LICENSE` and `code/LICENSE` to the live `ZPE-IMC` SAL v6.0 text.
 - Docs: transfer `zpe-masthead-option-3.4.gif`, `zpe-masthead-option-3.5.gif`, and `zpe-masthead-option-3.6.gif` into `.github/assets/readme/`.
 - Docs: place animated masthead GIFs in `README.md` to mirror the `ZPE-IMC` reference positions.
