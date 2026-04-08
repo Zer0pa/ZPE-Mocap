@@ -30,7 +30,9 @@ zpe-mocap = "zpe_mocap.cli:main"
 [project.optional-dependencies]
 cmu = ["bvhio"]
 gates = ["comet_ml>=3.43", "zstandard>=0.22"]
-dev = ["pytest", "build"]
+test = ["pytest"]
+docs = ["grip"]
+dev = ["build", "grip", "pytest"]
 
 [project.urls]
 Homepage = "https://github.com/Zer0pa/ZPE-Mocap"

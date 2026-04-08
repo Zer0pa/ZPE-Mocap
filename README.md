@@ -562,6 +562,14 @@ No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evide
       <td valign="top">Installable package and codec implementation surface</td>
     </tr>
     <tr>
+      <td valign="top"><a href="examples/"><code>examples/</code></a></td>
+      <td valign="top">Runnable BVH, CMU, and Blender-preview demos</td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="BENCHMARKS.md"><code>BENCHMARKS.md</code></a></td>
+      <td valign="top">Benchmark methodology, current published rows, and phase-3 expansion path</td>
+    </tr>
+    <tr>
       <td valign="top"><a href="docs/"><code>docs/</code></a></td>
       <td valign="top">Architecture, legal boundaries, support, and documentation routing</td>
     </tr>

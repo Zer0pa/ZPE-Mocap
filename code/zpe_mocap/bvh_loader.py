@@ -1,10 +1,18 @@
 from __future__ import annotations
 
+import warnings
+
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
 import numpy as np
+
+warnings.filterwarnings(
+    "ignore",
+    message='Importing PyGLM via "import glm" is going to be deprecated in the future.',
+    category=PendingDeprecationWarning,
+)
 
 try:  # optional dependency for real BVH ingestion
     import bvhio  # type: ignore

@@ -10,6 +10,10 @@
 
 ## Unreleased
 
+- Examples: add runnable BVH, CMU, and Blender-preview demos under `examples/`.
+- Tests: add clean-install, example-smoke, CMU real-BVH, manifest-diagnostic, and zip-safety coverage.
+- Benchmarks: add `BENCHMARKS.md` methodology surface and published synthetic benchmark rows.
+- Packaging: add `test` and `docs` optional dependency groups.
 - README: add evidence-first synthetic-only positioning, personas, ecosystem links, quick start, install guidance, and corrected latency references.
 - Packaging: normalize `code/pyproject.toml` metadata with expanded classifiers and project URLs.
 - Docs: align `LICENSE` and `code/LICENSE` to the live `ZPE-IMC` SAL v6.0 text.
