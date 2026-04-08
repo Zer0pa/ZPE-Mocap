@@ -1,0 +1,1 @@
+python3 code/scripts/benchmark_cmu_public_corpus.py --target-sequences 100 --extra-candidates 0 --workers 6 --timeout-sec 180 --retry-count 3 --cache-root /tmp/zpe_mocap_cmu_full_cache --artifact-root proofs/artifacts/2026-04-08_cmu_public_corpus_benchmark

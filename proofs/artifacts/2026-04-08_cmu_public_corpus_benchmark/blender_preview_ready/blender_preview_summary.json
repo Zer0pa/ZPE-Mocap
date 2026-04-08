@@ -1,0 +1,7 @@
+{
+  "blender_script": "proofs/artifacts/2026-04-08_cmu_public_corpus_benchmark/blender_preview_ready/blender_preview_generated.py",
+  "compression_ratio": 19.67074014295596,
+  "decoded_json": "proofs/artifacts/2026-04-08_cmu_public_corpus_benchmark/blender_preview_ready/decoded_positions.json",
+  "payload_hash": "e5372e6e006064f24372900708f95286dec81c7bad1e6571aa012e8196e87ee1",
+  "source_bvh": "/tmp/zpe_mocap_cmu_full_cache/data/001/01_01.bvh"
+}

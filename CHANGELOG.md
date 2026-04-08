@@ -10,6 +10,10 @@
 
 ## Unreleased
 
+- Benchmarks: add `code/scripts/benchmark_cmu_public_corpus.py` for a reproducible 100-sequence public CMU subset run with cache-backed downloads and artifact emission.
+- Tests: add `code/tests/test_cmu_benchmark_helpers.py` for CMU benchmark tree parsing, deterministic subset selection, and summary table helpers.
+- Benchmarks: publish `proofs/artifacts/2026-04-08_cmu_public_corpus_benchmark/` with CMU public-subset results (`zpe_ratio_mean=20.3016x`, `joint_angle_rmse_deg_mean=80.3369`, `mpjpe_mm_mean=44.3691`) and explicit AMASS/Mixamo/Blender blocker notes.
+- Examples: add a real-CMU Blender preview scaffold under `proofs/artifacts/2026-04-08_cmu_public_corpus_benchmark/blender_preview_ready/`.
 - Examples: add runnable BVH, CMU, and Blender-preview demos under `examples/`.
 - Tests: add clean-install, example-smoke, CMU real-BVH, manifest-diagnostic, and zip-safety coverage.
 - Benchmarks: add `BENCHMARKS.md` methodology surface and published synthetic benchmark rows.
