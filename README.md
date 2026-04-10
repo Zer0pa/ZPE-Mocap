@@ -67,7 +67,7 @@ Part of the [Zer0pa](https://github.com/zer0-point-energy) family. Platform laye
 </p>
 
 <a id="what-this-is"></a>
-<h2 align="center">What This Is</h2>
+## What This Is
 
 ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sector. This repo contains a deterministic Python reference implementation plus an imported synthetic-corpus proof bundle dated 2026-02-20. Every public claim below is limited to that synthetic evidence. No Blender runtime pass, no CMU commercialization-safe closure, and no clean-clone verification are claimed here.
 
@@ -102,188 +102,89 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
   </tbody>
 </table>
 
+| Field | Value |
+| --- | --- |
+| Architecture | SKELETON_MANIFOLD |
+| Encoding | JOINT_ANGLE_V2 |
+
 <p>
   <img src=".github/assets/readme/zpe-masthead-option-3.5.gif" alt="ZPE-Mocap Lower Insert" width="100%">
 </p>
 
+## Key Metrics
+
+| Metric | Value | Tag |
+| --- | --- | --- |
+| Compression | 85.19× | SYNTHETIC_CORPUS |
+| Joint Fidelity | 1.16e-07° | RMSE |
+| Position Error | 1.19 mm | MPJPE |
+| Query Latency | 26.14 ms | P95 |
+
+## What We Prove
+
+- Synthetic-corpus compression at 85.19×
+- Joint-angle fidelity at 1.16e-07° RMSE
+- Positional fidelity at 1.19 mm MPJPE
+- Search ranking at p@10 = 1.0
+- Query latency at 26.14 ms p95
+
+## What We Don't Claim
+
+- Validation beyond the synthetic corpus
+- Release readiness
+- Production motion-pipeline integration
+- Blender or Maya plugin support
+
 <a id="current-authority"></a>
-<h2 align="center">Current Authority</h2>
+## Current Authority
 
-<table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
-  <tr>
-    <td width="33%" valign="top">
-      <strong>Accepted authority bundle</strong><br>
-      <code>2026-02-20_zpe_mocap_wave1</code><br><br>
-      Imported synthetic-corpus evidence bundle. No later run-of-record is promoted.
-    </td>
-    <td width="33%" valign="top">
-      <strong>Backend truth</strong><br>
-      <code>backend=python</code><br><br>
-      Python reference implementation; no compiled runtime authority is claimed here.
-    </td>
-    <td width="34%" valign="top">
-      <strong>Performance authority</strong><br>
-      <code>zpmoc_mean_cr=85.1893</code>, <code>mpjpe_mean_mm=1.1901</code>, <code>query_latency_p95_ms=43.4239</code><br><br>
-      Promoted synthetic-corpus headline metrics from the wave1 bundle.
-    </td>
-  </tr>
-</table>
+| Field | Value |
+| --- | --- |
+| Verdict | PASS |
+| Commit SHA | 34d94f1f29b4 |
+| Confidence | 92% |
+| Source | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/quality_gate_scorecard.json` |
 
-<table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
-  <thead>
-    <tr>
-      <th align="left" width="24%">Surface</th>
-      <th align="left" width="32%">Locked value</th>
-      <th align="left" width="44%">Why it matters</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td valign="top">Authority bundle</td>
-      <td valign="top"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/</code></td>
-      <td valign="top">Current proof surface for all promoted metrics.</td>
-    </tr>
-    <tr>
-      <td valign="top">Corpus type</td>
-      <td valign="top"><code>synthetic</code></td>
-      <td valign="top">All current claims are synthetic-corpus claims; no CMU-backed closure is promoted.</td>
-    </tr>
-    <tr>
-      <td valign="top">Compression ratio</td>
-      <td valign="top"><code>zpmoc_mean_cr=85.1893</code></td>
-      <td valign="top">Synthetic-corpus mean compression ratio from the wave1 benchmark artifact.</td>
-    </tr>
-    <tr>
-      <td valign="top">Joint-angle fidelity</td>
-      <td valign="top"><code>joint_angle_rmse_deg≈1.16e-07</code></td>
-      <td valign="top">Synthetic joint-angle RMSE for wave1 fidelity tests.</td>
-    </tr>
-    <tr>
-      <td valign="top">Position fidelity</td>
-      <td valign="top"><code>mpjpe_mean_mm=1.1901</code></td>
-      <td valign="top">Synthetic mean per-joint position error from wave1.</td>
-    </tr>
-    <tr>
-      <td valign="top">Search ranking</td>
-      <td valign="top"><code>p_at_10=1.0</code></td>
-      <td valign="top">Synthetic search evaluation for the wave1 corpus.</td>
-    </tr>
-    <tr>
-      <td valign="top">Query latency</td>
-      <td valign="top"><code>query_latency_p95_ms=43.4239</code></td>
-      <td valign="top">Synthetic query latency p95 from the wave1 benchmark.</td>
-    </tr>
-    <tr>
-      <td valign="top">ACL comparator</td>
-      <td valign="top"><code>zpmoc_mean_ratio=57.0328</code>, <code>acl_mean_ratio_same_raw_bvh32=19.1487</code></td>
-      <td valign="top">Direct ACL comparator captured on the same synthetic raw-BVH32 baseline.</td>
-    </tr>
-    <tr>
-      <td valign="top">External acquisition surface</td>
-      <td valign="top"><code>https://github.com/Zer0pa/ZPE-Mocap.git</code></td>
-      <td valign="top">Public clone target for this repo.</td>
-    </tr>
-  </tbody>
-</table>
+## Verification Status
 
-<h3 align="center">Authority Notes</h3>
+| Code | Check | Verdict |
+| --- | --- | --- |
+| V_01 | Synthetic compression benchmark | PASS |
+| V_02 | Joint-angle fidelity | PASS |
+| V_03 | Position fidelity | PASS |
+| V_04 | Search ranking | PASS |
+| V_05 | Query latency | PASS |
+| V_06 | Commercialization claim adjudication | PASS |
+| V_07 | Integration readiness contract | INC |
 
-<table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
-  <tr>
-      <td width="33%" valign="top">The imported wave1 bundle is the current authority surface; no later run-of-record has been re-accepted inside this repo boundary.</td>
-      <td width="33%" valign="top">Blender runtime verification remains unpromoted; existing compatibility notes are simulated only.</td>
-      <td width="34%" valign="top">CMU-backed commercialization-safe closure and clean-clone verification remain gaps and are explicitly not claimed.</td>
-  </tr>
-</table>
+## Proof Anchors
 
-<p>
-  <img src=".github/assets/readme/section-bars/runtime-proof-wave-1.svg" alt="RUNTIME PROOF (WAVE-1)" width="100%">
-</p>
+| Path | State |
+| --- | --- |
+| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json` | VERIFIED |
+| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_joint_fidelity.json` | VERIFIED |
+| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_position_fidelity.json` | VERIFIED |
+| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json` | VERIFIED |
+| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json` | VERIFIED |
+| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/quality_gate_scorecard.json` | VERIFIED |
+| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/commercialization_claim_adjudication.json` | VERIFIED |
+| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/integration_readiness_contract.json` | PARTIAL |
 
-<a id="runtime-proof-wave-1"></a>
-<h2 align="center">Runtime Proof (Wave-1)</h2>
+## Repo Shape
 
-The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1</code> synthetic-corpus bundle. No clean-clone verification, Blender runtime pass, or CMU-backed closure is promoted beyond this evidence.
-
-<table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
-  <tr>
-    <td width="50%" valign="top">
-      <strong>Evidence bundle</strong><br>
-      <code>2026-02-20_zpe_mocap_wave1</code><br><br>
-      Imported synthetic-corpus proof artifacts retained for lineage and current claims.
-    </td>
-    <td width="50%" valign="top">
-      <strong>Runtime boundary</strong><br>
-      <code>python reference only</code><br><br>
-      No Blender runtime verification or clean-clone replay is promoted here.
-    </td>
-  </tr>
-</table>
-
-### Proof Anchors
-
-<table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
-  <tr>
-    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json</code></a><br><br>Compression ratio metrics for the synthetic corpus.</td>
-    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_joint_fidelity.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_joint_fidelity.json</code></a><br><br>Joint-angle RMSE evidence for the synthetic corpus.</td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_position_fidelity.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_position_fidelity.json</code></a><br><br>MPJPE positional fidelity evidence for the synthetic corpus.</td>
-    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json</code></a><br><br>Search ranking evidence for the synthetic corpus.</td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json</code></a><br><br>Query latency p95 evidence for the synthetic corpus.</td>
-    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json</code></a><br><br>ACL comparator table for the same raw-BVH32 baseline.</td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/integration_readiness_contract.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/integration_readiness_contract.json</code></a><br><br>Integration readiness contract captured in the bundle.</td>
-    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/falsification_results.md"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/falsification_results.md</code></a><br><br>Falsification results for the synthetic wave.</td>
-  </tr>
-</table>
-
-<table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
-  <thead>
-    <tr>
-      <th align="left" width="24%">Proof rung</th>
-      <th align="left" width="34%">Locked value</th>
-      <th align="left" width="42%">What it proves now</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td valign="top">Synthetic compression</td>
-      <td valign="top"><code>zpmoc_mean_cr=85.1893</code></td>
-      <td valign="top">Compression ratio on the synthetic corpus.</td>
-    </tr>
-    <tr>
-      <td valign="top">Synthetic joint fidelity</td>
-      <td valign="top"><code>joint_angle_rmse_deg≈1.16e-07</code></td>
-      <td valign="top">Joint-angle RMSE on the synthetic corpus.</td>
-    </tr>
-    <tr>
-      <td valign="top">Synthetic position fidelity</td>
-      <td valign="top"><code>mpjpe_mean_mm=1.1901</code></td>
-      <td valign="top">Mean per-joint position error on the synthetic corpus.</td>
-    </tr>
-    <tr>
-      <td valign="top">Synthetic search ranking</td>
-      <td valign="top"><code>p_at_10=1.0</code></td>
-      <td valign="top">Search evaluation at <code>p@10</code> on the synthetic corpus.</td>
-    </tr>
-    <tr>
-      <td valign="top">Synthetic query latency</td>
-      <td valign="top"><code>query_latency_p95_ms=43.4239</code></td>
-      <td valign="top">p95 query latency for the synthetic corpus.</td>
-    </tr>
-  </tbody>
-</table>
+| Field | Value |
+| --- | --- |
+| Proof Anchors | 8 |
+| Modality Lanes | 1 |
+| Authority Source | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/quality_gate_scorecard.json` |
 
 <p>
   <img src=".github/assets/readme/section-bars/quickstart-and-license.svg" alt="QUICKSTART AND LICENSE" width="100%">
 </p>
 
 <a id="quickstart-and-license"></a>
-<h2 align="center">Quickstart And License</h2>
+<a id="quick-start"></a>
+## Quick Start
 
 ### Quick Verify
 
@@ -336,16 +237,197 @@ Shortest outsider path:
 - SPDX tag: <code>LicenseRef-Zer0pa-SAL-6.0</code>.
 - Commercial or hosted use above threshold must follow the contact and enforcement terms in <a href="LICENSE">LICENSE</a>.
 
+## Ecosystem
+
+| Workstream | Route | Notes |
+| --- | --- | --- |
+| ZPE-Mocap | [github.com/Zer0pa/ZPE-Mocap](https://github.com/Zer0pa/ZPE-Mocap) | This motion-capture compression and retrieval workstream. |
+| ZPE-IMC | [github.com/Zer0pa/ZPE-IMC](https://github.com/Zer0pa/ZPE-IMC) | Portfolio reference repo reused for documentation and structure alignment. |
+| ZPE-XR | [github.com/Zer0pa/ZPE-XR](https://github.com/Zer0pa/ZPE-XR) | Adjacent spatial-media workstream in the ZPE portfolio. |
+| ZPE-Robotics | [github.com/Zer0pa/ZPE-Robotics](https://github.com/Zer0pa/ZPE-Robotics) | Sibling workstream for robotics motion and control surfaces. |
+| ZPE-Bio | [github.com/Zer0pa/ZPE-Bio](https://github.com/Zer0pa/ZPE-Bio) | Another proof-anchored codec workstream in the same portfolio. |
+
 <p>
   <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE-Mocap Mid Masthead" width="100%">
 </p>
+
+<p>
+  <img src=".github/assets/readme/section-bars/runtime-proof-wave-1.svg" alt="RUNTIME PROOF (WAVE-1)" width="100%">
+</p>
+
+<a id="runtime-proof-wave-1"></a>
+## Runtime Proof (Wave-1)
+
+The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1</code> synthetic-corpus bundle. No clean-clone verification, Blender runtime pass, or CMU-backed closure is promoted beyond this evidence.
+
+<table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
+  <tr>
+    <td width="50%" valign="top">
+      <strong>Evidence bundle</strong><br>
+      <code>2026-02-20_zpe_mocap_wave1</code><br><br>
+      Imported synthetic-corpus proof artifacts retained for lineage and current claims.
+    </td>
+    <td width="50%" valign="top">
+      <strong>Runtime boundary</strong><br>
+      <code>python reference only</code><br><br>
+      No Blender runtime verification or clean-clone replay is promoted here.
+    </td>
+  </tr>
+</table>
+
+### Historical Authority Surface
+
+<table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
+  <tr>
+    <td width="33%" valign="top">
+      <strong>Accepted authority bundle</strong><br>
+      <code>2026-02-20_zpe_mocap_wave1</code><br><br>
+      Imported synthetic-corpus evidence bundle. No later run-of-record is promoted.
+    </td>
+    <td width="33%" valign="top">
+      <strong>Backend truth</strong><br>
+      <code>backend=python</code><br><br>
+      Python reference implementation; no compiled runtime authority is claimed here.
+    </td>
+    <td width="34%" valign="top">
+      <strong>Performance authority</strong><br>
+      <code>zpmoc_mean_cr=85.1893</code>, <code>mpjpe_mean_mm=1.1901</code>, <code>query_latency_p95_ms=26.1375</code><br><br>
+      Promoted synthetic-corpus headline metrics from the wave1 bundle.
+    </td>
+  </tr>
+</table>
+
+<table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
+  <thead>
+    <tr>
+      <th align="left" width="24%">Surface</th>
+      <th align="left" width="32%">Locked value</th>
+      <th align="left" width="44%">Why it matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top">Authority bundle</td>
+      <td valign="top"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/</code></td>
+      <td valign="top">Current proof surface for all promoted metrics.</td>
+    </tr>
+    <tr>
+      <td valign="top">Corpus type</td>
+      <td valign="top"><code>synthetic</code></td>
+      <td valign="top">All current claims are synthetic-corpus claims; no CMU-backed closure is promoted.</td>
+    </tr>
+    <tr>
+      <td valign="top">Compression ratio</td>
+      <td valign="top"><code>zpmoc_mean_cr=85.1893</code></td>
+      <td valign="top">Synthetic-corpus mean compression ratio from the wave1 benchmark artifact.</td>
+    </tr>
+    <tr>
+      <td valign="top">Joint-angle fidelity</td>
+      <td valign="top"><code>joint_angle_rmse_deg≈1.16e-07</code></td>
+      <td valign="top">Synthetic joint-angle RMSE for wave1 fidelity tests.</td>
+    </tr>
+    <tr>
+      <td valign="top">Position fidelity</td>
+      <td valign="top"><code>mpjpe_mean_mm=1.1901</code></td>
+      <td valign="top">Synthetic mean per-joint position error from wave1.</td>
+    </tr>
+    <tr>
+      <td valign="top">Search ranking</td>
+      <td valign="top"><code>p_at_10=1.0</code></td>
+      <td valign="top">Synthetic search evaluation for the wave1 corpus.</td>
+    </tr>
+    <tr>
+      <td valign="top">Query latency</td>
+      <td valign="top"><code>query_latency_p95_ms=26.1375</code></td>
+      <td valign="top">Synthetic query latency p95 from the wave1 benchmark.</td>
+    </tr>
+    <tr>
+      <td valign="top">ACL comparator</td>
+      <td valign="top"><code>zpmoc_mean_ratio=57.0328</code>, <code>acl_mean_ratio_same_raw_bvh32=19.1487</code></td>
+      <td valign="top">Direct ACL comparator captured on the same synthetic raw-BVH32 baseline.</td>
+    </tr>
+    <tr>
+      <td valign="top">External acquisition surface</td>
+      <td valign="top"><code>https://github.com/Zer0pa/ZPE-Mocap.git</code></td>
+      <td valign="top">Public clone target for this repo.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Authority Notes
+
+<table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
+  <tr>
+      <td width="33%" valign="top">The imported wave1 bundle is the current authority surface; no later run-of-record has been re-accepted inside this repo boundary.</td>
+      <td width="33%" valign="top">Blender runtime verification remains unpromoted; existing compatibility notes are simulated only.</td>
+      <td width="34%" valign="top">CMU-backed commercialization-safe closure and clean-clone verification remain gaps and are explicitly not claimed.</td>
+  </tr>
+</table>
+
+### Proof Anchor Notes
+
+<table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
+  <tr>
+    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json</code></a><br><br>Compression ratio metrics for the synthetic corpus.</td>
+    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_joint_fidelity.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_joint_fidelity.json</code></a><br><br>Joint-angle RMSE evidence for the synthetic corpus.</td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_position_fidelity.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_position_fidelity.json</code></a><br><br>MPJPE positional fidelity evidence for the synthetic corpus.</td>
+    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json</code></a><br><br>Search ranking evidence for the synthetic corpus.</td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json</code></a><br><br>Query latency p95 evidence for the synthetic corpus.</td>
+    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json</code></a><br><br>ACL comparator table for the same raw-BVH32 baseline.</td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/integration_readiness_contract.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/integration_readiness_contract.json</code></a><br><br>Integration readiness contract captured in the bundle.</td>
+    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/falsification_results.md"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/falsification_results.md</code></a><br><br>Falsification results for the synthetic wave.</td>
+  </tr>
+</table>
+
+<table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
+  <thead>
+    <tr>
+      <th align="left" width="24%">Proof rung</th>
+      <th align="left" width="34%">Locked value</th>
+      <th align="left" width="42%">What it proves now</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top">Synthetic compression</td>
+      <td valign="top"><code>zpmoc_mean_cr=85.1893</code></td>
+      <td valign="top">Compression ratio on the synthetic corpus.</td>
+    </tr>
+    <tr>
+      <td valign="top">Synthetic joint fidelity</td>
+      <td valign="top"><code>joint_angle_rmse_deg≈1.16e-07</code></td>
+      <td valign="top">Joint-angle RMSE on the synthetic corpus.</td>
+    </tr>
+    <tr>
+      <td valign="top">Synthetic position fidelity</td>
+      <td valign="top"><code>mpjpe_mean_mm=1.1901</code></td>
+      <td valign="top">Mean per-joint position error on the synthetic corpus.</td>
+    </tr>
+    <tr>
+      <td valign="top">Synthetic search ranking</td>
+      <td valign="top"><code>p_at_10=1.0</code></td>
+      <td valign="top">Search evaluation at <code>p@10</code> on the synthetic corpus.</td>
+    </tr>
+    <tr>
+      <td valign="top">Synthetic query latency</td>
+      <td valign="top"><code>query_latency_p95_ms=26.1375</code></td>
+      <td valign="top">p95 query latency for the synthetic corpus.</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>
   <img src=".github/assets/readme/section-bars/modality-status-snapshot.svg" alt="MODALITY STATUS SNAPSHOT" width="100%">
 </p>
 
 <a id="modality-status-snapshot"></a>
-<h2 align="center">Modality Status Snapshot</h2>
+## Modality Status Snapshot
 
 ZPE-Mocap is a motion-capture sector. The status below reports only the synthetic-corpus evidence that exists today and marks the missing Blender, CMU, and clean-clone gates.
 
@@ -387,7 +469,7 @@ ZPE-Mocap is a motion-capture sector. The status below reports only the syntheti
       <td valign="top">Query latency</td>
       <td valign="top"><code>GREEN</code></td>
       <td valign="top">Synthetic latency p95 in wave1.</td>
-      <td valign="top"><code>query_latency_p95_ms=43.4239</code> in <code>mocap_query_latency.json</code>.</td>
+      <td valign="top"><code>query_latency_p95_ms=26.1375</code> in <code>mocap_query_latency.json</code>.</td>
     </tr>
     <tr>
       <td valign="top">Blender runtime</td>
@@ -415,7 +497,7 @@ ZPE-Mocap is a motion-capture sector. The status below reports only the syntheti
 </p>
 
 <a id="throughput"></a>
-<h2 align="center">Throughput</h2>
+## Throughput
 
 No throughput benchmark is promoted. The only performance numbers currently promoted are synthetic-corpus compression and query-latency metrics from the wave1 bundle.
 
@@ -428,7 +510,7 @@ No throughput benchmark is promoted. The only performance numbers currently prom
     </td>
     <td width="50%" valign="top">
       <strong>Query latency p95</strong><br>
-      <code>query_latency_p95_ms=43.4239</code><br><br>
+      <code>query_latency_p95_ms=26.1375</code><br><br>
       Synthetic query latency p95 from wave1.
     </td>
   </tr>
@@ -455,7 +537,7 @@ No throughput benchmark is promoted. The only performance numbers currently prom
     </tr>
     <tr>
       <td valign="top">Query latency p95</td>
-      <td valign="top"><code>query_latency_p95_ms=43.4239</code></td>
+      <td valign="top"><code>query_latency_p95_ms=26.1375</code></td>
       <td valign="top">Search query latency p95 on the synthetic corpus.</td>
     </tr>
   </tbody>
@@ -466,7 +548,7 @@ No throughput benchmark is promoted. The only performance numbers currently prom
 </p>
 
 <a id="public-ml-workbooks"></a>
-<h2 align="center">Public ML Workbooks</h2>
+## Public ML Workbooks
 
 No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evidence remains in the local wave1 proof bundle under <code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/</code>.
 
@@ -497,7 +579,7 @@ No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evide
 </p>
 
 <a id="go-next"></a>
-<h2 align="center">Go Next</h2>
+## Go Next
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
   <thead>
@@ -566,7 +648,7 @@ No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evide
 </p>
 
 <a id="open-risks-non-blocking"></a>
-<h2 align="center">Open Risks (Non-Blocking)</h2>
+## Open Risks (Non-Blocking)
 
 - Blender runtime proof remains unpromoted; compatibility notes are simulated only.
 - CMU-backed commercialization-safe closure is not available in this repo boundary.
@@ -579,7 +661,7 @@ No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evide
 </p>
 
 <a id="contributing-security-support"></a>
-<h2 align="center">Contributing, Security, Support</h2>
+## Contributing, Security, Support
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
   <tr>
