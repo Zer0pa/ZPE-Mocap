@@ -136,7 +136,7 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
 - Blender or Maya plugin support
 
 <a id="current-authority"></a>
-## Current Authority
+## Commercial Readiness
 
 | Field | Value |
 | --- | --- |
@@ -145,7 +145,7 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
 | Confidence | 92% |
 | Source | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/quality_gate_scorecard.json` |
 
-## Verification Status
+## Tests and Verification
 
 | Code | Check | Verdict |
 | --- | --- | --- |
