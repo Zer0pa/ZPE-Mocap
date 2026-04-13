@@ -40,7 +40,7 @@
 
 ZPE-Mocap applies the ZPE deterministic 8-primitive encoding architecture to motion-capture data — compression, search, and retrieval for spatial-temporal skeletal signals. All current evidence is bounded to the **synthetic corpus from the 2026-02-20 wave1 bundle**. Nothing here claims real-world validation.
 
-On that synthetic corpus: **85.19× compression ratio**, joint-angle fidelity at **RMSE ≈ 1.16e-07 degrees**, positional fidelity at **MPJPE 1.19 mm**, p@10 = 1.0 search ranking, and p95 query latency of 43.4 ms. Full evidence bundle: `proofs/artifacts/2026-02-20_zpe_mocap_wave1/`. Falsification results and integration readiness contract are included.
+On that synthetic corpus: **85.19× compression ratio**, joint-angle fidelity at **RMSE ≈ 1.16e-07 degrees**, positional fidelity at **MPJPE 1.19 mm**, p@10 = 1.0 search ranking, and p95 query latency of 26.1375 ms. Full evidence bundle: `proofs/artifacts/2026-02-20_zpe_mocap_wave1/`. Falsification results and integration readiness contract are included.
 
 Animation studios, game engines, and motion-data infrastructure teams evaluating deterministic mocap compression can benchmark against these synthetic numbers. The gap to commercial readiness is real-world corpus validation — no Blender runtime pass, no CMU commercialization-safe closure, no clean-clone verification exist.
 
@@ -113,12 +113,28 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
 
 ## Key Metrics
 
-| Metric | Value | Tag |
+| Metric | Value | Baseline |
 | --- | --- | --- |
-| Compression | 85.19× | SYNTHETIC_CORPUS |
-| Joint Fidelity | 1.16e-07° | RMSE |
-| Position Error | 1.19 mm | MPJPE |
-| Query Latency | 26.14 ms | P95 |
+| COMPRESSION | 85.189× | vs ACL ~19× (industry std) |
+| MPJPE | 1.190072 mm | position fidelity |
+| SEARCH | p@10 = 1.0 | 120 queries |
+| LATENCY | 26.1375 ms p95 | — |
+
+> Source: [`mocap_compression_benchmark.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json), [`mocap_position_fidelity.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_position_fidelity.json), [`mocap_search_eval.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json), [`mocap_query_latency.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json), [`acl_direct_comparator_table.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json)
+
+## Competitive Benchmarks
+
+Selected clips from the 10-clip direct comparator on the same BVH corpus. The mean row covers all 10 compared clips.
+
+| Clip | ZPE-Mocap | ACL | Win ratio |
+| --- | --- | --- | --- |
+| walk_0000 | 61.0× | 17.1× | 3.6× |
+| run_0000 | 60.9× | 14.7× | 4.1× |
+| jump_0000 | 52.6× | 12.3× | 4.3× |
+| fall_recover_0000 | 77.8× | 15.2× | 5.1× |
+| **Mean** | **57.0×** | **19.1×** | **3.0×** |
+
+> Source: [`acl_direct_comparator_table.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json)
 
 ## What We Prove
 
