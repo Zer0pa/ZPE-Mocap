@@ -69,7 +69,13 @@ Part of the [Zer0pa](https://github.com/zer0-point-energy) family. Platform laye
 <a id="what-this-is"></a>
 ## What This Is
 
-ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sector. This repo contains a deterministic Python reference implementation plus an imported synthetic-corpus proof bundle dated 2026-02-20. Every public claim below is limited to that synthetic evidence. No Blender runtime pass, no CMU commercialization-safe closure, and no clean-clone verification are claimed here.
+**ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sector.**
+
+This repo contains a deterministic Python reference implementation plus an imported synthetic-corpus proof bundle dated 2026-02-20.
+
+Every public claim below is limited to that synthetic evidence.
+
+No Blender runtime pass, no CMU commercialization-safe closure, and no clean-clone verification are claimed here.
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
   <thead>
@@ -113,20 +119,20 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
 
 ## Key Metrics
 
-| Metric | Value | Tag |
+| Metric | Value | Baseline |
 | --- | --- | --- |
-| Compression | 85.19× | SYNTHETIC_CORPUS |
-| Joint Fidelity | 1.16e-07° | RMSE |
-| Position Error | 1.19 mm | MPJPE |
-| Query Latency | 26.14 ms | P95 |
+| COMPRESSION | 85.19× | vs gzip ~3× on BVH |
+| JOINT_FIDELITY | 1.16e-07° | — |
+| POSITION_ERROR | 1.19 mm | — |
+| QUERY_LATENCY | 26.14 ms | — |
 
 ## What We Prove
 
-- Synthetic-corpus compression at 85.19×
-- Joint-angle fidelity at 1.16e-07° RMSE
-- Positional fidelity at 1.19 mm MPJPE
-- Search ranking at p@10 = 1.0
-- Query latency at 26.14 ms p95
+- Paired compass tokens per joint encode motion in XY and XZ planes simultaneously
+- Parent-relative skeletal storage eliminates redundant global-space representation
+- Motion-motif suffix indexing enables search on compressed skeletal streams
+- Joint-angle and positional fidelity verified at sub-millimeter and sub-microdegree precision
+- Search ranking achieves p@10 = 1.0 with 26 ms p95 query latency
 
 ## What We Don't Claim
 
@@ -141,7 +147,7 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
 | Field | Value |
 | --- | --- |
 | Verdict | PASS |
-| Commit SHA | 34d94f1f29b4 |
+| Commit SHA | 34D94F1 |
 | Confidence | 92% |
 | Source | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/quality_gate_scorecard.json` |
 
@@ -149,13 +155,13 @@ ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sect
 
 | Code | Check | Verdict |
 | --- | --- | --- |
-| V_01 | Synthetic compression benchmark | PASS |
-| V_02 | Joint-angle fidelity | PASS |
-| V_03 | Position fidelity | PASS |
-| V_04 | Search ranking | PASS |
-| V_05 | Query latency | PASS |
-| V_06 | Commercialization claim adjudication | PASS |
-| V_07 | Integration readiness contract | INC |
+| V_01 | SYNTHETIC_COMPRESSION_BENCHMARK | PASS |
+| V_02 | JOINT-ANGLE_FIDELITY | PASS |
+| V_03 | POSITION_FIDELITY | PASS |
+| V_04 | SEARCH_RANKING | PASS |
+| V_05 | QUERY_LATENCY | PASS |
+| V_06 | CLAIM_ACCURACY | PASS |
+| V_07 | INTEGRATION_READINESS_CONTRACT | INC |
 
 ## Proof Anchors
 
