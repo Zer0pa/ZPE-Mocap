@@ -138,6 +138,15 @@ Selected clips from the 10-clip direct comparator on the same BVH corpus. The me
 
 > Source: [`acl_direct_comparator_table.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json)
 
+**Synthetic corpus — general-purpose compressor comparison:**
+
+| Tool | Synthetic Corpus CR | Notes |
+|------|---------------------|-------|
+| **ZPE-Mocap** | **85.19×** | Headline synthetic benchmark |
+| gzip | 69.70× | ~22% behind ZPE on same synthetic corpus |
+
+ZPE-Mocap exceeds gzip by ~22% on the synthetic corpus. This margin is considerably narrower than the ACL comparison above. Real-world corpus validation (CMU, AMASS) is pending.
+
 ## What We Prove
 
 > Auditable guarantees backed by committed proof artifacts. Start at `AUDITOR_PLAYBOOK.md`.
