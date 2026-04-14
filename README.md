@@ -38,15 +38,17 @@
 
 ## What This Is
 
-ZPE-Mocap applies the ZPE deterministic 8-primitive encoding architecture to motion-capture data — compression, search, and retrieval for spatial-temporal skeletal signals. All current evidence is bounded to the **synthetic corpus from the 2026-02-20 wave1 bundle**. Nothing here claims real-world validation.
+ZPE-Mocap applies the ZPE deterministic 8-primitive encoding architecture to motion-capture data — compression, search, and retrieval for spatial-temporal skeletal signals.
 
-On that synthetic corpus: **85.19× compression ratio**, joint-angle fidelity at **RMSE ≈ 1.16e-07 degrees**, positional fidelity at **MPJPE 1.19 mm**, p@10 = 1.0 search ranking, and p95 query latency of 26.1375 ms. Full evidence bundle: `proofs/artifacts/2026-02-20_zpe_mocap_wave1/`. Falsification results and integration readiness contract are included.
+**Real-data results (CMU fixture, 10 BVH clips):** 18.77× compression, 32.45 mm MPJPE, 82.51° angle RMSE. Evidence: `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/`.
 
-Animation studios, game engines, and motion-data infrastructure teams evaluating deterministic mocap compression can benchmark against these synthetic numbers. The gap to commercial readiness is real-world corpus validation — no Blender runtime pass, no CMU commercialization-safe closure, no clean-clone verification exist.
+**Synthetic-corpus results (identity encoding):** 85.19× compression, 1.19 mm MPJPE, 1.16e-07° angle RMSE, p@10 = 1.0 search, 26.14 ms p95 latency. Evidence: `proofs/artifacts/2026-02-20_zpe_mocap_wave1/`. The synthetic corpus is pre-tokenized from the codec's own alphabet — the encoder passes tokens through unchanged, so these numbers represent a theoretical ceiling, not operational performance.
 
-**Readiness: staged, synthetic evidence only.** Public repository. No real-world corpus validation.
+Animation studios, game engines, and motion-data infrastructure teams evaluating deterministic mocap compression should benchmark against the **CMU fixture numbers** (18.77×, 32.45 mm). The gap to commercial readiness is real-world fidelity improvement and broader corpus validation.
 
-**Not claimed:** CMU or commercial corpus validation, Blender runtime compatibility, clean-clone verification, commercialization-safe closure.
+**Readiness: staged.** Real-data compression demonstrated (18.77×) but fidelity is not production-grade (32.45 mm MPJPE). No Blender runtime pass, no CMU commercialization-safe closure, no clean-clone verification exist.
+
+**Not claimed:** Production-grade fidelity on real data, real-data parity with synthetic benchmarks, fair competitive benchmarks (ACL comparison is circular), Blender runtime compatibility, clean-clone verification, commercialization-safe closure.
 
 | Proof anchor | Location |
 |---|---|
@@ -69,7 +71,7 @@ Part of the [Zer0pa](https://github.com/zer0-point-energy) family. Platform laye
 <a id="what-this-is"></a>
 ## What This Is
 
-85× mocap compression at 1.19 mm joint error. Compress, search, and retrieve skeletal motion data without decompression. CMU fixture corpus: 18.77× mean across 10 real BVH clips.
+Deterministic mocap compression and retrieval. CMU fixture corpus: 18.77× compression, 32.45 mm MPJPE across 10 real BVH clips. Synthetic corpus (identity encoding): 85.19× compression, 1.19 mm MPJPE. Compress, search, and retrieve skeletal motion data without decompression.
 
 ZPE-Mocap targets animation pipeline teams and mocap-data infrastructure where studios archive terabytes of BVH/FBX data that can only be queried after full decompression. This codec indexes motion during encoding — downstream search never touches the raw stream.
 
@@ -91,11 +93,11 @@ ZPE-Mocap targets animation pipeline teams and mocap-data infrastructure where s
     </tr>
     <tr>
       <td valign="top">What is actually proved?</td>
-      <td valign="top">Synthetic-corpus compression ratio, joint-angle fidelity, positional fidelity, search ranking, and query-latency metrics in the wave1 bundle.</td>
+      <td valign="top">CMU fixture-corpus compression (18.77×, 32.45 mm MPJPE, 82.51° RMSE) and synthetic-corpus metrics (85.19× compression, 1.19 mm MPJPE — identity encoding). The synthetic numbers are a theoretical ceiling due to pre-tokenized data bypassing quantization.</td>
     </tr>
     <tr>
       <td valign="top">What is not being claimed?</td>
-      <td valign="top">No CMU-backed commercialization-safe closure, no Blender runtime pass, and no clean-clone verification. The bundle is historical and may retain machine-absolute paths.</td>
+      <td valign="top">No real-data parity with synthetic benchmarks (identity encoding inflates synthetic numbers). No fair competitive benchmark (ACL comparison is circular — fed synthetic data from ZPE tokens). No CMU-backed commercialization-safe closure, no Blender runtime pass, and no clean-clone verification. The bundle is historical and may retain machine-absolute paths.</td>
     </tr>
     <tr>
       <td valign="top">Where should an outsider acquire and verify?</td>
@@ -115,18 +117,35 @@ ZPE-Mocap targets animation pipeline teams and mocap-data infrastructure where s
 
 ## Key Metrics
 
-| Metric | Value | Baseline |
-| --- | --- | --- |
-| COMPRESSION | 85.19× | vs ACL ~19× |
-| MPJPE | 1.19 | mm |
-| SEARCH | p@10 1.0 | — |
-| LATENCY | 26.14 | ms |
+**CMU fixture corpus (10 real BVH clips):**
 
-> Source: [`mocap_compression_benchmark.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json), [`mocap_position_fidelity.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_position_fidelity.json), [`mocap_search_eval.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json), [`mocap_query_latency.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json), [`acl_direct_comparator_table.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json)
+| Metric | Value | Notes |
+| --- | --- | --- |
+| COMPRESSION | 18.77× | vs raw BVH float32 (range 15.2×–23.0×) |
+| MPJPE | 32.45 mm | mean per-joint position error |
+| ANGLE RMSE | 82.51° | mean joint-angle RMSE |
+
+> Source: [`results.json`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json), [`summary.md`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md)
+
+**Synthetic corpus (pre-tokenized from codec alphabet):**
+
+| Metric | Value | Notes |
+| --- | --- | --- |
+| COMPRESSION | 85.19× | identity encoding — synthetic tokens pass through encoder unchanged |
+| MPJPE | 1.19 mm | synthetic corpus only |
+| ANGLE RMSE | 1.16e-07° | synthetic corpus only |
+| SEARCH | p@10 1.0 | — |
+| LATENCY | 26.14 ms | p95 query latency |
+
+> Source: [`mocap_compression_benchmark.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json), [`mocap_position_fidelity.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_position_fidelity.json), [`mocap_search_eval.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json), [`mocap_query_latency.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json)
+
+> **Why the gap?** The synthetic corpus is pre-tokenized from the codec's own 8-direction alphabet (`synthetic.py` populates `xy_tokens`, `xz_tokens`, `magnitudes_mm` directly). When these fields are present, the encoder short-circuits quantization (`codec.py:189-195`) and passes tokens through unchanged — an identity encoding. Real BVH data must be quantized from continuous joint positions, which introduces quantization error. The synthetic numbers represent a theoretical ceiling, not operational fidelity.
 
 ## Competitive Benchmarks
 
-Selected clips from the 10-clip direct comparator on the same BVH corpus. The mean row covers all 10 compared clips.
+> **Circular methodology disclosure:** The ACL comparison below was run on the synthetic corpus. The synthetic BVH was generated FROM ZPE tokens (the codec's own 8-direction alphabet), not from independent real BVH data. Both ZPE-Mocap and ACL were fed the same synthetic clips, but the data structurally favours ZPE-Mocap because it was generated from the ZPE token vocabulary. This comparison does not reflect real-world competitive performance. A fair comparison would require both codecs to compress the same independent BVH corpus (e.g., CMU).
+
+Selected clips from the 10-clip direct comparator on the **synthetic** BVH corpus. The mean row covers all 10 compared clips.
 
 | Clip | ZPE-Mocap | ACL | Win ratio |
 | --- | --- | --- | --- |
@@ -142,24 +161,36 @@ Selected clips from the 10-clip direct comparator on the same BVH corpus. The me
 
 | Tool | Synthetic Corpus CR | Notes |
 |------|---------------------|-------|
-| **ZPE-Mocap** | **85.19×** | Headline synthetic benchmark |
+| **ZPE-Mocap** | **85.19×** | Synthetic benchmark (identity encoding) |
 | gzip | 69.70× | ~22% behind ZPE on same synthetic corpus |
 
 ZPE-Mocap exceeds gzip by ~22% on the synthetic corpus. This margin is considerably narrower than the ACL comparison above. Real-world corpus validation (CMU, AMASS) is pending.
+
+**CMU fixture corpus (real BVH) — compression only:**
+
+| Corpus | Mean CR | Range | Source |
+|--------|---------|-------|--------|
+| CMU fixture (10 clips) | 18.77× | 15.2×–23.0× | [`2026-04-14 benchmark`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json) |
+
+No ACL comparison has been run on the CMU fixture corpus.
 
 ## What We Prove
 
 > Auditable guarantees backed by committed proof artifacts. Start at `AUDITOR_PLAYBOOK.md`.
 
-- Synthetic-corpus compression at 85.19×
-- Joint-angle fidelity at 1.16e-07° RMSE
-- Positional fidelity at 1.19 mm MPJPE
-- Search ranking at p@10 = 1.0
-- Query latency at 26.14 ms p95
+- Synthetic-corpus compression at 85.19× (identity encoding — tokens pass through unchanged)
+- Synthetic joint-angle fidelity at 1.16e-07° RMSE (identity encoding)
+- Synthetic positional fidelity at 1.19 mm MPJPE (identity encoding)
+- Synthetic search ranking at p@10 = 1.0
+- Synthetic query latency at 26.14 ms p95
+- CMU fixture-corpus compression at 18.77× mean across 10 real BVH clips
+- CMU fixture-corpus positional fidelity at 32.45 mm MPJPE
+- CMU fixture-corpus joint-angle fidelity at 82.51° RMSE
 
 ## What We Don't Claim
 
-- Validation beyond the synthetic corpus
+- Real-data parity with synthetic benchmarks — the synthetic corpus is pre-tokenized from the codec's own 8-direction alphabet, producing an identity encoding. Real BVH data produces substantially different fidelity (32.45 mm vs 1.19 mm MPJPE; 82.51° vs 1.16e-07° angle RMSE; 18.77× vs 85.19× compression).
+- Fair competitive benchmarks — the ACL comparison used synthetic data generated from ZPE tokens, not independent BVH. This is circular methodology.
 - Release readiness
 - Production motion-pipeline integration
 - Blender or Maya plugin support
@@ -169,12 +200,12 @@ ZPE-Mocap exceeds gzip by ~22% on the synthetic corpus. This margin is considera
 
 | Field | Value |
 | --- | --- |
-| Verdict | PASS |
+| Verdict | CONDITIONAL — synthetic only |
 | Commit SHA | 34d94f1f29b4 |
-| Confidence | 92% |
-| Source | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/quality_gate_scorecard.json` |
+| Confidence | Synthetic PASS; real-data fidelity FAIL (32.45 mm MPJPE, 82.51° angle RMSE) |
+| Source | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/quality_gate_scorecard.json`, `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md` |
 
-> **Evaluators:** Synthetic-corpus wave-1 PASS. `pip install -e ./code` to evaluate. Contact hello@zer0pa.com for real-corpus evaluation access.
+> **Evaluators:** Synthetic-corpus wave-1 PASS (identity encoding). CMU fixture corpus shows 18.77× compression but 32.45 mm MPJPE and 82.51° angle RMSE — not production-grade fidelity. Real-corpus validation is the remaining gate. `pip install -e ./code` to evaluate. Contact hello@zer0pa.com for real-corpus evaluation access.
 
 ## Tests and Verification
 
@@ -185,7 +216,7 @@ ZPE-Mocap exceeds gzip by ~22% on the synthetic corpus. This margin is considera
 | V_03 | Position fidelity | PASS |
 | V_04 | Search ranking | PASS |
 | V_05 | Query latency | PASS |
-| V_06 | Commercialization claim adjudication | PASS |
+| V_06 | Commercialization claim adjudication | CONDITIONAL — synthetic PASS, real-data fidelity gap open |
 | V_07 | Integration readiness contract | INC |
 
 ## Proof Anchors
@@ -200,12 +231,14 @@ ZPE-Mocap exceeds gzip by ~22% on the synthetic corpus. This margin is considera
 | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/quality_gate_scorecard.json` | VERIFIED |
 | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/commercialization_claim_adjudication.json` | VERIFIED |
 | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/integration_readiness_contract.json` | PARTIAL |
+| `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json` | VERIFIED |
+| `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md` | VERIFIED |
 
 ## Repo Shape
 
 | Field | Value |
 | --- | --- |
-| Proof Anchors | 8 |
+| Proof Anchors | 10 |
 | Modality Lanes | 1 |
 | Authority Source | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/quality_gate_scorecard.json` |
 
@@ -333,8 +366,9 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
     </td>
     <td width="34%" valign="top">
       <strong>Performance authority</strong><br>
-      <code>zpmoc_mean_cr=85.1893</code>, <code>mpjpe_mean_mm=1.1901</code>, <code>query_latency_p95_ms=26.1375</code><br><br>
-      Promoted synthetic-corpus headline metrics from the wave1 bundle.
+      <strong>CMU fixture (real):</strong> <code>mean_cr=18.77</code>, <code>mpjpe_mean_mm=32.45</code>, <code>angle_rmse_deg=82.51</code><br>
+      <strong>Synthetic (identity):</strong> <code>mean_cr=85.19</code>, <code>mpjpe_mean_mm=1.19</code>, <code>query_latency_p95_ms=26.14</code><br><br>
+      Synthetic metrics are a theoretical ceiling (identity encoding). CMU fixture metrics are the operational benchmark.
     </td>
   </tr>
 </table>
@@ -386,7 +420,7 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
     <tr>
       <td valign="top">ACL comparator</td>
       <td valign="top"><code>zpmoc_mean_ratio=57.0328</code>, <code>acl_mean_ratio_same_raw_bvh32=19.1487</code></td>
-      <td valign="top">Direct ACL comparator captured on the same synthetic raw-BVH32 baseline.</td>
+      <td valign="top"><strong>Circular methodology:</strong> ACL comparator captured on synthetic BVH generated from ZPE tokens, not independent real data. This structurally favours ZPE-Mocap and does not reflect real-world competitive performance.</td>
     </tr>
     <tr>
       <td valign="top">External acquisition surface</td>
@@ -425,6 +459,10 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
     <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/integration_readiness_contract.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/integration_readiness_contract.json</code></a><br><br>Integration readiness contract captured in the bundle.</td>
     <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/falsification_results.md"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/falsification_results.md</code></a><br><br>Falsification results for the synthetic wave.</td>
   </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json"><code>proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json</code></a><br><br>CMU fixture corpus benchmark: 18.77× compression, 32.45 mm MPJPE, 82.51° angle RMSE across 10 real BVH clips.</td>
+    <td width="50%" valign="top"><a href="proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md"><code>proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md</code></a><br><br>Human-readable summary of CMU fixture corpus benchmark results and limitations.</td>
+  </tr>
 </table>
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
@@ -437,19 +475,34 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
   </thead>
   <tbody>
     <tr>
+      <td valign="top">CMU fixture compression</td>
+      <td valign="top"><code>mean_cr=18.77</code></td>
+      <td valign="top">Compression ratio on 10 real CMU BVH clips. Operational benchmark.</td>
+    </tr>
+    <tr>
+      <td valign="top">CMU fixture position fidelity</td>
+      <td valign="top"><code>mpjpe_mean_mm=32.45</code></td>
+      <td valign="top">Mean per-joint position error on real CMU data. Not production-grade.</td>
+    </tr>
+    <tr>
+      <td valign="top">CMU fixture angle fidelity</td>
+      <td valign="top"><code>angle_rmse_deg=82.51</code></td>
+      <td valign="top">Joint-angle RMSE on real CMU data. Not production-grade.</td>
+    </tr>
+    <tr>
       <td valign="top">Synthetic compression</td>
       <td valign="top"><code>zpmoc_mean_cr=85.1893</code></td>
-      <td valign="top">Compression ratio on the synthetic corpus.</td>
+      <td valign="top">Compression ratio on the synthetic corpus (identity encoding — theoretical ceiling).</td>
     </tr>
     <tr>
       <td valign="top">Synthetic joint fidelity</td>
       <td valign="top"><code>joint_angle_rmse_deg≈1.16e-07</code></td>
-      <td valign="top">Joint-angle RMSE on the synthetic corpus.</td>
+      <td valign="top">Joint-angle RMSE on the synthetic corpus (identity encoding — theoretical ceiling).</td>
     </tr>
     <tr>
       <td valign="top">Synthetic position fidelity</td>
       <td valign="top"><code>mpjpe_mean_mm=1.1901</code></td>
-      <td valign="top">Mean per-joint position error on the synthetic corpus.</td>
+      <td valign="top">Mean per-joint position error on the synthetic corpus (identity encoding — theoretical ceiling).</td>
     </tr>
     <tr>
       <td valign="top">Synthetic search ranking</td>
@@ -485,21 +538,21 @@ ZPE-Mocap is a motion-capture sector. The status below reports only the syntheti
   <tbody>
     <tr>
       <td valign="top">Compression</td>
-      <td valign="top"><code>GREEN</code></td>
-      <td valign="top">Synthetic compression ratio evidence in wave1.</td>
-      <td valign="top"><code>zpmoc_mean_cr=85.1893</code> from the wave1 benchmark artifact.</td>
+      <td valign="top"><code>AMBER</code></td>
+      <td valign="top">CMU fixture: 18.77× (real). Synthetic: 85.19× (identity encoding).</td>
+      <td valign="top">Real-data compression is proven but substantially below synthetic headline. Synthetic <code>zpmoc_mean_cr=85.1893</code> is identity encoding (theoretical ceiling).</td>
     </tr>
     <tr>
       <td valign="top">Joint-angle fidelity</td>
-      <td valign="top"><code>GREEN</code></td>
-      <td valign="top">Synthetic joint-angle RMSE in wave1.</td>
-      <td valign="top"><code>joint_angle_rmse_deg≈1.16e-07</code> in <code>mocap_joint_fidelity.json</code>.</td>
+      <td valign="top"><code>RED</code></td>
+      <td valign="top">CMU fixture: 82.51° RMSE (real). Synthetic: 1.16e-07° (identity encoding).</td>
+      <td valign="top">Real-data angle RMSE is not production-grade. Synthetic value is meaningless as an operational metric (identity encoding).</td>
     </tr>
     <tr>
       <td valign="top">Position fidelity</td>
-      <td valign="top"><code>GREEN</code></td>
-      <td valign="top">Synthetic MPJPE in wave1.</td>
-      <td valign="top"><code>mpjpe_mean_mm=1.1901</code> in <code>mocap_position_fidelity.json</code>.</td>
+      <td valign="top"><code>RED</code></td>
+      <td valign="top">CMU fixture: 32.45 mm MPJPE (real). Synthetic: 1.19 mm (identity encoding).</td>
+      <td valign="top">Real-data MPJPE is not production-grade. Synthetic value is identity encoding (theoretical ceiling).</td>
     </tr>
     <tr>
       <td valign="top">Search ranking</td>
@@ -541,14 +594,15 @@ ZPE-Mocap is a motion-capture sector. The status below reports only the syntheti
 <a id="throughput"></a>
 ## Throughput
 
-No throughput benchmark is promoted. The only performance numbers currently promoted are synthetic-corpus compression and query-latency metrics from the wave1 bundle.
+No throughput benchmark is promoted. Performance summary:
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
   <tr>
     <td width="50%" valign="top">
       <strong>Compression ratio</strong><br>
-      <code>zpmoc_mean_cr=85.1893</code><br><br>
-      Synthetic-corpus compression ratio from wave1.
+      <strong>CMU fixture (real):</strong> <code>mean_cr=18.77</code><br>
+      <strong>Synthetic (identity):</strong> <code>mean_cr=85.19</code><br><br>
+      CMU fixture is the operational benchmark. Synthetic is identity encoding (theoretical ceiling).
     </td>
     <td width="50%" valign="top">
       <strong>Query latency p95</strong><br>
@@ -573,9 +627,14 @@ No throughput benchmark is promoted. The only performance numbers currently prom
       <td valign="top">All latency values are p95 in milliseconds.</td>
     </tr>
     <tr>
-      <td valign="top">Compression ratio</td>
+      <td valign="top">Compression ratio (CMU real)</td>
+      <td valign="top"><code>mean_cr=18.77</code></td>
+      <td valign="top">Mean compression ratio on 10 real CMU BVH clips. Operational benchmark.</td>
+    </tr>
+    <tr>
+      <td valign="top">Compression ratio (synthetic)</td>
       <td valign="top"><code>zpmoc_mean_cr=85.1893</code></td>
-      <td valign="top">Mean compression ratio on the synthetic corpus.</td>
+      <td valign="top">Mean compression ratio on the synthetic corpus (identity encoding — theoretical ceiling).</td>
     </tr>
     <tr>
       <td valign="top">Query latency p95</td>
@@ -692,6 +751,9 @@ No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evide
 <a id="open-risks-non-blocking"></a>
 ## Open Risks (Non-Blocking)
 
+- **Synthetic benchmark circularity:** All synthetic metrics (85.19× compression, 1.19 mm MPJPE, 1.16e-07° RMSE) are produced by identity encoding — the synthetic corpus is pre-tokenized from the codec's own alphabet, so the encoder passes tokens through unchanged. These numbers are a theoretical ceiling, not operational fidelity.
+- **ACL comparison circularity:** The ACL direct comparator was run on synthetic BVH generated from ZPE tokens, not independent real data. The "3× win" is structurally inflated.
+- **Real-data fidelity gap:** CMU fixture corpus shows 32.45 mm MPJPE and 82.51° angle RMSE — substantially worse than synthetic numbers and not production-grade.
 - Blender runtime proof remains unpromoted; compatibility notes are simulated only.
 - CMU-backed commercialization-safe closure is not available in this repo boundary.
 - Clean-clone verification has not been executed from this repo.

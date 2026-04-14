@@ -4,18 +4,18 @@
   "status": "STAGED_PROOF_SURFACE",
   "plain_english_summary": "Deterministic motion-capture compression and retrieval system, currently bounded to synthetic evidence.",
   "commercial_wedge": "For animation studios, game engines, and motion-data infrastructure teams needing high-ratio deterministic mocap compression with search and retrieval. Business value: storage reduction and query-speed gains on motion-capture archives.",
-  "technical_wedge": "Deterministic 8-primitive encoding applied to motion-capture data, evidenced by synthetic-corpus compression ratio of 85.19x, sub-millimetre positional fidelity (MPJPE 1.19 mm), and p95 query latency of 43.4 ms.",
+  "technical_wedge": "Deterministic 8-primitive encoding applied to motion-capture data. CMU fixture corpus (10 real BVH clips): 18.77x compression, 32.45 mm MPJPE, 82.51 deg angle RMSE. Synthetic corpus (identity encoding): 85.19x compression, 1.19 mm MPJPE. Synthetic numbers are a theoretical ceiling — real data must be quantized from continuous joint positions.",
   "ideal_first_buyer": "Animation pipeline or mocap-data infrastructure team evaluating deterministic compression with search for motion archives.",
   "deployment_model": "Python reference implementation (pip install -e ./code). Public repo, not a packaged release.",
   "proof_anchors": [
-    "2026-02-20 synthetic-corpus wave1 bundle",
-    "Compression ratio 85.19x on synthetic corpus",
-    "MPJPE 1.19 mm positional fidelity",
-    "p95 query latency 43.4 ms",
-    "ACL direct comparator table"
+    "2026-04-14 CMU fixture corpus benchmark (10 real BVH clips): 18.77x compression, 32.45 mm MPJPE, 82.51 deg RMSE",
+    "2026-02-20 synthetic-corpus wave1 bundle (identity encoding): 85.19x compression, 1.19 mm MPJPE",
+    "ACL direct comparator table (circular methodology — synthetic data generated from ZPE tokens)"
   ],
   "not_claimed": [
-    "No real-world (CMU or commercial) corpus validation",
+    "No real-data parity with synthetic benchmarks (identity encoding inflates synthetic numbers)",
+    "No fair competitive benchmarks (ACL comparison is circular — fed synthetic data from ZPE tokens)",
+    "No production-grade fidelity on real data (32.45 mm MPJPE, 82.51 deg angle RMSE on CMU fixture)",
     "No Blender runtime verification",
     "No clean-clone verification from this repo boundary",
     "No commercialization-safe closure gate passed"
