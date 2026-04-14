@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-SAL%20v6.0-e5e7eb?labelColor=111111" alt="License: SAL v6.0"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-SAL%20v6.2-e5e7eb?labelColor=111111" alt="License: SAL v6.2"></a>
   <a href="code/README.md"><img src="https://img.shields.io/badge/python-reference%20implementation-e5e7eb?labelColor=111111" alt="Python reference implementation"></a>
   <a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json"><img src="https://img.shields.io/badge/current%20authority-2026--02--20%20synthetic%20wave-e5e7eb?labelColor=111111" alt="Current authority: 2026-02-20 synthetic wave"></a>
   <a href="proofs/README.md"><img src="https://img.shields.io/badge/proof%20anchors-wave1%20bundle-e5e7eb?labelColor=111111" alt="Proof anchors: wave1 bundle"></a>
@@ -117,10 +117,10 @@ ZPE-Mocap targets animation pipeline teams and mocap-data infrastructure where s
 
 | Metric | Value | Baseline |
 | --- | --- | --- |
-| COMPRESSION | 85.19× | vs ACL ~19× (industry std) |
-| MPJPE | 1.19 | mm position fidelity |
-| SEARCH | p@10 1.0 | 120 queries |
-| LATENCY | 26.14 | ms p95 |
+| COMPRESSION | 85.19× | vs ACL ~19× |
+| MPJPE | 1.19 | mm |
+| SEARCH | p@10 1.0 | — |
+| LATENCY | 26.14 | ms |
 
 > Source: [`mocap_compression_benchmark.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json), [`mocap_position_fidelity.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_position_fidelity.json), [`mocap_search_eval.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json), [`mocap_query_latency.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json), [`acl_direct_comparator_table.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json)
 
@@ -255,7 +255,7 @@ Shortest outsider path:
 
 ### License Boundary
 
-- Free tier boundary: annual gross revenue at or below USD 100M under SAL v6.0.
+- Free tier boundary: annual gross revenue at or below USD 100M under SAL v6.2.
 - SPDX tag: <code>LicenseRef-Zer0pa-SAL-6.0</code>.
 - Commercial or hosted use above threshold must follow the contact and enforcement terms in <a href="LICENSE">LICENSE</a>.
 
@@ -702,7 +702,7 @@ No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evide
   </tr>
   <tr>
     <td width="33%" valign="top">Documentation index: <a href="docs/README.md"><code>docs/README.md</code></a></td>
-    <td colspan="2" width="67%" valign="top">Autonomous agents and AI systems using this repository are subject to Section 6 of the <a href="LICENSE">Zer0pa SAL v6.0</a>.</td>
+    <td colspan="2" width="67%" valign="top">Autonomous agents and AI systems using this repository are subject to Section 6 of the <a href="LICENSE">Zer0pa SAL v6.2</a>.</td>
   </tr>
 </table>
 
