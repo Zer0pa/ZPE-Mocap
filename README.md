@@ -117,10 +117,10 @@ ZPE-Mocap targets animation pipeline teams and mocap-data infrastructure where s
 
 | Metric | Value | Baseline |
 | --- | --- | --- |
-| COMPRESSION | 85.189× | vs ACL ~19× (industry std) |
-| MPJPE | 1.190072 mm | position fidelity |
-| SEARCH | p@10 = 1.0 | 120 queries |
-| LATENCY | 26.1375 ms p95 | — |
+| COMPRESSION | 85.19× | vs ACL ~19× (industry std) |
+| MPJPE | 1.19 | mm position fidelity |
+| SEARCH | p@10 1.0 | 120 queries |
+| LATENCY | 26.14 | ms p95 |
 
 > Source: [`mocap_compression_benchmark.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json), [`mocap_position_fidelity.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_position_fidelity.json), [`mocap_search_eval.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json), [`mocap_query_latency.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json), [`acl_direct_comparator_table.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json)
 
