@@ -269,6 +269,8 @@ Shortest outsider path:
 | ZPE-Robotics | [github.com/Zer0pa/ZPE-Robotics](https://github.com/Zer0pa/ZPE-Robotics) | Sibling workstream for robotics motion and control surfaces. |
 | ZPE-Bio | [github.com/Zer0pa/ZPE-Bio](https://github.com/Zer0pa/ZPE-Bio) | Another proof-anchored codec workstream in the same portfolio. |
 
+**Observability:** [Comet dashboard](https://www.comet.com/zer0pa/zpe-mocap/view/new/panels) (public)
+
 ## Who This Is For
 
 | | |
