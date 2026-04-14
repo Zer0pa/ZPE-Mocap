@@ -205,7 +205,7 @@ No ACL comparison has been run on the CMU fixture corpus.
 | Confidence | Synthetic PASS; real-data fidelity FAIL (32.45 mm MPJPE, 82.51° angle RMSE) |
 | Source | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/quality_gate_scorecard.json`, `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md` |
 
-> **Evaluators:** Synthetic-corpus wave-1 PASS (identity encoding). CMU fixture corpus shows 18.77× compression but 32.45 mm MPJPE and 82.51° angle RMSE — not production-grade fidelity. Real-corpus validation is the remaining gate. `pip install -e ./code` to evaluate. Contact hello@zer0pa.com for real-corpus evaluation access.
+> **Evaluators:** Synthetic-corpus wave-1 PASS (identity encoding). CMU fixture corpus shows 18.77× compression but 32.45 mm MPJPE and 82.51° angle RMSE — not production-grade fidelity. Real-corpus validation is the remaining gate. `pip install zpe-mocap` (available on PyPI) to evaluate. Contact hello@zer0pa.com for real-corpus evaluation access.
 
 ## Tests and Verification
 
@@ -250,7 +250,12 @@ No ACL comparison has been run on the CMU fixture corpus.
 <a id="quick-start"></a>
 ## Quick Start
 
-### Quick Verify
+```bash
+# Install from PyPI
+pip install zpe-mocap
+```
+
+### Quick Verify (from source)
 
 Use the clone/install path below as repository verification guidance, not packaged public-release guidance.
 
@@ -319,7 +324,7 @@ Shortest outsider path:
 |---|---|
 | **Ideal first buyer** | Animation pipeline or mocap-data infrastructure team evaluating deterministic compression with search for motion archives |
 | **Pain** | Studios archive terabytes of BVH/FBX data that can only be queried after full decompression — storage costs climb, retrieval is slow |
-| **Deployment** | Python reference implementation (`pip install -e ./code`). Public repo, not a packaged release |
+| **Deployment** | Python reference implementation (`pip install zpe-mocap`), available on PyPI |
 | **Family position** | Proves ZPE encoding applicability to motion-capture and spatial-temporal signal domains. Staged/validation tier alongside Neuro, Prosody, and Bio |
 
 <p>
