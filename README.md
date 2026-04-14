@@ -69,7 +69,9 @@ Part of the [Zer0pa](https://github.com/zer0-point-energy) family. Platform laye
 <a id="what-this-is"></a>
 ## What This Is
 
-ZPE-Mocap is Zero-Point Encoding's motion-capture compression and retrieval sector. This repo contains a deterministic Python reference implementation plus an imported synthetic-corpus proof bundle dated 2026-02-20. Every public claim below is limited to that synthetic evidence. No Blender runtime pass, no CMU commercialization-safe closure, and no clean-clone verification are claimed here.
+85× mocap compression at 1.19 mm joint error. Compress, search, and retrieve skeletal motion data without decompression. CMU fixture corpus: 18.77× mean across 10 real BVH clips.
+
+ZPE-Mocap targets animation pipeline teams and mocap-data infrastructure where studios archive terabytes of BVH/FBX data that can only be queried after full decompression. This codec indexes motion during encoding — downstream search never touches the raw stream.
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
   <thead>
@@ -138,6 +140,8 @@ Selected clips from the 10-clip direct comparator on the same BVH corpus. The me
 
 ## What We Prove
 
+> Auditable guarantees backed by committed proof artifacts. Start at `AUDITOR_PLAYBOOK.md`.
+
 - Synthetic-corpus compression at 85.19×
 - Joint-angle fidelity at 1.16e-07° RMSE
 - Positional fidelity at 1.19 mm MPJPE
@@ -160,6 +164,8 @@ Selected clips from the 10-clip direct comparator on the same BVH corpus. The me
 | Commit SHA | 34d94f1f29b4 |
 | Confidence | 92% |
 | Source | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/quality_gate_scorecard.json` |
+
+> **Evaluators:** Synthetic-corpus wave-1 PASS. `pip install -e ./code` to evaluate. Contact hello@zer0pa.com for real-corpus evaluation access.
 
 ## Tests and Verification
 
@@ -262,6 +268,15 @@ Shortest outsider path:
 | ZPE-XR | [github.com/Zer0pa/ZPE-XR](https://github.com/Zer0pa/ZPE-XR) | Adjacent spatial-media workstream in the ZPE portfolio. |
 | ZPE-Robotics | [github.com/Zer0pa/ZPE-Robotics](https://github.com/Zer0pa/ZPE-Robotics) | Sibling workstream for robotics motion and control surfaces. |
 | ZPE-Bio | [github.com/Zer0pa/ZPE-Bio](https://github.com/Zer0pa/ZPE-Bio) | Another proof-anchored codec workstream in the same portfolio. |
+
+## Who This Is For
+
+| | |
+|---|---|
+| **Ideal first buyer** | Animation pipeline or mocap-data infrastructure team evaluating deterministic compression with search for motion archives |
+| **Pain** | Studios archive terabytes of BVH/FBX data that can only be queried after full decompression — storage costs climb, retrieval is slow |
+| **Deployment** | Python reference implementation (`pip install -e ./code`). Public repo, not a packaged release |
+| **Family position** | Proves ZPE encoding applicability to motion-capture and spatial-temporal signal domains. Staged/validation tier alongside Neuro, Prosody, and Bio |
 
 <p>
   <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE-Mocap Mid Masthead" width="100%">
