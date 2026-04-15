@@ -38,22 +38,22 @@
 
 ## What This Is
 
-ZPE-Mocap applies the ZPE deterministic 8-primitive encoding architecture to motion-capture data — compression, search, and retrieval for spatial-temporal skeletal signals.
+ZPE-Mocap applies the ZPE deterministic 8-primitive encoding architecture to motion-capture data — motion fingerprinting, search, and retrieval for spatial-temporal skeletal signals. The value is the token vocabulary for indexing and similarity search, not faithful pose reconstruction.
 
-**Real-data results (CMU fixture, 10 BVH clips):** 18.77× compression, 32.45 mm MPJPE, 82.51° angle RMSE. Evidence: `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/`.
+**Real-data results (CMU fixture, 10 BVH clips):** 18.77× bandwidth reduction, 32.45 mm MPJPE, **82.51° angle RMSE**. The angle RMSE means reconstructed poses are not visually similar to input — this is a fingerprinting/retrieval codec, not a playback codec. Evidence: `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/`.
 
-**Synthetic-corpus results (identity encoding):** 85.19× compression, 1.19 mm MPJPE, 1.16e-07° angle RMSE, p@10 = 1.0 search, 26.14 ms p95 latency. Evidence: `proofs/artifacts/2026-02-20_zpe_mocap_wave1/`. The synthetic corpus is pre-tokenized from the codec's own alphabet — the encoder passes tokens through unchanged, so these numbers represent a theoretical ceiling, not operational performance.
+**Synthetic-corpus results (identity encoding):** 85.19× bandwidth reduction, 1.19 mm MPJPE, 1.16e-07° angle RMSE, p@10 = 1.0 search, 26.14 ms p95 latency. Evidence: `proofs/artifacts/2026-02-20_zpe_mocap_wave1/`. The synthetic corpus is pre-tokenized from the codec's own alphabet — the encoder passes tokens through unchanged, so these numbers represent a theoretical ceiling, not operational performance.
 
-Animation studios, game engines, and motion-data infrastructure teams evaluating deterministic mocap compression should benchmark against the **CMU fixture numbers** (18.77×, 32.45 mm). The gap to commercial readiness is real-world fidelity improvement and broader corpus validation.
+Animation studios, game engines, and motion-data infrastructure teams evaluating deterministic mocap fingerprinting for **motion similarity search and retrieval** should benchmark against the **CMU fixture numbers** (18.77× bandwidth reduction, 32.45 mm MPJPE, 82.51° angle RMSE). These metrics are sufficient for motion similarity search; they are not sufficient for faithful pose playback.
 
-**Readiness: staged.** Real-data compression demonstrated (18.77×) but fidelity is not production-grade (32.45 mm MPJPE). No Blender runtime pass, no CMU commercialization-safe closure, no clean-clone verification exist.
+**Readiness: retrieval/indexing mode only.** Real-data bandwidth reduction demonstrated (18.77×) but fidelity is not playback-grade (32.45 mm MPJPE, 82.51° angle RMSE). The codec produces a compact motion fingerprint suitable for search and retrieval, not for pose reconstruction. No Blender runtime pass, no CMU commercialization-safe closure, no clean-clone verification exist.
 
-**Not claimed:** Production-grade fidelity on real data, real-data parity with synthetic benchmarks, fair competitive benchmarks (ACL comparison is circular), Blender runtime compatibility, clean-clone verification, commercialization-safe closure.
+**Not claimed:** Playback-quality pose reconstruction — joint-angle RMSE of 82-88° on real data means reconstructed poses are not visually similar to input. The codec is designed for motion fingerprinting and retrieval, not reconstruction. Also not claimed: real-data parity with synthetic benchmarks, fair competitive benchmarks (ACL comparison is circular), Blender runtime compatibility, clean-clone verification, commercialization-safe closure.
 
 | Proof anchor | Location |
 |---|---|
 | Wave1 evidence bundle | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/` |
-| Compression / fidelity / search / latency | wave1 bundle artifacts |
+| Bandwidth reduction / fidelity / search / latency | wave1 bundle artifacts |
 | Falsification results | wave1 bundle |
 
 Part of the [Zer0pa](https://github.com/zer0-point-energy) family. Platform layer: [ZPE-IMC](https://github.com/zer0-point-energy/ZPE-IMC).
@@ -71,9 +71,9 @@ Part of the [Zer0pa](https://github.com/zer0-point-energy) family. Platform laye
 <a id="what-this-is"></a>
 ## What This Is
 
-Deterministic mocap compression and retrieval. CMU fixture corpus: 18.77× compression, 32.45 mm MPJPE across 10 real BVH clips. Synthetic corpus (identity encoding): 85.19× compression, 1.19 mm MPJPE. Compress, search, and retrieve skeletal motion data without decompression.
+Deterministic motion fingerprinting and retrieval codec. CMU fixture corpus: 18.77× bandwidth reduction, 32.45 mm MPJPE, 82.51° angle RMSE across 10 real BVH clips. Synthetic corpus (identity encoding): 85.19× bandwidth reduction, 1.19 mm MPJPE. Fingerprint, search, and retrieve skeletal motion data without decompression. Not a playback codec — the token vocabulary enables motion similarity search, not faithful pose reconstruction.
 
-ZPE-Mocap targets animation pipeline teams and mocap-data infrastructure where studios archive terabytes of BVH/FBX data that can only be queried after full decompression. This codec indexes motion during encoding — downstream search never touches the raw stream.
+ZPE-Mocap targets animation pipeline teams and mocap-data infrastructure where studios archive terabytes of BVH/FBX data that can only be queried after full decompression. This codec fingerprints motion during encoding — downstream search never touches the raw stream.
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
   <thead>
@@ -85,7 +85,7 @@ ZPE-Mocap targets animation pipeline teams and mocap-data infrastructure where s
   <tbody>
     <tr>
       <td valign="top">What is this?</td>
-      <td valign="top">A deterministic mocap compression and retrieval reference stack backed by a synthetic corpus with preserved proof lineage.</td>
+      <td valign="top">A deterministic motion fingerprinting and retrieval codec backed by a synthetic corpus with preserved proof lineage. Designed for motion similarity search and indexing, not playback-quality pose reconstruction.</td>
     </tr>
     <tr>
       <td valign="top">What is the current authority state?</td>
@@ -93,11 +93,11 @@ ZPE-Mocap targets animation pipeline teams and mocap-data infrastructure where s
     </tr>
     <tr>
       <td valign="top">What is actually proved?</td>
-      <td valign="top">CMU fixture-corpus compression (18.77×, 32.45 mm MPJPE, 82.51° RMSE) and synthetic-corpus metrics (85.19× compression, 1.19 mm MPJPE — identity encoding). The synthetic numbers are a theoretical ceiling due to pre-tokenized data bypassing quantization.</td>
+      <td valign="top">CMU fixture-corpus bandwidth reduction (18.77×, 32.45 mm MPJPE, <strong>82.51° angle RMSE</strong>) and synthetic-corpus metrics (85.19× bandwidth reduction, 1.19 mm MPJPE — identity encoding). The 82.51° angle RMSE on real data confirms this is sufficient for motion similarity search but not for faithful pose playback. The synthetic numbers are a theoretical ceiling due to pre-tokenized data bypassing quantization.</td>
     </tr>
     <tr>
       <td valign="top">What is not being claimed?</td>
-      <td valign="top">No real-data parity with synthetic benchmarks (identity encoding inflates synthetic numbers). No fair competitive benchmark (ACL comparison is circular — fed synthetic data from ZPE tokens). No CMU-backed commercialization-safe closure, no Blender runtime pass, and no clean-clone verification. The bundle is historical and may retain machine-absolute paths.</td>
+      <td valign="top">Playback-quality pose reconstruction — joint-angle RMSE of 82-88° on real data means reconstructed poses are not visually similar to input. The codec is designed for motion fingerprinting and retrieval, not reconstruction. No real-data parity with synthetic benchmarks (identity encoding inflates synthetic numbers). No fair competitive benchmark (ACL comparison is circular — fed synthetic data from ZPE tokens). No CMU-backed commercialization-safe closure, no Blender runtime pass, and no clean-clone verification. The bundle is historical and may retain machine-absolute paths.</td>
     </tr>
     <tr>
       <td valign="top">Where should an outsider acquire and verify?</td>
@@ -121,9 +121,9 @@ ZPE-Mocap targets animation pipeline teams and mocap-data infrastructure where s
 
 | Metric | Value | Notes |
 | --- | --- | --- |
-| COMPRESSION | 18.77× | vs raw BVH float32 (range 15.2×–23.0×) |
+| BANDWIDTH REDUCTION | 18.77× | vs raw BVH float32 (range 15.2×-23.0×) |
 | MPJPE | 32.45 mm | mean per-joint position error |
-| ANGLE RMSE | 82.51° | mean joint-angle RMSE |
+| **ANGLE RMSE** | **82.51°** | **mean joint-angle RMSE — not playback-quality; sufficient for motion similarity search** |
 
 > Source: [`results.json`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json), [`summary.md`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md)
 
@@ -131,7 +131,7 @@ ZPE-Mocap targets animation pipeline teams and mocap-data infrastructure where s
 
 | Metric | Value | Notes |
 | --- | --- | --- |
-| COMPRESSION | 85.19× | identity encoding — synthetic tokens pass through encoder unchanged |
+| BANDWIDTH REDUCTION | 85.19× | identity encoding — synthetic tokens pass through encoder unchanged |
 | MPJPE | 1.19 mm | synthetic corpus only |
 | ANGLE RMSE | 1.16e-07° | synthetic corpus only |
 | SEARCH | p@10 1.0 | — |
@@ -139,7 +139,7 @@ ZPE-Mocap targets animation pipeline teams and mocap-data infrastructure where s
 
 > Source: [`mocap_compression_benchmark.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json), [`mocap_position_fidelity.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_position_fidelity.json), [`mocap_search_eval.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json), [`mocap_query_latency.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json)
 
-> **Why the gap?** The synthetic corpus is pre-tokenized from the codec's own 8-direction alphabet (`synthetic.py` populates `xy_tokens`, `xz_tokens`, `magnitudes_mm` directly). When these fields are present, the encoder short-circuits quantization (`codec.py:189-195`) and passes tokens through unchanged — an identity encoding. Real BVH data must be quantized from continuous joint positions, which introduces quantization error. The synthetic numbers represent a theoretical ceiling, not operational fidelity.
+> **Why the gap?** The synthetic corpus is pre-tokenized from the codec's own 8-direction alphabet (`synthetic.py` populates `xy_tokens`, `xz_tokens`, `magnitudes_mm` directly). When these fields are present, the encoder short-circuits quantization (`codec.py:189-195`) and passes tokens through unchanged — an identity encoding. Real BVH data must be quantized from continuous joint positions, which introduces quantization error. The synthetic numbers represent a theoretical ceiling, not operational fidelity. The 82.51° angle RMSE on real data means reconstructed poses are not visually similar to input — the codec's value is the token vocabulary for motion similarity search, not the reconstructed pose.
 
 ## Competitive Benchmarks
 
@@ -159,18 +159,18 @@ Selected clips from the 10-clip direct comparator on the **synthetic** BVH corpu
 
 **Synthetic corpus — general-purpose compressor comparison:**
 
-| Tool | Synthetic Corpus CR | Notes |
+| Tool | Synthetic Corpus BR | Notes |
 |------|---------------------|-------|
 | **ZPE-Mocap** | **85.19×** | Synthetic benchmark (identity encoding) |
 | gzip | 69.70× | ~22% behind ZPE on same synthetic corpus |
 
 ZPE-Mocap exceeds gzip by ~22% on the synthetic corpus. This margin is considerably narrower than the ACL comparison above. Real-world corpus validation (CMU, AMASS) is pending.
 
-**CMU fixture corpus (real BVH) — compression only:**
+**CMU fixture corpus (real BVH) — bandwidth reduction only:**
 
-| Corpus | Mean CR | Range | Source |
+| Corpus | Mean BR | Range | Source |
 |--------|---------|-------|--------|
-| CMU fixture (10 clips) | 18.77× | 15.2×–23.0× | [`2026-04-14 benchmark`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json) |
+| CMU fixture (10 clips) | 18.77× | 15.2×-23.0× | [`2026-04-14 benchmark`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json) |
 
 No ACL comparison has been run on the CMU fixture corpus.
 
@@ -178,18 +178,19 @@ No ACL comparison has been run on the CMU fixture corpus.
 
 > Auditable guarantees backed by committed proof artifacts. Start at `AUDITOR_PLAYBOOK.md`.
 
-- Synthetic-corpus compression at 85.19× (identity encoding — tokens pass through unchanged)
+- Synthetic-corpus bandwidth reduction at 85.19× (identity encoding — tokens pass through unchanged)
 - Synthetic joint-angle fidelity at 1.16e-07° RMSE (identity encoding)
 - Synthetic positional fidelity at 1.19 mm MPJPE (identity encoding)
 - Synthetic search ranking at p@10 = 1.0
 - Synthetic query latency at 26.14 ms p95
-- CMU fixture-corpus compression at 18.77× mean across 10 real BVH clips
-- CMU fixture-corpus positional fidelity at 32.45 mm MPJPE
-- CMU fixture-corpus joint-angle fidelity at 82.51° RMSE
+- CMU fixture-corpus bandwidth reduction at 18.77× mean across 10 real BVH clips
+- CMU fixture-corpus positional fidelity at 32.45 mm MPJPE — sufficient for motion similarity search
+- CMU fixture-corpus joint-angle fidelity at 82.51° RMSE — **not playback-quality; confirms retrieval/indexing use case only**
 
 ## What We Don't Claim
 
-- Real-data parity with synthetic benchmarks — the synthetic corpus is pre-tokenized from the codec's own 8-direction alphabet, producing an identity encoding. Real BVH data produces substantially different fidelity (32.45 mm vs 1.19 mm MPJPE; 82.51° vs 1.16e-07° angle RMSE; 18.77× vs 85.19× compression).
+- **Playback-quality pose reconstruction** — joint-angle RMSE of 82-88° on real data means reconstructed poses are not visually similar to input. The codec is designed for motion fingerprinting and retrieval, not reconstruction.
+- Real-data parity with synthetic benchmarks — the synthetic corpus is pre-tokenized from the codec's own 8-direction alphabet, producing an identity encoding. Real BVH data produces substantially different fidelity (32.45 mm vs 1.19 mm MPJPE; 82.51° vs 1.16e-07° angle RMSE; 18.77× vs 85.19× bandwidth reduction).
 - Fair competitive benchmarks — the ACL comparison used synthetic data generated from ZPE tokens, not independent BVH. This is circular methodology.
 - Release readiness
 - Production motion-pipeline integration
@@ -200,23 +201,23 @@ No ACL comparison has been run on the CMU fixture corpus.
 
 | Field | Value |
 | --- | --- |
-| Verdict | CONDITIONAL — synthetic only |
+| Verdict | CONDITIONAL — retrieval/indexing mode only |
 | Commit SHA | 34d94f1f29b4 |
-| Confidence | Synthetic PASS; real-data fidelity FAIL (32.45 mm MPJPE, 82.51° angle RMSE) |
+| Confidence | Synthetic PASS; real-data fidelity FAIL for playback (32.45 mm MPJPE, 82.51° angle RMSE); PASS for fingerprinting/retrieval use case |
 | Source | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/quality_gate_scorecard.json`, `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md` |
 
-> **Evaluators:** Synthetic-corpus wave-1 PASS (identity encoding). CMU fixture corpus shows 18.77× compression but 32.45 mm MPJPE and 82.51° angle RMSE — not production-grade fidelity. Real-corpus validation is the remaining gate. `pip install zpe-mocap` (available on PyPI) to evaluate. Contact hello@zer0pa.com for real-corpus evaluation access.
+> **Evaluators:** Synthetic-corpus wave-1 PASS (identity encoding). CMU fixture corpus shows 18.77× bandwidth reduction but 32.45 mm MPJPE and **82.51° angle RMSE** — not playback-grade fidelity. Sufficient for motion fingerprinting and similarity retrieval. The codec produces a compact token vocabulary for indexing and search, not for faithful pose reconstruction. `pip install zpe-mocap` (available on PyPI) to evaluate. Contact hello@zer0pa.com for real-corpus evaluation access.
 
 ## Tests and Verification
 
 | Code | Check | Verdict |
 | --- | --- | --- |
-| V_01 | Synthetic compression benchmark | PASS |
+| V_01 | Synthetic bandwidth reduction benchmark | PASS |
 | V_02 | Joint-angle fidelity | PASS |
 | V_03 | Position fidelity | PASS |
 | V_04 | Search ranking | PASS |
 | V_05 | Query latency | PASS |
-| V_06 | Commercialization claim adjudication | CONDITIONAL — synthetic PASS, real-data fidelity gap open |
+| V_06 | Commercialization claim adjudication | CONDITIONAL — synthetic PASS, retrieval/indexing mode only (real-data fidelity not playback-grade) |
 | V_07 | Integration readiness contract | INC |
 
 ## Proof Anchors
@@ -310,7 +311,7 @@ Shortest outsider path:
 
 | Workstream | Route | Notes |
 | --- | --- | --- |
-| ZPE-Mocap | [github.com/Zer0pa/ZPE-Mocap](https://github.com/Zer0pa/ZPE-Mocap) | This motion-capture compression and retrieval workstream. |
+| ZPE-Mocap | [github.com/Zer0pa/ZPE-Mocap](https://github.com/Zer0pa/ZPE-Mocap) | This motion-capture fingerprinting and retrieval workstream. |
 | ZPE-IMC | [github.com/Zer0pa/ZPE-IMC](https://github.com/Zer0pa/ZPE-IMC) | Portfolio reference repo reused for documentation and structure alignment. |
 | ZPE-XR | [github.com/Zer0pa/ZPE-XR](https://github.com/Zer0pa/ZPE-XR) | Adjacent spatial-media workstream in the ZPE portfolio. |
 | ZPE-Robotics | [github.com/Zer0pa/ZPE-Robotics](https://github.com/Zer0pa/ZPE-Robotics) | Sibling workstream for robotics motion and control surfaces. |
@@ -322,10 +323,10 @@ Shortest outsider path:
 
 | | |
 |---|---|
-| **Ideal first buyer** | Animation pipeline or mocap-data infrastructure team evaluating deterministic compression with search for motion archives |
+| **Ideal first buyer** | Animation pipeline or mocap-data infrastructure team evaluating deterministic motion fingerprinting with similarity search for motion archives |
 | **Pain** | Studios archive terabytes of BVH/FBX data that can only be queried after full decompression — storage costs climb, retrieval is slow |
 | **Deployment** | Python reference implementation (`pip install zpe-mocap`), available on PyPI |
-| **Family position** | Proves ZPE encoding applicability to motion-capture and spatial-temporal signal domains. Staged/validation tier alongside Neuro, Prosody, and Bio |
+| **Family position** | Proves ZPE encoding applicability to motion-capture fingerprinting and spatial-temporal signal retrieval. Staged/validation tier alongside Neuro, Prosody, and Bio |
 
 <p>
   <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE-Mocap Mid Masthead" width="100%">
@@ -371,9 +372,9 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
     </td>
     <td width="34%" valign="top">
       <strong>Performance authority</strong><br>
-      <strong>CMU fixture (real):</strong> <code>mean_cr=18.77</code>, <code>mpjpe_mean_mm=32.45</code>, <code>angle_rmse_deg=82.51</code><br>
-      <strong>Synthetic (identity):</strong> <code>mean_cr=85.19</code>, <code>mpjpe_mean_mm=1.19</code>, <code>query_latency_p95_ms=26.14</code><br><br>
-      Synthetic metrics are a theoretical ceiling (identity encoding). CMU fixture metrics are the operational benchmark.
+      <strong>CMU fixture (real):</strong> <code>mean_br=18.77</code>, <code>mpjpe_mean_mm=32.45</code>, <code>angle_rmse_deg=82.51</code><br>
+      <strong>Synthetic (identity):</strong> <code>mean_br=85.19</code>, <code>mpjpe_mean_mm=1.19</code>, <code>query_latency_p95_ms=26.14</code><br><br>
+      Synthetic metrics are a theoretical ceiling (identity encoding). CMU fixture metrics are the operational benchmark. The 82.51° angle RMSE confirms retrieval/indexing mode only — not playback.
     </td>
   </tr>
 </table>
@@ -398,9 +399,9 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
       <td valign="top">All current claims are synthetic-corpus claims; no CMU-backed closure is promoted.</td>
     </tr>
     <tr>
-      <td valign="top">Compression ratio</td>
-      <td valign="top"><code>zpmoc_mean_cr=85.1893</code></td>
-      <td valign="top">Synthetic-corpus mean compression ratio from the wave1 benchmark artifact.</td>
+      <td valign="top">Bandwidth reduction</td>
+      <td valign="top"><code>zpmoc_mean_br=85.1893</code></td>
+      <td valign="top">Synthetic-corpus mean bandwidth reduction from the wave1 benchmark artifact.</td>
     </tr>
     <tr>
       <td valign="top">Joint-angle fidelity</td>
@@ -425,7 +426,7 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
     <tr>
       <td valign="top">ACL comparator</td>
       <td valign="top"><code>zpmoc_mean_ratio=57.0328</code>, <code>acl_mean_ratio_same_raw_bvh32=19.1487</code></td>
-      <td valign="top"><strong>Circular methodology:</strong> ACL comparator captured on synthetic BVH generated from ZPE tokens, not independent real data. This structurally favours ZPE-Mocap and does not reflect real-world competitive performance.</td>
+      <td valign="top"><strong>Circular methodology:</strong> ACL comparator captured on synthetic BVH generated from ZPE tokens, not independent real data. This structurally favours ZPE-Mocap and does not reflect real-world competitive performance. Both ratios are bandwidth reduction for fingerprinting, not playback-quality compression.</td>
     </tr>
     <tr>
       <td valign="top">External acquisition surface</td>
@@ -449,7 +450,7 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
   <tr>
-    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json</code></a><br><br>Compression ratio metrics for the synthetic corpus.</td>
+    <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json</code></a><br><br>Bandwidth reduction metrics for the synthetic corpus.</td>
     <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_joint_fidelity.json"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_joint_fidelity.json</code></a><br><br>Joint-angle RMSE evidence for the synthetic corpus.</td>
   </tr>
   <tr>
@@ -465,7 +466,7 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
     <td width="50%" valign="top"><a href="proofs/artifacts/2026-02-20_zpe_mocap_wave1/falsification_results.md"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/falsification_results.md</code></a><br><br>Falsification results for the synthetic wave.</td>
   </tr>
   <tr>
-    <td width="50%" valign="top"><a href="proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json"><code>proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json</code></a><br><br>CMU fixture corpus benchmark: 18.77× compression, 32.45 mm MPJPE, 82.51° angle RMSE across 10 real BVH clips.</td>
+    <td width="50%" valign="top"><a href="proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json"><code>proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json</code></a><br><br>CMU fixture corpus benchmark: 18.77× bandwidth reduction, 32.45 mm MPJPE, 82.51° angle RMSE across 10 real BVH clips. Retrieval/indexing mode only.</td>
     <td width="50%" valign="top"><a href="proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md"><code>proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md</code></a><br><br>Human-readable summary of CMU fixture corpus benchmark results and limitations.</td>
   </tr>
 </table>
@@ -480,24 +481,24 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
   </thead>
   <tbody>
     <tr>
-      <td valign="top">CMU fixture compression</td>
-      <td valign="top"><code>mean_cr=18.77</code></td>
-      <td valign="top">Compression ratio on 10 real CMU BVH clips. Operational benchmark.</td>
+      <td valign="top">CMU fixture bandwidth reduction</td>
+      <td valign="top"><code>mean_br=18.77</code></td>
+      <td valign="top">Bandwidth reduction on 10 real CMU BVH clips. Operational benchmark for retrieval/indexing.</td>
     </tr>
     <tr>
       <td valign="top">CMU fixture position fidelity</td>
       <td valign="top"><code>mpjpe_mean_mm=32.45</code></td>
-      <td valign="top">Mean per-joint position error on real CMU data. Not production-grade.</td>
+      <td valign="top">Mean per-joint position error on real CMU data. Not playback-grade; sufficient for motion similarity search.</td>
     </tr>
     <tr>
       <td valign="top">CMU fixture angle fidelity</td>
       <td valign="top"><code>angle_rmse_deg=82.51</code></td>
-      <td valign="top">Joint-angle RMSE on real CMU data. Not production-grade.</td>
+      <td valign="top">Joint-angle RMSE on real CMU data. Not playback-grade; confirms retrieval/indexing use case only.</td>
     </tr>
     <tr>
-      <td valign="top">Synthetic compression</td>
-      <td valign="top"><code>zpmoc_mean_cr=85.1893</code></td>
-      <td valign="top">Compression ratio on the synthetic corpus (identity encoding — theoretical ceiling).</td>
+      <td valign="top">Synthetic bandwidth reduction</td>
+      <td valign="top"><code>zpmoc_mean_br=85.1893</code></td>
+      <td valign="top">Bandwidth reduction on the synthetic corpus (identity encoding — theoretical ceiling).</td>
     </tr>
     <tr>
       <td valign="top">Synthetic joint fidelity</td>
@@ -529,7 +530,7 @@ The only promoted proof surface is the imported <code>2026-02-20_zpe_mocap_wave1
 <a id="modality-status-snapshot"></a>
 ## Modality Status Snapshot
 
-ZPE-Mocap is a motion-capture sector. The status below reports only the synthetic-corpus evidence that exists today and marks the missing Blender, CMU, and clean-clone gates.
+ZPE-Mocap is a motion-capture fingerprinting and retrieval codec. The status below reports only the synthetic-corpus evidence that exists today and marks the missing Blender, CMU, and clean-clone gates. Fidelity statuses are assessed for both playback and retrieval use cases.
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="14" cellspacing="0">
   <thead>
@@ -542,22 +543,22 @@ ZPE-Mocap is a motion-capture sector. The status below reports only the syntheti
   </thead>
   <tbody>
     <tr>
-      <td valign="top">Compression</td>
+      <td valign="top">Bandwidth reduction</td>
       <td valign="top"><code>AMBER</code></td>
       <td valign="top">CMU fixture: 18.77× (real). Synthetic: 85.19× (identity encoding).</td>
-      <td valign="top">Real-data compression is proven but substantially below synthetic headline. Synthetic <code>zpmoc_mean_cr=85.1893</code> is identity encoding (theoretical ceiling).</td>
+      <td valign="top">Real-data bandwidth reduction is proven but substantially below synthetic headline. Synthetic <code>zpmoc_mean_cr=85.1893</code> is identity encoding (theoretical ceiling). Suitable for fingerprinting/retrieval, not playback.</td>
     </tr>
     <tr>
       <td valign="top">Joint-angle fidelity</td>
-      <td valign="top"><code>RED</code></td>
+      <td valign="top"><code>RED (playback) / AMBER (retrieval)</code></td>
       <td valign="top">CMU fixture: 82.51° RMSE (real). Synthetic: 1.16e-07° (identity encoding).</td>
-      <td valign="top">Real-data angle RMSE is not production-grade. Synthetic value is meaningless as an operational metric (identity encoding).</td>
+      <td valign="top">Real-data angle RMSE is not playback-grade — reconstructed poses are not visually similar to input. Acceptable for motion fingerprinting and retrieval where the token vocabulary, not the reconstructed pose, is the product. Synthetic value is meaningless as an operational metric (identity encoding).</td>
     </tr>
     <tr>
       <td valign="top">Position fidelity</td>
-      <td valign="top"><code>RED</code></td>
+      <td valign="top"><code>RED (playback) / AMBER (retrieval)</code></td>
       <td valign="top">CMU fixture: 32.45 mm MPJPE (real). Synthetic: 1.19 mm (identity encoding).</td>
-      <td valign="top">Real-data MPJPE is not production-grade. Synthetic value is identity encoding (theoretical ceiling).</td>
+      <td valign="top">Real-data MPJPE is not playback-grade. Acceptable for motion fingerprinting and retrieval. Synthetic value is identity encoding (theoretical ceiling).</td>
     </tr>
     <tr>
       <td valign="top">Search ranking</td>
@@ -604,10 +605,10 @@ No throughput benchmark is promoted. Performance summary:
 <table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
   <tr>
     <td width="50%" valign="top">
-      <strong>Compression ratio</strong><br>
-      <strong>CMU fixture (real):</strong> <code>mean_cr=18.77</code><br>
-      <strong>Synthetic (identity):</strong> <code>mean_cr=85.19</code><br><br>
-      CMU fixture is the operational benchmark. Synthetic is identity encoding (theoretical ceiling).
+      <strong>Bandwidth reduction</strong><br>
+      <strong>CMU fixture (real):</strong> <code>mean_br=18.77</code><br>
+      <strong>Synthetic (identity):</strong> <code>mean_br=85.19</code><br><br>
+      CMU fixture is the operational benchmark. Synthetic is identity encoding (theoretical ceiling). These ratios reflect fingerprint compactness for retrieval, not playback-quality compression.
     </td>
     <td width="50%" valign="top">
       <strong>Query latency p95</strong><br>
@@ -632,14 +633,14 @@ No throughput benchmark is promoted. Performance summary:
       <td valign="top">All latency values are p95 in milliseconds.</td>
     </tr>
     <tr>
-      <td valign="top">Compression ratio (CMU real)</td>
-      <td valign="top"><code>mean_cr=18.77</code></td>
-      <td valign="top">Mean compression ratio on 10 real CMU BVH clips. Operational benchmark.</td>
+      <td valign="top">Bandwidth reduction (CMU real)</td>
+      <td valign="top"><code>mean_br=18.77</code></td>
+      <td valign="top">Mean bandwidth reduction on 10 real CMU BVH clips. Operational benchmark for retrieval/indexing.</td>
     </tr>
     <tr>
-      <td valign="top">Compression ratio (synthetic)</td>
-      <td valign="top"><code>zpmoc_mean_cr=85.1893</code></td>
-      <td valign="top">Mean compression ratio on the synthetic corpus (identity encoding — theoretical ceiling).</td>
+      <td valign="top">Bandwidth reduction (synthetic)</td>
+      <td valign="top"><code>zpmoc_mean_br=85.1893</code></td>
+      <td valign="top">Mean bandwidth reduction on the synthetic corpus (identity encoding — theoretical ceiling).</td>
     </tr>
     <tr>
       <td valign="top">Query latency p95</td>
@@ -756,9 +757,9 @@ No public ML workbook is promoted for ZPE-Mocap at this time. All promoted evide
 <a id="open-risks-non-blocking"></a>
 ## Open Risks (Non-Blocking)
 
-- **Synthetic benchmark circularity:** All synthetic metrics (85.19× compression, 1.19 mm MPJPE, 1.16e-07° RMSE) are produced by identity encoding — the synthetic corpus is pre-tokenized from the codec's own alphabet, so the encoder passes tokens through unchanged. These numbers are a theoretical ceiling, not operational fidelity.
-- **ACL comparison circularity:** The ACL direct comparator was run on synthetic BVH generated from ZPE tokens, not independent real data. The "3× win" is structurally inflated.
-- **Real-data fidelity gap:** CMU fixture corpus shows 32.45 mm MPJPE and 82.51° angle RMSE — substantially worse than synthetic numbers and not production-grade.
+- **Synthetic benchmark circularity:** All synthetic metrics (85.19× bandwidth reduction, 1.19 mm MPJPE, 1.16e-07° RMSE) are produced by identity encoding — the synthetic corpus is pre-tokenized from the codec's own alphabet, so the encoder passes tokens through unchanged. These numbers are a theoretical ceiling, not operational fidelity.
+- **ACL comparison circularity:** The ACL direct comparator was run on synthetic BVH generated from ZPE tokens, not independent real data. The "3x win" is structurally inflated.
+- **Real-data fidelity gap (retrieval-only):** CMU fixture corpus shows 32.45 mm MPJPE and 82.51° angle RMSE — reconstructed poses are not visually similar to input. This confirms the codec is viable for motion fingerprinting and retrieval but not for playback-quality pose reconstruction.
 - Blender runtime proof remains unpromoted; compatibility notes are simulated only.
 - CMU-backed commercialization-safe closure is not available in this repo boundary.
 - Clean-clone verification has not been executed from this repo.
