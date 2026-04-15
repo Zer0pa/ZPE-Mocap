@@ -67,6 +67,7 @@ Source: [acl_direct_comparator_table.json](proofs/artifacts/2026-02-20_zpe_mocap
 | Field | Value |
 |-------|-------|
 | Verdict | CONDITIONAL — retrieval/indexing mode only |
+| Release posture | Live work in progress; not a final official release |
 | Commit SHA | c3f8ac9dd082 |
 | Primary Boundary | `82.51°` CMU joint-angle RMSE blocks playback claims |
 | Source | `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md`, `proofs/artifacts/2026-02-20_zpe_mocap_wave1/commercialization_claim_adjudication.json` |
