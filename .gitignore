@@ -10,3 +10,13 @@ build/
 dist/
 pip-wheel-metadata/
 proofs/artifacts/**/tmp/
+
+# RTR strip-down additions
+.gpd/
+.github/assets/readme/
+.github/ISSUE_TEMPLATE/
+.github/PULL_REQUEST_TEMPLATE.md
+**/codex_receipt*.md
+**/codex-receipt*.md
+**/*_codex_receipt.md
+**/*codex_receipt*.md
