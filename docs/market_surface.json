@@ -3,7 +3,7 @@
   "repo_role": "staged_validation_lane",
   "status": "STAGED_PROOF_SURFACE",
   "plain_english_summary": "Deterministic motion-capture compression and retrieval system, currently bounded to synthetic evidence.",
-  "commercial_wedge": "For animation studios, game engines, and motion-data infrastructure teams needing high-ratio deterministic mocap compression with search and retrieval. Business value: storage reduction and query-speed gains on motion-capture archives.",
+  "commercial_wedge": "Motion fingerprinting and similarity retrieval for mocap archives.",
   "technical_wedge": "Deterministic 8-primitive encoding applied to motion-capture data. CMU fixture corpus (10 real BVH clips): 18.77x compression, 32.45 mm MPJPE, 82.51 deg angle RMSE. Synthetic corpus (identity encoding): 85.19x compression, 1.19 mm MPJPE. Synthetic numbers are a theoretical ceiling — real data must be quantized from continuous joint positions.",
   "ideal_first_buyer": "Animation pipeline or mocap-data infrastructure team evaluating deterministic compression with search for motion archives.",
   "deployment_model": "Python reference implementation (pip install -e ./code). Public repo, not a packaged release.",
