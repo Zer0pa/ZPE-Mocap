@@ -1,5 +1,6 @@
 # Proof Logs
 
-Reserved for future repo-local sanity logs and verification captures.
+Reserved for repo-local verification captures when a pass needs durable logs.
 
-This phase intentionally avoided large new artifact generation.
+Empty today because the promoted authority lives in committed proof artifacts
+rather than transient log dumps.

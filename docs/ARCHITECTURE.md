@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <td valign="top"><code>code/fixtures/</code></td>
-      <td valign="top">Locked synthetic corpus inputs.</td>
+      <td valign="top">Locked synthetic inputs plus the committed CMU fixture corpus used for real-data retrieval benchmarking.</td>
     </tr>
     <tr>
       <td valign="top"><code>proofs/</code></td>
@@ -46,7 +46,7 @@
     </tr>
     <tr>
       <td valign="top"><code>docs/</code></td>
-      <td valign="top">Architecture, FAQ, legal boundary, and support routing docs.</td>
+      <td valign="top">Architecture, legal-boundary, and reorientation docs.</td>
     </tr>
   </tbody>
 </table>
@@ -68,27 +68,23 @@
   <tbody>
     <tr>
       <td valign="top"><a href="../README.md"><code>README.md</code></a></td>
-      <td valign="top">Front-door truth and the only location for promoted metrics and authority snapshots.</td>
+      <td valign="top">Front-door truth and the only location for promoted metrics, posture, and authority snapshots.</td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="../proofs/artifacts/2026-04-14_cmu_corpus_benchmark/"><code>proofs/artifacts/2026-04-14_cmu_corpus_benchmark/</code></a></td>
+      <td valign="top">Current real-data authority surface for the retrieval/indexing claim boundary.</td>
     </tr>
     <tr>
       <td valign="top"><a href="../proofs/artifacts/2026-02-20_zpe_mocap_wave1/"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/</code></a></td>
-      <td valign="top">Current authority bundle for synthetic-corpus evidence.</td>
-    </tr>
-    <tr>
-      <td valign="top"><a href="../proofs/README.md"><code>proofs/README.md</code></a></td>
-      <td valign="top">Proof navigation, logs, and evidence lineage.</td>
+      <td valign="top">Historical synthetic ceiling bundle and proof lineage, retained for search and determinism context.</td>
     </tr>
     <tr>
       <td valign="top"><a href="../code/README.md"><code>code/README.md</code></a></td>
       <td valign="top">Package-facing install and runtime usage.</td>
     </tr>
     <tr>
-      <td valign="top"><a href="../AUDITOR_PLAYBOOK.md"><code>AUDITOR_PLAYBOOK.md</code></a></td>
-      <td valign="top">Shortest honest audit path across the repo evidence surface.</td>
-    </tr>
-    <tr>
-      <td valign="top"><a href="../PUBLIC_AUDIT_LIMITS.md"><code>PUBLIC_AUDIT_LIMITS.md</code></a></td>
-      <td valign="top">Explicit non-claims and limits on public audit inference.</td>
+      <td valign="top"><a href="../docs/LEGAL_BOUNDARIES.md"><code>docs/LEGAL_BOUNDARIES.md</code></a></td>
+      <td valign="top">Operational claim boundary map for what the current evidence does and does not support.</td>
     </tr>
   </tbody>
 </table>
@@ -109,19 +105,21 @@
   </thead>
   <tbody>
     <tr>
-      <td valign="top"><code>codec.py</code>, <code>search.py</code>, <code>synthetic.py</code></td>
-      <td valign="top">Deterministic encoding, retrieval, and synthetic corpus generation surfaces referenced by the package API.</td>
+      <td valign="top"><code>codec.py</code>, <code>constants.py</code></td>
+      <td valign="top">Deterministic ZPMOC packaging plus lane-specific 8-way XY/XZ motion tokenization, periodicity tagging, and mirror-group metadata.</td>
     </tr>
     <tr>
-      <td valign="top"><code>retarget.py</code>, <code>bvh_loader.py</code>, <code>cmu.py</code></td>
-      <td valign="top">Retargeting and corpus-ingestion helpers.</td>
+      <td valign="top"><code>search.py</code>, <code>synthetic.py</code></td>
+      <td valign="top">Token-stream retrieval index and deterministic corpus generation surfaces referenced by the package API.</td>
     </tr>
     <tr>
-      <td valign="top"><code>benchmark.py</code>, <code>constants.py</code>, <code>cli.py</code></td>
-      <td valign="top">Benchmark assembly, package constants, and the CLI surface.</td>
+      <td valign="top"><code>retarget.py</code>, <code>bvh_loader.py</code>, <code>cmu.py</code>, <code>benchmark.py</code>, <code>cli.py</code></td>
+      <td valign="top">Retargeting helpers, BVH/CMU ingestion, benchmark assembly, and the CLI surface.</td>
     </tr>
   </tbody>
 </table>
+
+The lane-specific 8-way direction quantization lives in [../code/zpe_mocap/codec.py](../code/zpe_mocap/codec.py#L28) and [../code/zpe_mocap/constants.py](../code/zpe_mocap/constants.py#L13). It is a Mocap codec mechanic, not a portfolio-wide platform claim.
 
 <a id="runtime-flow"></a>
 <h2 align="center">Runtime Flow (Reference Path)</h2>
@@ -140,7 +138,7 @@
     </tr>
     <tr>
       <td valign="top">Compression</td>
-      <td valign="top"><code>encode_clip</code> serializes motion payloads into deterministic ZPMOC form.</td>
+      <td valign="top"><code>encode_clip</code> turns local motion deltas into parent-relative XY/XZ direction tokens, millimeter magnitudes, and deterministic ZPMOC payload segments.</td>
     </tr>
     <tr>
       <td valign="top">Decompression</td>
@@ -148,7 +146,7 @@
     </tr>
     <tr>
       <td valign="top">Search</td>
-      <td valign="top"><code>MotionSuffixIndex</code> handles retrieval evaluation.</td>
+      <td valign="top"><code>MotionSuffixIndex</code> scores interleaved token streams for retrieval evaluation.</td>
     </tr>
     <tr>
       <td valign="top">Gate replay</td>
@@ -178,15 +176,15 @@
     </tr>
     <tr>
       <td valign="top">Proof corpus</td>
-      <td valign="top">The imported proof bundle is historical and bounded to the wave1 synthetic corpus.</td>
+      <td valign="top">Current front-door authority is the committed 10-clip CMU fixture benchmark for retrieval/indexing. The wave1 synthetic bundle remains historical ceiling and lineage context.</td>
     </tr>
     <tr>
       <td valign="top">Runtime validation</td>
-      <td valign="top">Blender runtime verification, CMU-backed commercialization closure, and clean-clone verification remain unpromoted.</td>
+      <td valign="top">Playback-grade reconstruction, Blender runtime verification, and clean-clone verification remain unpromoted.</td>
     </tr>
     <tr>
       <td valign="top">External datasets</td>
-      <td valign="top">ACL and corpus clones are intentionally kept outside the tracked repo boundary.</td>
+      <td valign="top">ACL and larger corpus clones are intentionally kept outside the tracked repo boundary; only bounded imported fixtures become repo authority.</td>
     </tr>
   </tbody>
 </table>

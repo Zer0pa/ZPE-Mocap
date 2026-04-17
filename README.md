@@ -19,6 +19,8 @@ ZPE-Mocap is a deterministic motion fingerprinting and retrieval codec for skele
 
 The real-data authority surface is the committed CMU fixture benchmark: `18.77×` mean bandwidth reduction, `32.45 mm` mean MPJPE, and `82.51°` mean joint-angle RMSE across 10 BVH clips. That angle error is too high for playback-grade reconstruction, so the lane must be read as retrieval/indexing only. The older synthetic bundle remains useful for ceiling behavior and search latency, but it is not the commercial front door.
 
+This lane uses lane-specific 8-way XY/XZ direction tokens over local motion deltas plus a deterministic retrieval index. That mechanic lives in [code/zpe_mocap/codec.py](code/zpe_mocap/codec.py#L28) and [code/zpe_mocap/search.py](code/zpe_mocap/search.py#L9); it is a Mocap codec detail, not a portfolio-wide substrate claim.
+
 | Field | Value |
 |-------|-------|
 | Architecture | SKELETON_MANIFOLD |
@@ -37,7 +39,7 @@ Source: [results.json](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.
 
 ## Competitive Benchmarks
 
-The only committed comparator tables are synthetic. They are useful for lineage, but they are not the commercial wedge because the synthetic corpus is generated from the ZPE token vocabulary itself. Real evaluation should be judged from the CMU fixture results above.
+The only committed comparator tables are synthetic. They are useful for lineage, but they are not the commercial wedge because they were generated in-lane rather than measured on the current CMU fixture authority surface. Real evaluation should be judged from the CMU fixture results above.
 
 | Tool | Corpus | Result | Notes |
 |------|--------|--------|-------|
@@ -67,7 +69,7 @@ Source: [acl_direct_comparator_table.json](proofs/artifacts/2026-02-20_zpe_mocap
 | Field | Value |
 |-------|-------|
 | Verdict | CONDITIONAL — retrieval/indexing mode only |
-| Release posture | Live work in progress; not a final official release |
+| Release posture | Always-in-beta: useful now for retrieval/indexing, improving continuously |
 | Commit SHA | c3f8ac9dd082 |
 | Primary Boundary | `82.51°` CMU joint-angle RMSE blocks playback claims |
 | Source | `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md`, `proofs/artifacts/2026-02-20_zpe_mocap_wave1/commercialization_claim_adjudication.json` |

@@ -1,5 +1,7 @@
 # Concept Open Questions Resolution
 
+Historical wave1 synthetic commentary. Current front-door authority for this repo is the CMU fixture benchmark in `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/`.
+
 | Question | Resolution | Status | Evidence |
 |---|---|---|---|
 | Dual projection gimbal-like artifacts? | Stress-tested high-velocity and discontinuous clips; no crashes, fidelity within gate thresholds on proxy corpus. | RESOLVED | artifacts/2026-02-20_zpe_mocap_wave1/falsification_results.md, artifacts/2026-02-20_zpe_mocap_wave1/mocap_joint_fidelity.json |

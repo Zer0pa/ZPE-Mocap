@@ -1,5 +1,7 @@
 # Residual Risk Register
 
+Historical wave1 synthetic commentary. Current lane posture is retrieval/indexing only unless a newer proof surface clears playback-grade reconstruction.
+
 - RISK-001: ACL direct binary comparator parity remains incomplete unless `acl_direct_comparator_table.json` reports PASS.
 - RISK-002: Blender/USD live runtime evidence is required for max-wave readiness.
 - RISK-003: NET-NEW dataset coverage limitations propagate claim uncertainty for linked claims.

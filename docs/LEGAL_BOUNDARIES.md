@@ -29,14 +29,19 @@ clear lineage and license review:
 
 ## Evidence Boundary
 
-- Imported historical artifacts are kept as lineage and may retain stale paths
-  or overstated historical prose.
-- Repo-facing docs are the current interpretation layer for staging.
-- Docs cannot promote CMU, Blender, or clean-clone status without fresh
-  artifact-backed proof.
+- `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/` is the current real-data
+  authority surface for retrieval/indexing claims.
+- Imported wave1 synthetic artifacts remain lineage and ceiling context, not the
+  commercial front door.
+- Repo-facing docs are the current interpretation layer for what the live beta
+  surface supports today.
+- Docs can promote retrieval/indexing posture backed by the CMU fixture
+  benchmark. Docs cannot promote playback, Blender, clean-clone, or broader
+  commercialization closure without fresh artifact-backed proof.
 
 ## Go Next
 
 - Legal source: `../LICENSE`
-- Support routing: `SUPPORT.md`
-- Docs index: `README.md`
+- Front door: `../README.md`
+- Package surface: `../code/README.md`
+- Architecture map: `ARCHITECTURE.md`

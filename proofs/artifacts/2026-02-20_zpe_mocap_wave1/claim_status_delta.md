@@ -1,5 +1,7 @@
 # Claim Status Delta
 
+Historical wave1 synthetic claim table. Current front-door authority for this repo is the CMU fixture benchmark in `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/`.
+
 | Claim | Pre | Post | Evidence |
 |---|---|---|---|
 | MOC-C001 | UNTESTED | PASS | artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json; artifacts/2026-02-20_zpe_mocap_wave1/max_claim_resource_map.json |
