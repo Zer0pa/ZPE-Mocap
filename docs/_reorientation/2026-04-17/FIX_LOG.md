@@ -22,6 +22,7 @@
 ## Consistency
 
 - [README.md](../../../README.md) lines 20-22 — aligned the front-door description with the CMU fixture benchmark already committed under `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/`.
+- [README.md](../../../README.md) lines 31-38 — replaced the old fidelity-only Key Metrics mix with `RETRIEVAL_P10` so the metric slate matches the motion-retrieval wedge.
 - [docs/ARCHITECTURE.md](../../ARCHITECTURE.md) lines 70-87 — aligned architecture routing with the same authority split used in the README.
 - [proofs/logs/README.md](../../../proofs/logs/README.md) lines 3-6 — aligned the logs README with the current repo posture that durable authority lives in committed artifacts, not transient log dumps.
 - [proofs/source_refs/README.md](../../../proofs/source_refs/README.md) line 5 — replaced the old staging-only wording with the actual tracked-repo boundary language used elsewhere.
@@ -56,7 +57,7 @@
 
 - Drift: 6
 - Clarity: 7
-- Consistency: 4
+- Consistency: 5
 - Framing: 2
 - Beta posture: 2
 - Primitive scope: 2

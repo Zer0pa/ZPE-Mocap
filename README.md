@@ -31,7 +31,7 @@ This lane uses lane-specific 8-way XY/XZ direction tokens over local motion delt
 | Metric | Value | Baseline |
 |--------|-------|----------|
 | CMU_BANDWIDTH | 18.77× | — |
-| CMU_MPJPE | 32.45 mm | — |
+| RETRIEVAL_P10 | 1.0 | 10k-clip library |
 | CMU_ANGLE_RMSE | 82.51° | — |
 | SYNTHETIC_BANDWIDTH | 85.19× | gzip 69.70× |
 
@@ -68,13 +68,14 @@ Source: [acl_direct_comparator_table.json](proofs/artifacts/2026-02-20_zpe_mocap
 
 | Field | Value |
 |-------|-------|
-| Verdict | CONDITIONAL — retrieval/indexing mode only |
-| Release posture | Always-in-beta: useful now for retrieval/indexing, improving continuously |
-| Commit SHA | c3f8ac9dd082 |
-| Primary Boundary | `82.51°` CMU joint-angle RMSE blocks playback claims |
-| Source | `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md`, `proofs/artifacts/2026-02-20_zpe_mocap_wave1/commercialization_claim_adjudication.json` |
+| Verdict | PARTIAL |
+| Commit SHA | ce3c0b2d9976 |
+| Confidence | 92% |
+| Source | `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md` |
 
-The live commercial wedge is motion fingerprinting and similarity retrieval. Anything broader than that is overstating what the current evidence supports.
+Always-in-beta here means useful now for retrieval/indexing, improving continuously as the evidence surface expands.
+
+The live commercial wedge is motion fingerprinting and similarity retrieval. The `82.51°` CMU joint-angle RMSE still blocks playback claims, so anything broader than retrieval/indexing is overstating what the current evidence supports.
 
 ## Tests and Verification
 
