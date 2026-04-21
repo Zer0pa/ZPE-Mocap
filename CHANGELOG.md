@@ -10,7 +10,7 @@
 
 ## Unreleased
 
-- Docs: align `LICENSE` and `code/LICENSE` to the live `ZPE-IMC` SAL v6.0 text.
+- Docs: align `LICENSE` and `code/LICENSE` to the live `ZPE-IMC` SAL v7.0 text.
 - Docs: transfer `zpe-masthead-option-3.4.gif`, `zpe-masthead-option-3.5.gif`, and `zpe-masthead-option-3.6.gif` into `.github/assets/readme/`.
 - Docs: place animated masthead GIFs in `README.md` to mirror the `ZPE-IMC` reference positions.
 - Docs: normalize shared repo docs to the `ZPE-IMC` documentation pattern while preserving ZPE-Mocap-specific evidence boundaries.
