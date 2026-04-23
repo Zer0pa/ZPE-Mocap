@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: >-
+  If you use ZPE-Mocap, please cite this repository record.
+type: software
+title: "ZPE-Mocap"
+authors:
+  - name: "Zer0pa (Pty) Ltd"
+    email: architects@zer0pa.ai
+version: 0.1.0
+repository-code: https://github.com/Zer0pa/ZPE-Mocap
+url: https://github.com/Zer0pa/ZPE-Mocap
+license: LicenseRef-Zer0pa-SAL-7.0
+abstract: >-
+  ZPE-Mocap is a deterministic motion fingerprinting and retrieval codec for
+  skeletal motion data. It uses 8-direction dual-plane compass tokenisation
+  applied to joint-angle deltas (Compass-8, dual xy/xz planes), parent-relative
+  transforms, and zlib entropy coding to produce compact motion fingerprints
+  suited for search, indexing, and retrieval across BVH motion archives.
+keywords:
+  - motion capture
+  - deterministic codec
+  - skeletal motion
+  - motion fingerprinting
+  - motion retrieval
+  - compass-8
+  - BVH
+  - joint-angle encoding
