@@ -67,7 +67,7 @@ Source: [acl_direct_comparator_table.json](proofs/artifacts/2026-02-20_zpe_mocap
 | Field | Value |
 |-------|-------|
 | Verdict | PARTIAL |
-| Commit SHA | PENDING_LOCAL_COMMIT |
+| Commit SHA | 3492b9b1d1c3 |
 | Confidence | 89% |
 | Source | proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/summary.md |
 
