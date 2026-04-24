@@ -67,7 +67,7 @@ Source: [acl_direct_comparator_table.json](proofs/artifacts/2026-02-20_zpe_mocap
 | Field | Value |
 |-------|-------|
 | Verdict | PARTIAL |
-| Commit SHA | ce3c0b2d9976 |
+| Commit SHA | d2485c272414 |
 | Confidence | 92% |
 | Source | proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md |
 

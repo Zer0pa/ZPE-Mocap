@@ -1,0 +1,26 @@
+{
+  "title": "ZPE-Mocap",
+  "description": "ZPE-Mocap is a deterministic motion fingerprinting and retrieval codec for skeletal motion data. It emits compact motion fingerprints for search, indexing, and retrieval rather than playback-grade pose reconstruction.",
+  "upload_type": "software",
+  "license": "LicenseRef-Zer0pa-SAL-7.0",
+  "creators": [
+    {
+      "name": "Zer0pa (Pty) Ltd"
+    }
+  ],
+  "keywords": [
+    "motion-capture",
+    "skeletal-motion",
+    "retrieval",
+    "fingerprinting",
+    "bvh",
+    "compression"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Zer0pa/ZPE-Mocap",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
