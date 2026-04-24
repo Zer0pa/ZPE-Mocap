@@ -9,13 +9,16 @@ version = "0.1.0"
 description = "Zero-label structural motion search and compression. ZPE-MoCap deterministic codec/search package."
 readme = "README.md"
 requires-python = ">=3.10"
-authors = [{ name = "Zer0pa" }]
+authors = [{ name = "Zer0pa (Pty) Ltd", email = "architects@zer0pa.ai" }]
 license = { text = "LicenseRef-Zer0pa-SAL-7.0" }
 dependencies = [
   "numpy>=1.24",
 ]
-keywords = ["motion-capture", "animation", "search", "compression", "ZPE", "zpe-mocap"]
+keywords = ["motion-capture", "skeletal-motion", "bvh", "motion-retrieval", "motion-search", "deterministic-codec"]
 classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: Other/Proprietary License",
   "Programming Language :: Python :: 3",
   "Topic :: Multimedia :: Graphics :: 3D Modeling",
   "Topic :: Scientific/Engineering",
@@ -31,7 +34,10 @@ dev = ["pytest", "build"]
 
 [project.urls]
 Homepage = "https://github.com/Zer0pa/ZPE-Mocap"
+Documentation = "https://github.com/Zer0pa/ZPE-Mocap#readme"
+Issues = "https://github.com/Zer0pa/ZPE-Mocap/issues"
 Repository = "https://github.com/Zer0pa/ZPE-Mocap"
+Changelog = "https://github.com/Zer0pa/ZPE-Mocap/blob/main/CHANGELOG.md"
 
 [tool.setuptools]
 include-package-data = false

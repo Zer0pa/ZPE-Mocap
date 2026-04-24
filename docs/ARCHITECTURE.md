@@ -71,24 +71,20 @@
       <td valign="top">Front-door truth and the only location for promoted metrics and authority snapshots.</td>
     </tr>
     <tr>
-      <td valign="top"><a href="../proofs/artifacts/2026-02-20_zpe_mocap_wave1/"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/</code></a></td>
-      <td valign="top">Current authority bundle for synthetic-corpus evidence.</td>
+      <td valign="top"><a href="../proofs/artifacts/2026-04-14_cmu_corpus_benchmark/"><code>proofs/artifacts/2026-04-14_cmu_corpus_benchmark/</code></a></td>
+      <td valign="top">Current promoted authority bundle for the committed CMU fixture benchmark surfaced in the README.</td>
     </tr>
     <tr>
-      <td valign="top"><a href="../proofs/README.md"><code>proofs/README.md</code></a></td>
-      <td valign="top">Proof navigation, logs, and evidence lineage.</td>
+      <td valign="top"><a href="../proofs/artifacts/2026-02-20_zpe_mocap_wave1/"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/</code></a></td>
+      <td valign="top">Historical synthetic-ceiling bundle retained for lineage, search behavior, and latency evidence only.</td>
     </tr>
     <tr>
       <td valign="top"><a href="../code/README.md"><code>code/README.md</code></a></td>
       <td valign="top">Package-facing install and runtime usage.</td>
     </tr>
     <tr>
-      <td valign="top"><a href="../AUDITOR_PLAYBOOK.md"><code>AUDITOR_PLAYBOOK.md</code></a></td>
-      <td valign="top">Shortest honest audit path across the repo evidence surface.</td>
-    </tr>
-    <tr>
-      <td valign="top"><a href="../PUBLIC_AUDIT_LIMITS.md"><code>PUBLIC_AUDIT_LIMITS.md</code></a></td>
-      <td valign="top">Explicit non-claims and limits on public audit inference.</td>
+      <td valign="top"><a href="../proofs/logs/README.md"><code>proofs/logs/README.md</code></a></td>
+      <td valign="top">Repo-local verification log surface reserved for future captures.</td>
     </tr>
   </tbody>
 </table>
@@ -178,7 +174,7 @@
     </tr>
     <tr>
       <td valign="top">Proof corpus</td>
-      <td valign="top">The imported proof bundle is historical and bounded to the wave1 synthetic corpus.</td>
+      <td valign="top">The promoted authority bundle is the committed 10-clip CMU fixture benchmark; the synthetic wave1 bundle remains historical lineage only.</td>
     </tr>
     <tr>
       <td valign="top">Runtime validation</td>
@@ -186,7 +182,7 @@
     </tr>
     <tr>
       <td valign="top">External datasets</td>
-      <td valign="top">ACL and corpus clones are intentionally kept outside the tracked repo boundary.</td>
+      <td valign="top">Full ACL and external corpus clones remain outside the tracked repo boundary; the committed CMU fixture subset under <code>code/fixtures/cmu/</code> is the reproducible in-repo corpus surface.</td>
     </tr>
   </tbody>
 </table>
