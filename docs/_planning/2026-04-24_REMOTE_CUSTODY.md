@@ -16,7 +16,12 @@ Small, current planning artifacts are stored in-repo under `docs/_planning/`.
 
 ## External Artifact Custody
 
-Large or out-of-repo artifacts are stored on the GitHub custody release because Hugging Face CLI auth failed on this Mac during the custody pass after:
+Large or out-of-repo artifacts are stored in both places:
+
+- GitHub custody release: `custody-zpe-mocap-2026-04-24`
+- Hugging Face dataset: `Zer0pa/ZPE-Mocap-artifacts`
+
+The first normalized Hugging Face probe on this Mac failed after:
 
 ```bash
 unset HF_TOKEN
@@ -25,11 +30,15 @@ unset HF_HOME
 hf auth whoami
 ```
 
-Observed result:
+with:
 
 ```text
 Error: Not logged in
 ```
+
+The actual working org-write credential was the stored token `Zer0pa HF Storage`
+under the custom `HF_HOME`. After switching away from the env token override, the
+custody bundle was uploaded to the private dataset repo above.
 
 ## Restore Steps
 
@@ -48,9 +57,17 @@ Error: Not logged in
    git fetch origin chore/true-sal-v7-restamp-2026-04-22
    ```
 
-3. Download the assets from the `custody-zpe-mocap-2026-04-24` GitHub release and extract them next to the repo so the lane path shape is restored.
+3. Preferred restore path: download from the private Hugging Face dataset
+   `Zer0pa/ZPE-Mocap-artifacts`.
 
-4. If you need the real-data retrieval benchmark exactly as executed on 2026-04-24, restore `external/cmu_github_mirror/` before rerunning the retrieval benchmark because the committed proof bundle records that corpus root.
+4. Fallback restore path: download the assets from the
+   `custody-zpe-mocap-2026-04-24` GitHub release and extract them next to the
+   repo so the lane path shape is restored.
+
+5. If you need the real-data retrieval benchmark exactly as executed on
+   2026-04-24, restore `external/cmu_github_mirror/` before rerunning the
+   retrieval benchmark because the committed proof bundle records that corpus
+   root.
 
 ## Notes
 
