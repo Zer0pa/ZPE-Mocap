@@ -1,0 +1,1532 @@
+{
+  "argv": [
+    "code/scripts/benchmark_cmu_retrieval.py",
+    "--max-clips",
+    "24",
+    "--stdout"
+  ],
+  "clips_skipped_short": [],
+  "clips_used": [
+    {
+      "clip_id": "01_01",
+      "fps": 120,
+      "frame_count": 2752,
+      "library_doc_ids": [
+        "01_01__lib_00",
+        "01_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/001/01_01.bvh"
+    },
+    {
+      "clip_id": "01_02",
+      "fps": 120,
+      "frame_count": 4347,
+      "library_doc_ids": [
+        "01_02__lib_00",
+        "01_02__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/001/01_02.bvh"
+    },
+    {
+      "clip_id": "02_01",
+      "fps": 120,
+      "frame_count": 344,
+      "library_doc_ids": [
+        "02_01__lib_00",
+        "02_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/002/02_01.bvh"
+    },
+    {
+      "clip_id": "02_02",
+      "fps": 120,
+      "frame_count": 299,
+      "library_doc_ids": [
+        "02_02__lib_00",
+        "02_02__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/002/02_02.bvh"
+    },
+    {
+      "clip_id": "03_01",
+      "fps": 120,
+      "frame_count": 433,
+      "library_doc_ids": [
+        "03_01__lib_00",
+        "03_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/003/03_01.bvh"
+    },
+    {
+      "clip_id": "03_02",
+      "fps": 120,
+      "frame_count": 366,
+      "library_doc_ids": [
+        "03_02__lib_00",
+        "03_02__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/003/03_02.bvh"
+    },
+    {
+      "clip_id": "05_01",
+      "fps": 120,
+      "frame_count": 599,
+      "library_doc_ids": [
+        "05_01__lib_00",
+        "05_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/005/05_01.bvh"
+    },
+    {
+      "clip_id": "05_02",
+      "fps": 120,
+      "frame_count": 1124,
+      "library_doc_ids": [
+        "05_02__lib_00",
+        "05_02__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/005/05_02.bvh"
+    },
+    {
+      "clip_id": "06_01",
+      "fps": 120,
+      "frame_count": 495,
+      "library_doc_ids": [
+        "06_01__lib_00",
+        "06_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/006/06_01.bvh"
+    },
+    {
+      "clip_id": "06_02",
+      "fps": 120,
+      "frame_count": 722,
+      "library_doc_ids": [
+        "06_02__lib_00",
+        "06_02__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/006/06_02.bvh"
+    },
+    {
+      "clip_id": "07_01",
+      "fps": 120,
+      "frame_count": 317,
+      "library_doc_ids": [
+        "07_01__lib_00",
+        "07_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/007/07_01.bvh"
+    },
+    {
+      "clip_id": "07_02",
+      "fps": 120,
+      "frame_count": 330,
+      "library_doc_ids": [
+        "07_02__lib_00",
+        "07_02__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/007/07_02.bvh"
+    },
+    {
+      "clip_id": "08_01",
+      "fps": 120,
+      "frame_count": 278,
+      "library_doc_ids": [
+        "08_01__lib_00",
+        "08_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/008/08_01.bvh"
+    },
+    {
+      "clip_id": "08_02",
+      "fps": 120,
+      "frame_count": 310,
+      "library_doc_ids": [
+        "08_02__lib_00",
+        "08_02__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/008/08_02.bvh"
+    },
+    {
+      "clip_id": "09_01",
+      "fps": 120,
+      "frame_count": 149,
+      "library_doc_ids": [
+        "09_01__lib_00",
+        "09_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/009/09_01.bvh"
+    },
+    {
+      "clip_id": "10_01",
+      "fps": 120,
+      "frame_count": 802,
+      "library_doc_ids": [
+        "10_01__lib_00",
+        "10_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/010/10_01.bvh"
+    },
+    {
+      "clip_id": "11_01",
+      "fps": 120,
+      "frame_count": 598,
+      "library_doc_ids": [
+        "11_01__lib_00",
+        "11_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/011/11_01.bvh"
+    },
+    {
+      "clip_id": "12_01",
+      "fps": 120,
+      "frame_count": 524,
+      "library_doc_ids": [
+        "12_01__lib_00",
+        "12_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/012/12_01.bvh"
+    },
+    {
+      "clip_id": "13_01",
+      "fps": 120,
+      "frame_count": 2314,
+      "library_doc_ids": [
+        "13_01__lib_00",
+        "13_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/013/13_01.bvh"
+    },
+    {
+      "clip_id": "14_01",
+      "fps": 120,
+      "frame_count": 5595,
+      "library_doc_ids": [
+        "14_01__lib_00",
+        "14_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/014/14_01.bvh"
+    },
+    {
+      "clip_id": "15_01",
+      "fps": 120,
+      "frame_count": 5525,
+      "library_doc_ids": [
+        "15_01__lib_00",
+        "15_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/015/15_01.bvh"
+    },
+    {
+      "clip_id": "16_01",
+      "fps": 120,
+      "frame_count": 323,
+      "library_doc_ids": [
+        "16_01__lib_00",
+        "16_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/016/16_01.bvh"
+    },
+    {
+      "clip_id": "17_01",
+      "fps": 120,
+      "frame_count": 6306,
+      "library_doc_ids": [
+        "17_01__lib_00",
+        "17_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/017/17_01.bvh"
+    },
+    {
+      "clip_id": "18_01",
+      "fps": 120,
+      "frame_count": 304,
+      "library_doc_ids": [
+        "18_01__lib_00",
+        "18_01__lib_01"
+      ],
+      "query_count": 1,
+      "relative_path": "data/018/18_01.bvh"
+    }
+  ],
+  "command_line": "code/scripts/benchmark_cmu_retrieval.py --max-clips 24 --stdout",
+  "corpus_root": "/Users/Zer0pa/ZPE/ZPE Mocap/external/cmu_github_mirror",
+  "python_executable": "/private/tmp/zpe-mocap-exec311/bin/python",
+  "queries": [
+    {
+      "clip_id": "01_01",
+      "frame_start": 2052,
+      "frame_stop": 2100,
+      "latency_ms": 1.2867499999629217,
+      "query_id": "01_01__query_00",
+      "rank": 20,
+      "relative_path": "data/001/01_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "10_01",
+          "doc_id": "10_01__lib_01"
+        },
+        {
+          "clip_id": "11_01",
+          "doc_id": "11_01__lib_00"
+        },
+        {
+          "clip_id": "14_01",
+          "doc_id": "14_01__lib_00"
+        },
+        {
+          "clip_id": "15_01",
+          "doc_id": "15_01__lib_00"
+        },
+        {
+          "clip_id": "18_01",
+          "doc_id": "18_01__lib_00"
+        },
+        {
+          "clip_id": "01_02",
+          "doc_id": "01_02__lib_01"
+        },
+        {
+          "clip_id": "18_01",
+          "doc_id": "18_01__lib_01"
+        },
+        {
+          "clip_id": "10_01",
+          "doc_id": "10_01__lib_00"
+        },
+        {
+          "clip_id": "05_02",
+          "doc_id": "05_02__lib_01"
+        },
+        {
+          "clip_id": "13_01",
+          "doc_id": "13_01__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "01_02",
+      "frame_start": 3246,
+      "frame_stop": 3294,
+      "latency_ms": 0.8364579998669797,
+      "query_id": "01_02__query_00",
+      "rank": 5,
+      "relative_path": "data/001/01_02.bvh",
+      "top_results": [
+        {
+          "clip_id": "14_01",
+          "doc_id": "14_01__lib_01"
+        },
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_01"
+        },
+        {
+          "clip_id": "15_01",
+          "doc_id": "15_01__lib_01"
+        },
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_00"
+        },
+        {
+          "clip_id": "01_02",
+          "doc_id": "01_02__lib_00"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_01"
+        },
+        {
+          "clip_id": "05_02",
+          "doc_id": "05_02__lib_00"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_01"
+        },
+        {
+          "clip_id": "05_01",
+          "doc_id": "05_01__lib_01"
+        },
+        {
+          "clip_id": "11_01",
+          "doc_id": "11_01__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "02_01",
+      "frame_start": 246,
+      "frame_stop": 294,
+      "latency_ms": 0.8660000003146706,
+      "query_id": "02_01__query_00",
+      "rank": 3,
+      "relative_path": "data/002/02_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_00"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_00"
+        },
+        {
+          "clip_id": "02_01",
+          "doc_id": "02_01__lib_01"
+        },
+        {
+          "clip_id": "07_02",
+          "doc_id": "07_02__lib_00"
+        },
+        {
+          "clip_id": "05_01",
+          "doc_id": "05_01__lib_01"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_00"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_01"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_00"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "02_02",
+      "frame_start": 210,
+      "frame_stop": 258,
+      "latency_ms": 0.8694170001035673,
+      "query_id": "02_02__query_00",
+      "rank": 6,
+      "relative_path": "data/002/02_02.bvh",
+      "top_results": [
+        {
+          "clip_id": "08_01",
+          "doc_id": "08_01__lib_00"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_01"
+        },
+        {
+          "clip_id": "07_02",
+          "doc_id": "07_02__lib_01"
+        },
+        {
+          "clip_id": "09_01",
+          "doc_id": "09_01__lib_01"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_01"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_01"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_00"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_00"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "03_01",
+      "frame_start": 312,
+      "frame_stop": 360,
+      "latency_ms": 0.8474999999634747,
+      "query_id": "03_01__query_00",
+      "rank": 13,
+      "relative_path": "data/003/03_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_00"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_00"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_00"
+        },
+        {
+          "clip_id": "05_01",
+          "doc_id": "05_01__lib_01"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_01"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_01"
+        },
+        {
+          "clip_id": "02_01",
+          "doc_id": "02_01__lib_01"
+        },
+        {
+          "clip_id": "08_01",
+          "doc_id": "08_01__lib_00"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_01"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        }
+      ]
+    },
+    {
+      "clip_id": "03_02",
+      "frame_start": 261,
+      "frame_stop": 309,
+      "latency_ms": 0.7971670002007158,
+      "query_id": "03_02__query_00",
+      "rank": 4,
+      "relative_path": "data/003/03_02.bvh",
+      "top_results": [
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_01"
+        },
+        {
+          "clip_id": "02_01",
+          "doc_id": "02_01__lib_01"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_01"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_00"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_01"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_00"
+        },
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_01"
+        },
+        {
+          "clip_id": "07_02",
+          "doc_id": "07_02__lib_01"
+        },
+        {
+          "clip_id": "01_01",
+          "doc_id": "01_01__lib_00"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_00"
+        }
+      ]
+    },
+    {
+      "clip_id": "05_01",
+      "frame_start": 435,
+      "frame_stop": 483,
+      "latency_ms": 0.8562919997530116,
+      "query_id": "05_01__query_00",
+      "rank": 1,
+      "relative_path": "data/005/05_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "05_01",
+          "doc_id": "05_01__lib_01"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_00"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "11_01",
+          "doc_id": "11_01__lib_01"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_01"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_01"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_00"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_01"
+        },
+        {
+          "clip_id": "02_01",
+          "doc_id": "02_01__lib_00"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_00"
+        }
+      ]
+    },
+    {
+      "clip_id": "05_02",
+      "frame_start": 831,
+      "frame_stop": 879,
+      "latency_ms": 0.7898329999989073,
+      "query_id": "05_02__query_00",
+      "rank": 36,
+      "relative_path": "data/005/05_02.bvh",
+      "top_results": [
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_01"
+        },
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_00"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_01"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_01"
+        },
+        {
+          "clip_id": "08_01",
+          "doc_id": "08_01__lib_00"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_01"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_00"
+        },
+        {
+          "clip_id": "05_01",
+          "doc_id": "05_01__lib_01"
+        },
+        {
+          "clip_id": "15_01",
+          "doc_id": "15_01__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "06_01",
+      "frame_start": 357,
+      "frame_stop": 405,
+      "latency_ms": 0.8642910001981363,
+      "query_id": "06_01__query_00",
+      "rank": 1,
+      "relative_path": "data/006/06_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_01"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_00"
+        },
+        {
+          "clip_id": "05_01",
+          "doc_id": "05_01__lib_01"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_00"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_00"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_01"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_00"
+        },
+        {
+          "clip_id": "07_02",
+          "doc_id": "07_02__lib_01"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "06_02",
+      "frame_start": 528,
+      "frame_stop": 576,
+      "latency_ms": 0.8455840002170589,
+      "query_id": "06_02__query_00",
+      "rank": 11,
+      "relative_path": "data/006/06_02.bvh",
+      "top_results": [
+        {
+          "clip_id": "02_01",
+          "doc_id": "02_01__lib_00"
+        },
+        {
+          "clip_id": "07_02",
+          "doc_id": "07_02__lib_01"
+        },
+        {
+          "clip_id": "08_01",
+          "doc_id": "08_01__lib_01"
+        },
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_00"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_01"
+        },
+        {
+          "clip_id": "05_01",
+          "doc_id": "05_01__lib_01"
+        },
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_01"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "11_01",
+          "doc_id": "11_01__lib_01"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "07_01",
+      "frame_start": 225,
+      "frame_stop": 273,
+      "latency_ms": 0.8691670000189333,
+      "query_id": "07_01__query_00",
+      "rank": 2,
+      "relative_path": "data/007/07_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_01"
+        },
+        {
+          "clip_id": "02_01",
+          "doc_id": "02_01__lib_00"
+        },
+        {
+          "clip_id": "08_01",
+          "doc_id": "08_01__lib_01"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_00"
+        },
+        {
+          "clip_id": "09_01",
+          "doc_id": "09_01__lib_01"
+        },
+        {
+          "clip_id": "07_02",
+          "doc_id": "07_02__lib_01"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_01"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_01"
+        },
+        {
+          "clip_id": "09_01",
+          "doc_id": "09_01__lib_00"
+        }
+      ]
+    },
+    {
+      "clip_id": "07_02",
+      "frame_start": 234,
+      "frame_stop": 282,
+      "latency_ms": 0.833041000078083,
+      "query_id": "07_02__query_00",
+      "rank": 18,
+      "relative_path": "data/007/07_02.bvh",
+      "top_results": [
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_00"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_01"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_01"
+        },
+        {
+          "clip_id": "05_01",
+          "doc_id": "05_01__lib_01"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_01"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_00"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_00"
+        },
+        {
+          "clip_id": "09_01",
+          "doc_id": "09_01__lib_00"
+        },
+        {
+          "clip_id": "09_01",
+          "doc_id": "09_01__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "08_01",
+      "frame_start": 195,
+      "frame_stop": 243,
+      "latency_ms": 0.77316700026131,
+      "query_id": "08_01__query_00",
+      "rank": 15,
+      "relative_path": "data/008/08_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_01"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_01"
+        },
+        {
+          "clip_id": "02_01",
+          "doc_id": "02_01__lib_01"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_00"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_00"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_01"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_00"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_00"
+        },
+        {
+          "clip_id": "09_01",
+          "doc_id": "09_01__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "08_02",
+      "frame_start": 219,
+      "frame_stop": 267,
+      "latency_ms": 0.7685830000809801,
+      "query_id": "08_02__query_00",
+      "rank": 6,
+      "relative_path": "data/008/08_02.bvh",
+      "top_results": [
+        {
+          "clip_id": "08_01",
+          "doc_id": "08_01__lib_00"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_01"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_01"
+        },
+        {
+          "clip_id": "07_02",
+          "doc_id": "07_02__lib_00"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_00"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_01"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_01"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_01"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_00"
+        }
+      ]
+    },
+    {
+      "clip_id": "09_01",
+      "frame_start": 99,
+      "frame_stop": 147,
+      "latency_ms": 0.7915830001365975,
+      "query_id": "09_01__query_00",
+      "rank": 2,
+      "relative_path": "data/009/09_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_01"
+        },
+        {
+          "clip_id": "09_01",
+          "doc_id": "09_01__lib_01"
+        },
+        {
+          "clip_id": "08_01",
+          "doc_id": "08_01__lib_01"
+        },
+        {
+          "clip_id": "02_01",
+          "doc_id": "02_01__lib_00"
+        },
+        {
+          "clip_id": "07_02",
+          "doc_id": "07_02__lib_01"
+        },
+        {
+          "clip_id": "08_01",
+          "doc_id": "08_01__lib_00"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_01"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_01"
+        },
+        {
+          "clip_id": "09_01",
+          "doc_id": "09_01__lib_00"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        }
+      ]
+    },
+    {
+      "clip_id": "10_01",
+      "frame_start": 588,
+      "frame_stop": 636,
+      "latency_ms": 0.7342499998230778,
+      "query_id": "10_01__query_00",
+      "rank": 28,
+      "relative_path": "data/010/10_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_00"
+        },
+        {
+          "clip_id": "01_02",
+          "doc_id": "01_02__lib_00"
+        },
+        {
+          "clip_id": "01_01",
+          "doc_id": "01_01__lib_00"
+        },
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_01"
+        },
+        {
+          "clip_id": "01_02",
+          "doc_id": "01_02__lib_01"
+        },
+        {
+          "clip_id": "18_01",
+          "doc_id": "18_01__lib_01"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_01"
+        },
+        {
+          "clip_id": "11_01",
+          "doc_id": "11_01__lib_00"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_01"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_00"
+        }
+      ]
+    },
+    {
+      "clip_id": "11_01",
+      "frame_start": 435,
+      "frame_stop": 483,
+      "latency_ms": 0.7684160000280826,
+      "query_id": "11_01__query_00",
+      "rank": 3,
+      "relative_path": "data/011/11_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_00"
+        },
+        {
+          "clip_id": "18_01",
+          "doc_id": "18_01__lib_01"
+        },
+        {
+          "clip_id": "11_01",
+          "doc_id": "11_01__lib_01"
+        },
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_01"
+        },
+        {
+          "clip_id": "11_01",
+          "doc_id": "11_01__lib_00"
+        },
+        {
+          "clip_id": "05_02",
+          "doc_id": "05_02__lib_00"
+        },
+        {
+          "clip_id": "14_01",
+          "doc_id": "14_01__lib_00"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_00"
+        },
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_00"
+        }
+      ]
+    },
+    {
+      "clip_id": "12_01",
+      "frame_start": 381,
+      "frame_stop": 429,
+      "latency_ms": 0.7969160001266573,
+      "query_id": "12_01__query_00",
+      "rank": 1,
+      "relative_path": "data/012/12_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "12_01",
+          "doc_id": "12_01__lib_00"
+        },
+        {
+          "clip_id": "12_01",
+          "doc_id": "12_01__lib_01"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_00"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "07_02",
+          "doc_id": "07_02__lib_00"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_00"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_01"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_00"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_01"
+        },
+        {
+          "clip_id": "05_01",
+          "doc_id": "05_01__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "13_01",
+      "frame_start": 1722,
+      "frame_stop": 1770,
+      "latency_ms": 0.8028750003177265,
+      "query_id": "13_01__query_00",
+      "rank": 3,
+      "relative_path": "data/013/13_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "18_01",
+          "doc_id": "18_01__lib_01"
+        },
+        {
+          "clip_id": "11_01",
+          "doc_id": "11_01__lib_00"
+        },
+        {
+          "clip_id": "13_01",
+          "doc_id": "13_01__lib_01"
+        },
+        {
+          "clip_id": "15_01",
+          "doc_id": "15_01__lib_00"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_00"
+        },
+        {
+          "clip_id": "01_02",
+          "doc_id": "01_02__lib_01"
+        },
+        {
+          "clip_id": "10_01",
+          "doc_id": "10_01__lib_00"
+        },
+        {
+          "clip_id": "14_01",
+          "doc_id": "14_01__lib_00"
+        },
+        {
+          "clip_id": "05_02",
+          "doc_id": "05_02__lib_01"
+        },
+        {
+          "clip_id": "10_01",
+          "doc_id": "10_01__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "14_01",
+      "frame_start": 4182,
+      "frame_stop": 4230,
+      "latency_ms": 0.8297499998661806,
+      "query_id": "14_01__query_00",
+      "rank": 6,
+      "relative_path": "data/014/14_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_00"
+        },
+        {
+          "clip_id": "01_02",
+          "doc_id": "01_02__lib_01"
+        },
+        {
+          "clip_id": "13_01",
+          "doc_id": "13_01__lib_01"
+        },
+        {
+          "clip_id": "18_01",
+          "doc_id": "18_01__lib_01"
+        },
+        {
+          "clip_id": "05_02",
+          "doc_id": "05_02__lib_00"
+        },
+        {
+          "clip_id": "14_01",
+          "doc_id": "14_01__lib_00"
+        },
+        {
+          "clip_id": "11_01",
+          "doc_id": "11_01__lib_00"
+        },
+        {
+          "clip_id": "10_01",
+          "doc_id": "10_01__lib_00"
+        },
+        {
+          "clip_id": "01_02",
+          "doc_id": "01_02__lib_00"
+        },
+        {
+          "clip_id": "12_01",
+          "doc_id": "12_01__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "15_01",
+      "frame_start": 4131,
+      "frame_stop": 4179,
+      "latency_ms": 0.7379590001619363,
+      "query_id": "15_01__query_00",
+      "rank": 23,
+      "relative_path": "data/015/15_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_01"
+        },
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_00"
+        },
+        {
+          "clip_id": "11_01",
+          "doc_id": "11_01__lib_01"
+        },
+        {
+          "clip_id": "05_01",
+          "doc_id": "05_01__lib_01"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_01"
+        },
+        {
+          "clip_id": "14_01",
+          "doc_id": "14_01__lib_01"
+        },
+        {
+          "clip_id": "07_02",
+          "doc_id": "07_02__lib_01"
+        },
+        {
+          "clip_id": "08_01",
+          "doc_id": "08_01__lib_01"
+        },
+        {
+          "clip_id": "02_01",
+          "doc_id": "02_01__lib_00"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "16_01",
+      "frame_start": 228,
+      "frame_stop": 276,
+      "latency_ms": 0.8219169999392761,
+      "query_id": "16_01__query_00",
+      "rank": 7,
+      "relative_path": "data/016/16_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "01_02",
+          "doc_id": "01_02__lib_00"
+        },
+        {
+          "clip_id": "18_01",
+          "doc_id": "18_01__lib_01"
+        },
+        {
+          "clip_id": "05_02",
+          "doc_id": "05_02__lib_00"
+        },
+        {
+          "clip_id": "02_01",
+          "doc_id": "02_01__lib_01"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_00"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_01"
+        },
+        {
+          "clip_id": "16_01",
+          "doc_id": "16_01__lib_01"
+        },
+        {
+          "clip_id": "07_01",
+          "doc_id": "07_01__lib_01"
+        },
+        {
+          "clip_id": "03_01",
+          "doc_id": "03_01__lib_01"
+        },
+        {
+          "clip_id": "07_02",
+          "doc_id": "07_02__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "17_01",
+      "frame_start": 4716,
+      "frame_stop": 4764,
+      "latency_ms": 0.8547910001652781,
+      "query_id": "17_01__query_00",
+      "rank": 46,
+      "relative_path": "data/017/17_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "05_01",
+          "doc_id": "05_01__lib_00"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_00"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_01"
+        },
+        {
+          "clip_id": "06_01",
+          "doc_id": "06_01__lib_00"
+        },
+        {
+          "clip_id": "07_02",
+          "doc_id": "07_02__lib_00"
+        },
+        {
+          "clip_id": "05_01",
+          "doc_id": "05_01__lib_01"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_00"
+        },
+        {
+          "clip_id": "08_02",
+          "doc_id": "08_02__lib_01"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_01"
+        }
+      ]
+    },
+    {
+      "clip_id": "18_01",
+      "frame_start": 216,
+      "frame_stop": 264,
+      "latency_ms": 0.803832999736187,
+      "query_id": "18_01__query_00",
+      "rank": 11,
+      "relative_path": "data/018/18_01.bvh",
+      "top_results": [
+        {
+          "clip_id": "07_02",
+          "doc_id": "07_02__lib_00"
+        },
+        {
+          "clip_id": "12_01",
+          "doc_id": "12_01__lib_00"
+        },
+        {
+          "clip_id": "03_02",
+          "doc_id": "03_02__lib_00"
+        },
+        {
+          "clip_id": "13_01",
+          "doc_id": "13_01__lib_01"
+        },
+        {
+          "clip_id": "12_01",
+          "doc_id": "12_01__lib_01"
+        },
+        {
+          "clip_id": "05_01",
+          "doc_id": "05_01__lib_00"
+        },
+        {
+          "clip_id": "02_02",
+          "doc_id": "02_02__lib_00"
+        },
+        {
+          "clip_id": "06_02",
+          "doc_id": "06_02__lib_00"
+        },
+        {
+          "clip_id": "02_01",
+          "doc_id": "02_01__lib_01"
+        },
+        {
+          "clip_id": "11_01",
+          "doc_id": "11_01__lib_01"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "candidate_cap": 64,
+    "clip_count_skipped_short": 0,
+    "clip_count_used": 24,
+    "latency_p50_ms": 0.8258334999027284,
+    "latency_p95_ms": 0.8693795000908722,
+    "latency_p99_ms": 1.19076340999527,
+    "library_window_count": 48,
+    "library_windows_per_clip": 2,
+    "mean_rank": 11.291666666666666,
+    "mean_reciprocal_rank": 0.2771887532757098,
+    "median_rank": 6.0,
+    "metric": "heldout_window_clip_retrieval",
+    "miss_count": 0,
+    "query_window_count": 24,
+    "query_windows_per_clip": 1,
+    "random_clip_hit_rate_at_1": 0.041666666666666664,
+    "random_clip_hit_rate_at_10": 0.4166666666666667,
+    "recall_at_1": 0.125,
+    "recall_at_10": 0.5833333333333334,
+    "recall_at_5": 0.4166666666666667,
+    "relevance_definition": "same source clip across held-out non-overlapping windows",
+    "scanned_bvh_file_count": 24,
+    "status": "PASS",
+    "top_k": 10,
+    "window_frames": 48
+  },
+  "timestamp_utc": "2026-04-24T01:19:33.188854+00:00"
+}

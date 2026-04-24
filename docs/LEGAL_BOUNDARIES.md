@@ -32,8 +32,11 @@ clear lineage and license review:
 - Imported historical artifacts are kept as lineage and may retain stale paths
   or overstated historical prose.
 - Repo-facing docs are the current interpretation layer for staging.
-- Docs cannot promote CMU, Blender, or clean-clone status without fresh
-  artifact-backed proof.
+- Docs may promote the committed CMU fixture compression/fidelity benchmark and
+  the bounded 24-file CMU held-out retrieval benchmark because both now have
+  local artifact-backed proof.
+- Docs cannot promote playback, Blender runtime, semantic action retrieval, or
+  clean-clone status without fresh artifact-backed proof.
 
 ## Go Next
 

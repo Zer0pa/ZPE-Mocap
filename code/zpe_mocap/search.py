@@ -30,18 +30,22 @@ class MotionSuffixIndex:
             gram = tuple(tokens[i : i + self.k])
             self.inverted[gram].add(clip_id)
 
-    def _candidates(self, query_tokens: list[int]) -> set[str]:
+    def _candidate_counts(self, query_tokens: list[int]) -> dict[str, int]:
         counts: dict[str, int] = defaultdict(int)
         if len(query_tokens) < self.k:
             for clip_id in self.inverted.get(tuple(query_tokens), set()):
                 counts[clip_id] += 1
-            return set(counts.keys())
+            return counts
         span = len(query_tokens) - self.k + 1
         stride = 1 if span <= 64 else max(2, span // 64)
         for i in range(0, span, stride):
             gram = tuple(query_tokens[i : i + self.k])
             for clip_id in self.inverted.get(gram, set()):
                 counts[clip_id] += 1
+        return counts
+
+    def _candidates(self, query_tokens: list[int]) -> set[str]:
+        counts = self._candidate_counts(query_tokens)
         if not counts:
             return set()
         ranked = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
@@ -56,7 +60,12 @@ class MotionSuffixIndex:
     def query(self, query_tokens: list[int], top_k: int = 10) -> tuple[list[str], float]:
         start = time.perf_counter()
         exact_ids = sorted(self.exact_lookup.get(tuple(query_tokens), []))
-        candidates = self._candidates(query_tokens)
+        counts = self._candidate_counts(query_tokens)
+        if counts:
+            ranked_counts = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
+            candidates = {clip_id for clip_id, _ in ranked_counts[: self.max_candidates]}
+        else:
+            candidates = set()
         for exact in exact_ids:
             candidates.add(exact)
         if not candidates:
@@ -64,12 +73,17 @@ class MotionSuffixIndex:
             return [], elapsed_ms
 
         query_arr = np.asarray(query_tokens, dtype=np.int16)
+        query_span = max(len(query_tokens) - self.k + 1, 1)
         scored = []
         for clip_id in candidates:
-            score = self._similarity(query_arr, self.docs_np[clip_id])
-            scored.append((score, clip_id))
-        scored.sort(key=lambda x: (-x[0], x[1]))
-        ordered = [clip_id for _, clip_id in scored]
+            candidate = self.docs_np[clip_id]
+            doc_span = max(int(candidate.shape[0]) - self.k + 1, 1)
+            overlap = counts.get(clip_id, 0)
+            overlap_score = overlap / float(max(query_span, doc_span))
+            position_score = self._similarity(query_arr, candidate)
+            scored.append((overlap_score, position_score, clip_id))
+        scored.sort(key=lambda x: (-x[0], -x[1], x[2]))
+        ordered = [clip_id for _, _, clip_id in scored]
         if exact_ids:
             ordered = exact_ids + [clip_id for clip_id in ordered if clip_id not in exact_ids]
         result_ids = ordered[:top_k]
