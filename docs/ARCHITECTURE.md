@@ -71,8 +71,16 @@
       <td valign="top">Front-door truth and the only location for promoted metrics and authority snapshots.</td>
     </tr>
     <tr>
+      <td valign="top"><a href="../proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/"><code>proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/</code></a></td>
+      <td valign="top">Current retrieval authority bundle for real-data held-out-window search over the CMU mirror.</td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="../proofs/artifacts/2026-04-14_cmu_corpus_benchmark/"><code>proofs/artifacts/2026-04-14_cmu_corpus_benchmark/</code></a></td>
+      <td valign="top">Current compression and fidelity authority bundle for the committed 10-clip CMU fixture corpus.</td>
+    </tr>
+    <tr>
       <td valign="top"><a href="../proofs/artifacts/2026-02-20_zpe_mocap_wave1/"><code>proofs/artifacts/2026-02-20_zpe_mocap_wave1/</code></a></td>
-      <td valign="top">Current authority bundle for synthetic-corpus evidence.</td>
+      <td valign="top">Historical synthetic evidence retained for lineage, not the commercial front door.</td>
     </tr>
     <tr>
       <td valign="top"><a href="../proofs/README.md"><code>proofs/README.md</code></a></td>
@@ -174,19 +182,19 @@
   <tbody>
     <tr>
       <td valign="top">Determinism</td>
-      <td valign="top">The reference implementation is documented as deterministic on the shipped synthetic corpus.</td>
+      <td valign="top">The reference implementation remains deterministic, and retrieval is now exercised on real BVH windows as well as the shipped synthetic corpus.</td>
     </tr>
     <tr>
       <td valign="top">Proof corpus</td>
-      <td valign="top">The imported proof bundle is historical and bounded to the wave1 synthetic corpus.</td>
+      <td valign="top">Promoted proof is split between the 10-clip CMU fixture benchmark and a 24-file held-out retrieval benchmark over the external CMU mirror.</td>
     </tr>
     <tr>
       <td valign="top">Runtime validation</td>
-      <td valign="top">Blender runtime verification, CMU-backed commercialization closure, and clean-clone verification remain unpromoted.</td>
+      <td valign="top">Playback-grade reconstruction, Blender runtime verification, and clean-clone commercialization closure remain unpromoted.</td>
     </tr>
     <tr>
       <td valign="top">External datasets</td>
-      <td valign="top">ACL and corpus clones are intentionally kept outside the tracked repo boundary.</td>
+      <td valign="top">ACL and corpus clones stay outside the tracked repo boundary; promoted metrics may cite derived proof artifacts from bounded external slices when the artifact states its scope.</td>
     </tr>
   </tbody>
 </table>
