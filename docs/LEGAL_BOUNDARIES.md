@@ -38,5 +38,5 @@ clear lineage and license review:
 ## Go Next
 
 - Legal source: `../LICENSE`
-- Support routing: `SUPPORT.md`
-- Docs index: `README.md`
+- Front door: `../README.md`
+- Runtime map: `ARCHITECTURE.md`
