@@ -36,12 +36,36 @@ The current retrieval authority is the 2026-04-24 CMU held-out-window benchmark.
 | Verdict | PASS for retrieval/indexing scope | [`summary.md`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/summary.md) |
 | Corpus | 24 scanned BVH files, 24 clips used | [`results.json`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/results.json) |
 | Relevance target | Same source clip across held-out non-overlapping windows | [`summary.md`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/summary.md) |
-| Recall@1 | 0.125000 | [`summary.md`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/summary.md) |
+| Recall@1 | 0.125000 (3.0× random baseline of 0.042) | [`results.json`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/results.json) |
 | Recall@5 | 0.416667 | [`summary.md`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/summary.md) |
 | Recall@10 | 0.583333 | [`summary.md`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/summary.md) |
 | Mean reciprocal rank | 0.277189 | [`summary.md`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/summary.md) |
 | Median rank | 6.0 | [`summary.md`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/summary.md) |
-| Latency p95 | 0.869380 ms | [`summary.md`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/summary.md) |
+| Latency p50 | 0.826 ms | [`results.json`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/results.json) |
+| Latency p95 | 0.869 ms | [`summary.md`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/summary.md) |
+| Latency p99 | 1.191 ms | [`results.json`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/results.json) |
+
+## CMU Corpus Compression
+
+Compression ratios measured against real CMU mocap data (10 fixture clips, cgspeed MotionBuilder-friendly BVH conversion, 2010). Basis: raw BVH float32 bytes. This is a fingerprinting/indexing codec — reconstruction fidelity (MPJPE) is not a design target and is not claimed.
+
+| Field | Value | Proof |
+|-------|-------|-------|
+| Mean compression ratio vs raw BVH float32 | 18.77× | [`results.json`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json) |
+| Compression ratio range | 15.22×–22.98× | [`results.json`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json) |
+| Clip count | 10 (walk, run, hop, combat, swim, calisthenics) | [`summary.md`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md) |
+| Corpus | CMU MoCap database via cgspeed BVH conversion (2010) | [`results.json`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json) |
+
+## ACL Direct Compression Comparator
+
+Scope caveat: this comparator runs on 10 synthetic clips (wave 1 fixture), not CMU real data, and ZPE-Mocap is a fingerprinting codec (lossy by design) while ACL targets playback-grade reconstruction. The comparison is compression-ratio-only and does not imply equivalent reconstruction quality.
+
+| Codec | Mean ratio vs raw BVH float32 | ACL level | Corpus | Proof |
+|-------|-------------------------------|-----------|--------|-------|
+| ZPE-Mocap | 57.03× | n/a (fingerprinting) | 10 synthetic clips | [`acl_direct_comparator_table.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json) |
+| ACL (Animation Compression Library) | 19.15× | medium | same 10 synthetic clips | [`acl_direct_comparator_table.json`](proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json) |
+
+ACL reference: [github.com/nfrechette/acl](https://github.com/nfrechette/acl). ACL binary was built locally from source and run directly; the ratio is measured against the same raw BVH float32 baseline. This result is not CI-gated and is bounded to the wave 1 synthetic fixture.
 
 ## Tests and Verification
 
@@ -67,6 +91,7 @@ The current retrieval authority is the 2026-04-24 CMU held-out-window benchmark.
 | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_joint_fidelity.json` | PRESENT |
 | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json` | PRESENT |
 | `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json` | PRESENT |
+| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json` | PRESENT |
 
 ## Repo Shape
 
