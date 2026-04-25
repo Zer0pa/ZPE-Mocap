@@ -15,7 +15,11 @@
 
 ## What This Is
 
-ZPE-Mocap is a deterministic motion fingerprinting and retrieval codec for skeletal motion data. The CI-backed repo surface is the canonical walk fixture, suffix-index retrieval behavior, edge-case decode coverage, and the committed 10-clip CMU fixture manifest. This front door does not promote playback-grade reconstruction or commercial-closure claims.
+ZPE-Mocap is a deterministic motion fingerprinting and retrieval codec for skeletal motion data — one lane in Zer0pa's 17-lane ZPE encoding portfolio. The design target is compact, indexable motion fingerprints from BVH archives, not playback-grade reconstruction. Encoding is lossy by design; retrieval fidelity is the primary proof surface.
+
+**Headline result (CI-anchored, real data):** mean 18.77× compression vs raw BVH float32 on 10 real CMU corpus clips. A synthetic-fixture ACL comparator (57.03× ZPE-Mocap vs 19.15× ACL medium, 10 synthetic clips, not CI-gated) sets an orientation ceiling but is not the aggregate claim. Both are documented in full below with scope boundaries.
+
+The committed front door covers: canonical walk fixture integrity, suffix-index retrieval stability, edge-case decode coverage, and the 10-clip CMU fixture manifest.
 
 ## CI-Verified Surface
 
@@ -27,9 +31,20 @@ ZPE-Mocap is a deterministic motion fingerprinting and retrieval codec for skele
 | Search ranking and retrieval metric primitives used by the CMU benchmark remain covered. | `code/zpe_mocap/search.py`, `code/zpe_mocap/metrics.py`, `code/scripts/benchmark_cmu_retrieval.py` | `code/tests/test_search.py`, `code/tests/test_metrics.py` |
 | The committed CMU fixture manifest remains fixed to the 10 checked-in BVH clips. | `code/fixtures/cmu/manifest.json`, `code/fixtures/cmu/bvh/*.bvh` | `code/tests/test_cmu_offline.py::test_manifest_matches_committed_fixture_set` |
 
+## CMU Corpus Compression
+
+**Primary compression authority.** Ratios measured against real CMU mocap data (10 fixture clips, cgspeed MotionBuilder-friendly BVH conversion, 2010). Basis: raw BVH float32 bytes. Reconstruction fidelity (MPJPE) is not a design target and is not claimed here.
+
+| Field | Value | Proof |
+|-------|-------|-------|
+| Mean compression ratio vs raw BVH float32 | **18.77×** | [`results.json`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json) |
+| Compression ratio range | 15.22×–22.98× | [`results.json`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json) |
+| Clip count | 10 (walk, run, hop, combat, swim, calisthenics) | [`summary.md`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md) |
+| Corpus | CMU MoCap database via cgspeed BVH conversion (2010) | [`results.json`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json) |
+
 ## CMU Retrieval Benchmark
 
-The current retrieval authority is the 2026-04-24 CMU held-out-window benchmark. It supports the retrieval/indexing wedge only: same-source clip retrieval across non-overlapping windows, not playback-grade reconstruction and not semantic action retrieval.
+The current retrieval authority is the 2026-04-24 CMU held-out-window benchmark. Scope: same-source clip retrieval across non-overlapping windows, not playback-grade reconstruction and not semantic action retrieval.
 
 | Field | Value | Proof |
 |-------|-------|-------|
@@ -45,20 +60,9 @@ The current retrieval authority is the 2026-04-24 CMU held-out-window benchmark.
 | Latency p95 | 0.869 ms | [`summary.md`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/summary.md) |
 | Latency p99 | 1.191 ms | [`results.json`](proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/results.json) |
 
-## CMU Corpus Compression
-
-Compression ratios measured against real CMU mocap data (10 fixture clips, cgspeed MotionBuilder-friendly BVH conversion, 2010). Basis: raw BVH float32 bytes. This is a fingerprinting/indexing codec — reconstruction fidelity (MPJPE) is not a design target and is not claimed.
-
-| Field | Value | Proof |
-|-------|-------|-------|
-| Mean compression ratio vs raw BVH float32 | 18.77× | [`results.json`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json) |
-| Compression ratio range | 15.22×–22.98× | [`results.json`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json) |
-| Clip count | 10 (walk, run, hop, combat, swim, calisthenics) | [`summary.md`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md) |
-| Corpus | CMU MoCap database via cgspeed BVH conversion (2010) | [`results.json`](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json) |
-
 ## ACL Direct Compression Comparator
 
-Scope caveat: this comparator runs on 10 synthetic clips (wave 1 fixture), not CMU real data, and ZPE-Mocap is a fingerprinting codec (lossy by design) while ACL targets playback-grade reconstruction. The comparison is compression-ratio-only and does not imply equivalent reconstruction quality.
+**Secondary comparator — synthetic fixture, not CI-gated.** This comparator runs on 10 synthetic clips (wave 1 fixture), not CMU real data. ZPE-Mocap is a fingerprinting codec (lossy by design) while ACL targets playback-grade reconstruction. The comparison is compression-ratio-only and does not imply equivalent reconstruction quality. Do not treat this as the aggregate compression claim — that is the 18.77× CMU figure above.
 
 | Codec | Mean ratio vs raw BVH float32 | ACL level | Corpus | Proof |
 |-------|-------------------------------|-----------|--------|-------|
@@ -140,6 +144,4 @@ print(enc.compression_ratio, dec.clip_id)
 PY
 ```
 
-The checked-in benchmark bundles under `proofs/artifacts/` remain available for manual inspection. Only the CMU retrieval metrics surfaced above are promoted here, and they are bounded to retrieval/indexing scope by the proof artifact and CI-covered search primitives.
-
-Read [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) before turning any artifact in this repo into a broader playback or commercial claim.
+The checked-in benchmark bundles under `proofs/artifacts/` remain available for manual inspection. Promoted metrics above are bounded to retrieval/indexing scope. Read [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) before turning any artifact in this repo into a broader playback or commercial claim.
