@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=68,<82", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,9 +7,9 @@ name = "zpe-mocap"
 version = "0.1.0"
 description = "Zero-label structural motion search and compression. ZPE-MoCap deterministic codec/search package."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 authors = [{ name = "Zer0pa (Pty) Ltd", email = "architects@zer0pa.ai" }]
-license = { text = "LicenseRef-Zer0pa-SAL-7.0" }
+license = "LicenseRef-Zer0pa-SAL-7.0"
 dependencies = [
   "numpy>=1.24",
 ]
@@ -17,8 +17,8 @@ keywords = ["motion-capture", "skeletal-motion", "bvh", "motion-retrieval", "mot
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Science/Research",
-  "License :: Other/Proprietary License",
-  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
   "Topic :: Multimedia :: Graphics :: 3D Modeling",
   "Topic :: Scientific/Engineering",
 ]
@@ -36,7 +36,6 @@ Homepage = "https://github.com/Zer0pa/ZPE-Mocap"
 Documentation = "https://github.com/Zer0pa/ZPE-Mocap#readme"
 Issues = "https://github.com/Zer0pa/ZPE-Mocap/issues"
 Repository = "https://github.com/Zer0pa/ZPE-Mocap"
-Changelog = "https://github.com/Zer0pa/ZPE-Mocap/blob/main/CHANGELOG.md"
 
 [tool.setuptools]
 include-package-data = false

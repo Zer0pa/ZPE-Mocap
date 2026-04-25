@@ -7,7 +7,6 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-SAL%20v7.0-e5e7eb?labelColor=111111" alt="License: SAL v7.0"></a>
   <a href="code/README.md"><img src="https://img.shields.io/badge/python-reference%20implementation-e5e7eb?labelColor=111111" alt="Python reference implementation"></a>
-  <a href="proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md"><img src="https://img.shields.io/badge/current%20authority-CMU%20fixture%20benchmark-e5e7eb?labelColor=111111" alt="Current authority: CMU fixture benchmark"></a>
   <a href="docs/LEGAL_BOUNDARIES.md"><img src="https://img.shields.io/badge/lane%20boundaries-retrieval%20not%20playback-e5e7eb?labelColor=111111" alt="Lane boundaries: retrieval, not playback"></a>
 </p>
 
@@ -15,108 +14,54 @@
 
 ## What This Is
 
-ZPE-Mocap is a deterministic motion fingerprinting and retrieval codec for skeletal motion data. The commercial wedge is not faithful pose reconstruction. It is compact motion fingerprints for search, indexing, and retrieval where raw BVH archives are expensive to store and slow to query.
+ZPE-Mocap is a deterministic motion fingerprinting and retrieval codec for skeletal motion data. The CI-backed repo surface is the canonical walk fixture, suffix-index retrieval behavior, edge-case decode coverage, and the committed 10-clip CMU fixture manifest. This front door does not promote playback-grade reconstruction or commercial-closure claims.
 
-The real-data authority surface is the committed CMU fixture benchmark: `18.77×` mean bandwidth reduction, `32.45 mm` mean MPJPE, and `82.51°` mean joint-angle RMSE across 10 BVH clips. That angle error is too high for playback-grade reconstruction, so the lane must be read as retrieval/indexing only. The older synthetic bundle remains useful for ceiling behavior and search latency, but it is not the commercial front door.
+## CI-Verified Surface
 
-| Field | Value |
-|-------|-------|
-| Architecture | SKELETON_MANIFOLD |
-| Encoding | JOINT_ANGLE_V2 |
-
-## Key Metrics
-
-| Metric | Value | Baseline |
-|--------|-------|----------|
-| CMU_BANDWIDTH | 18.77× | — |
-| CMU_MPJPE | 32.45 mm | — |
-| CMU_ANGLE_RMSE | 82.51° | — |
-| SYNTHETIC_BANDWIDTH | 85.19× | gzip 69.70× |
-
-Source: [results.json](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json), [summary.md](proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md), [mocap_search_eval.json](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json)
-
-## Competitive Benchmarks
-
-The only committed comparator tables are synthetic. They are useful for lineage, but they are not the commercial wedge because the synthetic corpus is generated from the ZPE token vocabulary itself. Real evaluation should be judged from the CMU fixture results above.
-
-| Tool | Corpus | Result | Notes |
-|------|--------|--------|-------|
-| **ZPE-Mocap** | synthetic comparator set | **57.0× mean** | Same synthetic clips used for the ACL table |
-| ACL | synthetic comparator set | 19.1× mean | Circular methodology; not a fair real-world comparator |
-| gzip | synthetic corpus | 69.70× | General-purpose baseline on the same synthetic surface |
-
-Source: [acl_direct_comparator_table.json](proofs/artifacts/2026-02-20_zpe_mocap_wave1/acl_direct_comparator_table.json), [mocap_compression_benchmark.json](proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json)
-
-## What We Prove
-
-- `18.77×` mean bandwidth reduction on the committed 10-clip CMU fixture corpus.
-- `32.45 mm` MPJPE and `82.51°` joint-angle RMSE on real BVH data, which is sufficient for retrieval/indexing judgment but not playback.
-- Synthetic search ranking at `p@10 = 1.0` and synthetic query latency at `26.14 ms` p95.
-- A committed Wave-1 evidence bundle with explicit commercialization and integration boundaries.
-
-## What We Don't Claim
-
-- No claim of playback-quality pose reconstruction.
-- No claim of real-data parity with the synthetic benchmark bundle.
-- No claim that the synthetic ACL comparison is a fair commercial benchmark.
-- No claim of Blender runtime closure, clean-clone verification, or commercialization-safe closure.
-- No claim that this repo is a released animation-runtime product.
-
-## Commercial Readiness
-
-| Field | Value |
-|-------|-------|
-| Verdict | PARTIAL |
-| Commit SHA | d2485c272414 |
-| Confidence | 92% |
-| Source | proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md |
+| Surface | Backing artifact | CI path |
+|--------|------------------|---------|
+| Canonical walk payload is byte-stable. | `code/tests/fixtures/canonical_walk.json`, `code/tests/fixtures/canonical_walk_compressed.bin` | `code/tests/test_roundtrip.py::test_canonical_walk_payload_matches_committed_binary` |
+| Canonical walk roundtrip remains numerically stable against the committed fixture. | `code/tests/fixtures/canonical_walk_roundtrip.json` | `code/tests/test_roundtrip.py::test_canonical_walk_roundtrip_matches_committed_json` |
+| Exact retrieval over the committed compressed walk fixture remains stable. | `code/tests/fixtures/canonical_walk.json`, `code/tests/fixtures/canonical_walk_compressed.bin` | `code/tests/test_search.py::test_retrieves_exact`, `code/tests/test_search.py::test_queries_compressed_library` |
+| The committed CMU fixture manifest remains fixed to the 10 checked-in BVH clips. | `code/fixtures/cmu/manifest.json`, `code/fixtures/cmu/bvh/*.bvh` | `code/tests/test_cmu_offline.py::test_manifest_matches_committed_fixture_set` |
 
 ## Tests and Verification
 
 | Code | Check | Verdict |
 |------|-------|---------|
-| V_01 | CMU fixture benchmark | PASS |
-| V_02 | Synthetic compression benchmark | PASS |
-| V_03 | Synthetic joint fidelity | PASS |
-| V_04 | Synthetic search ranking | PASS |
-| V_05 | Synthetic query latency | PASS |
-| V_06 | Commercialization claim adjudication | CONDITIONAL |
+| T_01 | Canonical walk payload matches committed binary fixture | PASS |
+| T_02 | Canonical walk roundtrip matches committed JSON fixture within numerical tolerance | PASS |
+| T_03 | Synthetic encode/decode threshold smoke path | PASS |
+| T_04 | Suffix-index exact retrieval remains stable | PASS |
+| T_05 | CMU fixture manifest remains fixed to the committed 10-clip set | PASS |
+| T_06 | Decode edge cases preserve expected shapes and fps | PASS |
 
-## Proof Anchors
+## Evidence On Disk
 
 | Path | State |
 |------|-------|
-| `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json` | VERIFIED |
-| `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md` | VERIFIED |
-| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json` | VERIFIED |
-| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_joint_fidelity.json` | VERIFIED |
-| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json` | VERIFIED |
-| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json` | VERIFIED |
-| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/quality_gate_scorecard.json` | VERIFIED |
-| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/commercialization_claim_adjudication.json` | VERIFIED |
+| `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/results.json` | PRESENT |
+| `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md` | PRESENT |
+| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_compression_benchmark.json` | PRESENT |
+| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_joint_fidelity.json` | PRESENT |
+| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_search_eval.json` | PRESENT |
+| `proofs/artifacts/2026-02-20_zpe_mocap_wave1/mocap_query_latency.json` | PRESENT |
 
 ## Repo Shape
 
 | Field | Value |
 |-------|-------|
-| Proof Anchors | 8 |
+| Evidence Bundles | 2 |
 | Modality Lanes | 1 |
-| Authority Source | `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/summary.md` |
+| CI Front Door | fixture-backed encode/decode and retrieval checks |
 
 - `code/`: Python reference implementation and repo-local tests.
 - `proofs/artifacts/2026-02-20_zpe_mocap_wave1/`: historical synthetic ceiling bundle.
-- `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/`: current real-data benchmark authority.
+- `proofs/artifacts/2026-04-14_cmu_corpus_benchmark/`: checked-in CMU fixture benchmark bundle.
 - `docs/`: architecture and legal-boundary notes.
 - `proofs/logs/`, `proofs/source_refs/`: lineage and source-reference material.
 
 ## Quick Start
-
-```bash
-# Install from PyPI
-pip install zpe-mocap
-```
-
-Or use the repository verification path:
 
 ```bash
 git clone https://github.com/Zer0pa/ZPE-Mocap.git
@@ -148,4 +93,6 @@ print(enc.compression_ratio, dec.clip_id)
 PY
 ```
 
-Read [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) before turning any synthetic result into a broader commercial claim.
+The checked-in benchmark bundles under `proofs/artifacts/` remain available for manual inspection, but their numeric summaries are not re-exercised in CI and are not promoted as front-door claims here.
+
+Read [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) before turning any artifact in this repo into a broader playback or commercial claim.
