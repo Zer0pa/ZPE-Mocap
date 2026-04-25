@@ -25,6 +25,35 @@ def precision_at_k(labels: list[str], predictions: list[list[str]], k: int = 10)
     return float(np.mean(scores))
 
 
+def recall_at_k(ranks: list[int | None], k: int) -> float:
+    if not ranks:
+        return 0.0
+    hits = 0
+    for rank in ranks:
+        if rank is not None and rank <= k:
+            hits += 1
+    return float(hits / len(ranks))
+
+
+def mean_reciprocal_rank(ranks: list[int | None]) -> float:
+    if not ranks:
+        return 0.0
+    scores = []
+    for rank in ranks:
+        if rank is None or rank <= 0:
+            scores.append(0.0)
+            continue
+        scores.append(1.0 / float(rank))
+    return float(np.mean(scores))
+
+
+def median_rank(ranks: list[int | None]) -> float | None:
+    observed = [rank for rank in ranks if rank is not None and rank > 0]
+    if not observed:
+        return None
+    return float(np.median(np.asarray(observed, dtype=np.float64)))
+
+
 def percentile_ms(samples_ms: list[float], p: float) -> float:
     if not samples_ms:
         return 0.0
