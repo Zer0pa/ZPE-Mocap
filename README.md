@@ -15,9 +15,9 @@
 
 ## What This Is
 
-ZPE-Mocap is a deterministic motion fingerprinting and retrieval codec for skeletal motion data — one lane in Zer0pa's 17-lane ZPE encoding portfolio. The design target is compact, indexable motion fingerprints from BVH archives, not playback-grade reconstruction. Encoding is lossy by design; retrieval fidelity is the primary proof surface.
+ZPE-Mocap is a motion fingerprint index for archive search and deduplication, not a playback codec. It produces compact, indexable fingerprints from skeletal BVH motion data so operators of large mocap archives can locate, dedupe, and retrieve clips by content. Encoding is lossy by design; retrieval fidelity and index latency are the primary proof surfaces. The lane is one of 17 in Zer0pa's ZPE portfolio.
 
-**Headline result (CI-anchored, real data):** mean 18.77× compression vs raw BVH float32 on 10 real CMU corpus clips. A synthetic-fixture ACL comparator (57.03× ZPE-Mocap vs 19.15× ACL medium, 10 synthetic clips, not CI-gated) sets an orientation ceiling but is not the aggregate claim. Both are documented in full below with scope boundaries.
+**Honest top-line (CI-anchored, real data):** mean 18.77× compression vs raw BVH float32 on 10 real CMU corpus clips, with retrieval Recall@1 0.125, Recall@10 0.583, and p50 query latency 0.826 ms — the actual product story for an archive-search index. A separate ACL synthetic comparator is documented in section 5 with its scope boundaries explicitly drawn (non-CI-gated, non-commensurable: fingerprint extraction vs playback codec); it is orientation material, not the aggregate claim.
 
 The committed front door covers: canonical walk fixture integrity, suffix-index retrieval stability, edge-case decode coverage, and the 10-clip CMU fixture manifest.
 
@@ -33,7 +33,7 @@ The committed front door covers: canonical walk fixture integrity, suffix-index 
 
 ## CMU Corpus Compression
 
-**Primary compression authority.** Ratios measured against real CMU mocap data (10 fixture clips, cgspeed MotionBuilder-friendly BVH conversion, 2010). Basis: raw BVH float32 bytes. Reconstruction fidelity (MPJPE) is not a design target and is not claimed here.
+**Primary compression authority — honest headline.** Ratios measured against real CMU mocap data (10 fixture clips, cgspeed MotionBuilder-friendly BVH conversion, 2010). Basis: raw BVH float32 bytes. Reconstruction fidelity (MPJPE) is not a design target for a fingerprint index and is not claimed here. The 18.77× mean is the figure that travels with this lane.
 
 | Field | Value | Proof |
 |-------|-------|-------|
@@ -62,7 +62,7 @@ The current retrieval authority is the 2026-04-24 CMU held-out-window benchmark.
 
 ## ACL Direct Compression Comparator
 
-**Secondary comparator — synthetic fixture, not CI-gated.** This comparator runs on 10 synthetic clips (wave 1 fixture), not CMU real data. ZPE-Mocap is a fingerprinting codec (lossy by design) while ACL targets playback-grade reconstruction. The comparison is compression-ratio-only and does not imply equivalent reconstruction quality. Do not treat this as the aggregate compression claim — that is the 18.77× CMU figure above.
+**Synthetic comparison (non-CI-gated, non-commensurable: fingerprint extraction vs playback codec).** This comparator runs on 10 synthetic clips (wave 1 fixture), not CMU real data. ZPE-Mocap extracts a lossy fingerprint sized for retrieval; ACL targets playback-grade reconstruction. The two systems are not commensurable on a single ratio number — a fingerprint index and a playback codec are doing different jobs — and this benchmark is not gated by CI. Reported here for orientation only; do not treat the 57.03× figure as the lane's compression claim. The aggregate, CI-gated claim is the 18.77× CMU figure above.
 
 | Codec | Mean ratio vs raw BVH float32 | ACL level | Corpus | Proof |
 |-------|-------------------------------|-----------|--------|-------|
@@ -145,3 +145,10 @@ PY
 ```
 
 The checked-in benchmark bundles under `proofs/artifacts/` remain available for manual inspection. Promoted metrics above are bounded to retrieval/indexing scope. Read [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) before turning any artifact in this repo into a broader playback or commercial claim.
+
+## Upcoming Workstreams
+
+This section captures the active lane priorities — what the next agent or contributor picks up, and what investors should expect. Cadence is continuous, not milestoned.
+
+- **CMU benchmark scale-up (10 → 100+ clips)** — Active Engineering. Pure data-ingestion work; closes proof-surface gap to a buyer-evaluable corpus.
+- **Recall@1 lift via fingerprint primitives** — Research-Deferred — Investigation Underway. Current 0.125 needs lift to 0.25+ for archive-search buyers; learned-embedding head, metric-learning fine-tune, or alternative distance function under investigation.
