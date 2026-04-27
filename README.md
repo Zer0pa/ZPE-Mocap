@@ -70,10 +70,17 @@ The following surfaces are CI-gated against committed fixtures. Every item below
 
 | Field | Value |
 |-------|-------|
-| Verdict | ACTIVE |
-| Stage | Fixture-scale proof. CI surface covers retrieval stability and compression ratio on 10 CMU clips. |
-| What a buyer gets today | A working Python reference implementation with CI-anchored fixture benchmarks, proof artifacts, and a defined retrieval scope. |
-| What is NOT ready | Production-scale corpus (100+ clips), Recall@1 lift to buyer-evaluable threshold (current 0.125 vs target 0.25+), playback reconstruction (not a lane goal). |
+| Verdict | STAGED |
+| Commit SHA | 6cef1728ef56 |
+| Source | proofs/artifacts/2026-04-24_cmu_retrieval_benchmark/results.json |
+
+### Stage Notes
+
+**Stage:** Fixture-scale proof. CI surface covers retrieval stability and compression ratio on 10 CMU clips.
+
+**What a buyer gets today:** A working Python reference implementation with CI-anchored fixture benchmarks, proof artifacts, and a defined retrieval scope.
+
+**What is NOT ready:** Production-scale corpus (100+ clips), Recall@1 lift to buyer-evaluable threshold (current 0.125 vs target 0.25+), playback reconstruction (not a lane goal).
 
 ## Tests and Verification
 
