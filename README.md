@@ -2,6 +2,39 @@
 
 ## Install / Developer Commands
 
+<!-- INSTALL-DX:START -->
+#### Package Install
+
+Installable package: `python3.11 -m pip install zpe-mocap`.
+Current release: `0.1.1` on [PyPI](https://pypi.org/project/zpe-mocap/).
+Source: [Zer0pa/ZPE-Mocap](https://github.com/Zer0pa/ZPE-Mocap/).
+
+```bash
+python3.11 -m pip install zpe-mocap
+```
+
+Import smoke:
+
+```bash
+python3.11 - <<'PY'
+import importlib.metadata as md
+import zpe_mocap
+
+print("zpe-mocap", md.version("zpe-mocap"))
+PY
+```
+
+
+CLI smoke:
+
+```bash
+zpe-mocap --help
+```
+
+Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.
+- PyPI copy is stale or pending refresh; install success is not product readiness.
+<!-- INSTALL-DX:END -->
+
 #### Quick Start
 
 ```bash
