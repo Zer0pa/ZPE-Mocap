@@ -88,7 +88,7 @@ The checked-in benchmark bundles under `proofs/artifacts/` remain available for 
 <table width="100%">
 <tr>
 <td width="50%" valign="top">
-<div><b>03 · VALUE</b></div>
+<div><b>03 · VALUE OF MARKET</b></div>
       <div><span>BVH</span> <span>INDEX</span></div>
       <div>Every BVH archive that cannot yet be searched by the movement inside it.</div>
 </td>
