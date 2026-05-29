@@ -1,9 +1,6 @@
 # ZPE-Mocap
 
-## Install / Developer Commands
-
-<!-- INSTALL-DX:START -->
-#### Package Install
+## Package Install
 
 Installable package: `python3.11 -m pip install zpe-mocap`.
 Current release: `0.1.1` on [PyPI](https://pypi.org/project/zpe-mocap/).
@@ -13,61 +10,9 @@ Source: [Zer0pa/ZPE-Mocap](https://github.com/Zer0pa/ZPE-Mocap/).
 python3.11 -m pip install zpe-mocap
 ```
 
-Import smoke:
+For full install, smoke, source, and developer commands, [click here](#install-developer-commands-detailed).
 
-```bash
-python3.11 - <<'PY'
-import importlib.metadata as md
-import zpe_mocap
-
-print("zpe-mocap", md.version("zpe-mocap"))
-PY
-```
-
-
-CLI smoke:
-
-```bash
-zpe-mocap --help
-```
-
-Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.
-- PyPI copy is stale or pending refresh; install success is not product readiness.
-<!-- INSTALL-DX:END -->
-
-#### Quick Start
-
-```bash
-git clone https://github.com/Zer0pa/ZPE-Mocap.git
-cd ZPE-Mocap
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -e ./code
-python -m unittest discover -s code/tests -v
-```
-
-Smoke check:
-
-```bash
-python - <<'PY'
-from zpe_mocap.codec import decode_zpmoc, encode_clip
-from zpe_mocap.synthetic import generate_clip
-
-clip = generate_clip(
-    clip_id="readme_smoke",
-    label="walk",
-    frames=120,
-    fps=60,
-    seed=20260220,
-    noise_scale=0.0002,
-)
-enc = encode_clip(clip, seed=20260220)
-dec = decode_zpmoc(enc.payload)
-print(enc.compression_ratio, dec.clip_id)
-PY
-```
-
-The checked-in benchmark bundles under `proofs/artifacts/` remain available for manual inspection. Promoted metrics above are bounded to retrieval/indexing scope. Read [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) before turning any artifact in this repo into a broader playback or commercial claim.
+---
 
 <table width="100%">
 <tr>
@@ -340,3 +285,76 @@ The checked-in benchmark bundles under `proofs/artifacts/` remain available for 
 </td>
 </tr>
 </table>
+
+---
+
+<a id="install-developer-commands-detailed"></a>
+
+## Install / Developer Commands Detailed
+
+<!-- INSTALL-DX:START -->
+#### Package Install
+
+Installable package: `python3.11 -m pip install zpe-mocap`.
+Current release: `0.1.1` on [PyPI](https://pypi.org/project/zpe-mocap/).
+Source: [Zer0pa/ZPE-Mocap](https://github.com/Zer0pa/ZPE-Mocap/).
+
+```bash
+python3.11 -m pip install zpe-mocap
+```
+
+Import smoke:
+
+```bash
+python3.11 - <<'PY'
+import importlib.metadata as md
+import zpe_mocap
+
+print("zpe-mocap", md.version("zpe-mocap"))
+PY
+```
+
+
+CLI smoke:
+
+```bash
+zpe-mocap --help
+```
+
+Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.
+- PyPI copy is stale or pending refresh; install success is not product readiness.
+<!-- INSTALL-DX:END -->
+
+#### Quick Start
+
+```bash
+git clone https://github.com/Zer0pa/ZPE-Mocap.git
+cd ZPE-Mocap
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ./code
+python -m unittest discover -s code/tests -v
+```
+
+Smoke check:
+
+```bash
+python - <<'PY'
+from zpe_mocap.codec import decode_zpmoc, encode_clip
+from zpe_mocap.synthetic import generate_clip
+
+clip = generate_clip(
+    clip_id="readme_smoke",
+    label="walk",
+    frames=120,
+    fps=60,
+    seed=20260220,
+    noise_scale=0.0002,
+)
+enc = encode_clip(clip, seed=20260220)
+dec = decode_zpmoc(enc.payload)
+print(enc.compression_ratio, dec.clip_id)
+PY
+```
+
+The checked-in benchmark bundles under `proofs/artifacts/` remain available for manual inspection. Promoted metrics above are bounded to retrieval/indexing scope. Read [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) before turning any artifact in this repo into a broader playback or commercial claim.
