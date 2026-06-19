@@ -19,6 +19,7 @@ For full install, smoke, source, and developer commands, [click here](#install-d
 <td width="100%" valign="top">
 <div><span><b>00 · ZPE-MOCAP</b> · MOTION FINGERPRINT INDEX</span> <span>RESEARCH-READY · RECALL OPEN</span></div>
       <h1>Motion Clips <span>Searchable By Shape</span></h1>
+      <p><strong>Live experiment. Not a release. Ambition headlined. Claims bounded.</strong></p>
       <p>A searchable motion archive &mdash; find any movement, not just any file &middot; ZPE-Mocap &middot; PyPI <em>zpe-mocap</em> 0.1.1 &middot; github.com/Zer0pa/ZPE-Mocap</p>
       <p>A motion-capture archive stores everything and finds almost nothing. A choreographer, animator, or biomechanist looking for a specific gesture starts at the filename and ends up scrubbing. ZPE-Mocap changes what the archive can answer. It fingerprints BVH skeletons into a motion index: give it a movement, get back the clips that match in <strong>0.826 ms</strong>, with the archive itself <strong>18.77&times;</strong> smaller. Playback reconstruction and semantic naming are not in scope here.</p>
 </td>
